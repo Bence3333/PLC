@@ -1,0 +1,5 @@
+# A RoboDK-ban futó szkriptekhez (robodk_scripts/) csak a RoboDK-val együtt települő 'robodk' csomag kell.
+# A jegyzőkönyv-készítőhöz (dokumentacio/jegyzokonyv_keszito.py):
+python-docx>=1.1
+matplotlib>=3.5
+# Opcionális: PDF közvetlenül Wordből (Windows/macOS):  docx2pdf

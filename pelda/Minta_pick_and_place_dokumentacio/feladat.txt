@@ -1,0 +1,7 @@
+Pick and place (MINTAFELADAT)
+Ez egy kitalált mintafeladat, csak a jegyzőkönyv-készítő bemutatására szolgál.
+Készítsen RoboDK-állomást egy ABB IRB 120 robottal és egy megfogóval!
+- A robot az asztal egyik pontjáról vegyen fel egy dobozt, és helyezze át egy másik pontra.
+- A felvételi és a lerakási pontot 100 mm-rel fölötte lévő pontból, lineáris mozgással közelítse meg.
+- Határozza meg a program ciklusidejét és a TCP által megtett utat!
+- Vizsgálja meg, hogy a pálya végrehajtható és ütközésmentes-e!
