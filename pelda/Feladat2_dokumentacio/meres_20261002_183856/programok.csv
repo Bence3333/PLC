@@ -1,0 +1,5 @@
+﻿program;robot;utasitasok;ciklusido_s;palyahossz_mm;ervenyesseg_szazalek;utkozes;tcp_max_sebesseg_mm_s;felveteltol_lerakasig_s;max_celpont_elteres_mm;max_palya_elteres_mm;kezdo_veg_elteres_mm;zona_min_tavolsag_mm;robodk_uzenet
+Negyzet_lassu;ABB IRB 120-3/0.6;15;18,372;1074,3;100,0;nincs;174,0;;0,0005;0,000;0,0000;;Program OK (MINTA - szimulált adat)
+Negyzet_gyors;ABB IRB 120-3/0.6;15;3,877;1074,3;100,0;nincs;717,1;;0,0003;0,000;0,0000;;Program OK (MINTA - szimulált adat)
+Negyzet_lassu_lekerekitett;ABB IRB 120-3/0.6;15;17,396;1063,0;100,0;nincs;174,0;;0,0002;2,373;0,0000;;Program OK (MINTA - szimulált adat)
+Negyzet_gyors_lekerekitett;ABB IRB 120-3/0.6;15;3,104;1063,0;100,0;nincs;717,1;;0,0002;2,024;0,0000;;Program OK (MINTA - szimulált adat)

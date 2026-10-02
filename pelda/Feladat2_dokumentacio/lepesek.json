@@ -1,0 +1,111 @@
+[
+  {
+    "sorszam": 1,
+    "idopont": "2026-10-02 18:38:54",
+    "leiras": "Új állomás, ABB IRB 120-3/0.6 robot betöltése az online könyvtárból",
+    "kep": "kepek/lepes_01.png",
+    "kep_automatikus": true,
+    "uj_elemek": [],
+    "elemek": [
+      "ABB IRB 120-3/0.6 Base",
+      "ABB IRB 120-3/0.6"
+    ]
+  },
+  {
+    "sorszam": 2,
+    "idopont": "2026-10-02 18:38:55",
+    "leiras": "Toll szerszám (TCP: Z = 120 mm), Palya referencia keret a négyzet közepén, rajzlap",
+    "kep": "kepek/lepes_02.png",
+    "kep_automatikus": true,
+    "uj_elemek": [
+      "Toll",
+      "Palya",
+      "Asztallap",
+      "Rajzlap",
+      "Negyzet_palya",
+      "Home",
+      "P1_felett",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "Negyzet_lassu",
+      "Negyzet_gyors",
+      "Negyzet_lassu_lekerekitett",
+      "Negyzet_gyors_lekerekitett"
+    ],
+    "elemek": [
+      "ABB IRB 120-3/0.6 Base",
+      "ABB IRB 120-3/0.6",
+      "Toll",
+      "Palya",
+      "Asztallap",
+      "Rajzlap",
+      "Negyzet_palya",
+      "Home",
+      "P1_felett",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "Negyzet_lassu",
+      "Negyzet_gyors",
+      "Negyzet_lassu_lekerekitett",
+      "Negyzet_gyors_lekerekitett"
+    ]
+  },
+  {
+    "sorszam": 3,
+    "idopont": "2026-10-02 18:38:56",
+    "leiras": "A négyzet csúcsai: P1(-75; -75), P2(75; -75), P3(75; 75), P4(-75; 75) mm, Z = 0",
+    "kep": "kepek/lepes_03.png",
+    "kep_automatikus": true,
+    "uj_elemek": [],
+    "elemek": [
+      "ABB IRB 120-3/0.6 Base",
+      "ABB IRB 120-3/0.6",
+      "Toll",
+      "Palya",
+      "Asztallap",
+      "Rajzlap",
+      "Negyzet_palya",
+      "Home",
+      "P1_felett",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "Negyzet_lassu",
+      "Negyzet_gyors",
+      "Negyzet_lassu_lekerekitett",
+      "Negyzet_gyors_lekerekitett"
+    ]
+  },
+  {
+    "sorszam": 4,
+    "idopont": "2026-10-02 18:38:56",
+    "leiras": "Programok: lassú (50 mm/s) és gyors (500 mm/s), pontos és 10 mm-es lekerekítéssel",
+    "kep": "kepek/lepes_04.png",
+    "kep_automatikus": true,
+    "uj_elemek": [],
+    "elemek": [
+      "ABB IRB 120-3/0.6 Base",
+      "ABB IRB 120-3/0.6",
+      "Toll",
+      "Palya",
+      "Asztallap",
+      "Rajzlap",
+      "Negyzet_palya",
+      "Home",
+      "P1_felett",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "Negyzet_lassu",
+      "Negyzet_gyors",
+      "Negyzet_lassu_lekerekitett",
+      "Negyzet_gyors_lekerekitett"
+    ]
+  }
+]

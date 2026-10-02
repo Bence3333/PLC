@@ -1,0 +1,21 @@
+Orvosi robot: precíziós mozgás
+Feladat: Szimulálj egy orvosi robotkarhoz hasonló precíziós feladatot. A robotnak egy virtuális műtéti területen meghatározott pontokat kell egymás után elérnie úgy, hogy közben ne érintse meg a tiltott területet.
+A feladat célja:
+- a nagy pontosságú robotmozgás gyakorlása,
+- a kis mozgások és sebességek vizsgálata,
+- az akadálykerülés megismerése,
+- az ismételhetőség vizsgálata.
+Mérendő adatok:
+- Az egyes pontok elérésének pontossága.
+- A teljes feladat végrehajtási ideje.
+- A végrehajtó szerv maximális eltérése a kívánt pozíciótól.
+- A különböző sebességbeállítások hatása a pontosságra.
+Feladat menete:
+- Jelölj ki egy kiindulási pontot és három célpontot.
+- Helyezz el egy virtuális akadályt vagy tiltott zónát.
+- Programozd be a robotot úgy, hogy a három célpontot megfelelő sorrendben érje el.
+- A robot nem léphet be a tiltott területre.
+- Végezze el a mozgást alacsony sebességgel.
+- Ismételd meg nagyobb sebességgel.
+- Hasonlítsd össze a pontosságot és a végrehajtási időt.
+Értékelés: A robotnak minden célpontot a lehető legkisebb eltéréssel kell elérnie, miközben az akadályt elkerüli. A mérés alapján állapítsd meg, hogyan befolyásolja a sebesség a precíziós robotmozgást.

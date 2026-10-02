@@ -1,0 +1,21 @@
+Modern robot: Pick & Place rendszer
+Feladat: Programozz be egy modern, 6 tengelyes robotkart, amely egy munkadarabot felvesz egy kiindulási pontról, majd egy másik helyre áthelyezi.
+A feladat célja:
+- a robot mozgásának megismerése,
+- pozíciók rögzítése,
+- a movej és movel mozgások használata,
+- a robot sebességének és gyorsulásának vizsgálata.
+Mérendő adatok:
+- A robot által megtett idő a felvételtől a lerakásig.
+- A mozgás során megtett út.
+- A robot maximális sebessége.
+- A movej és movel mozgások végrehajtási idejének különbsége.
+Feladat menete:
+- Helyezz el egy munkadarabot a kezdőpozícióban.
+- Programozd be a robotot úgy, hogy megközelítse a munkadarabot.
+- Fogja meg, majd emelje fel.
+- Vigye át a megadott célpozícióba.
+- Engedje el.
+- Ismételd meg a feladatot különböző sebességértékekkel.
+- Jegyezd fel a mérési eredményeket, majd hasonlítsd össze őket.
+Értékelés: A feladat akkor sikeres, ha a robot ütközés nélkül, pontosan és ismételhető módon helyezi át a munkadarabot.

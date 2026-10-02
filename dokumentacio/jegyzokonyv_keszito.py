@@ -78,6 +78,16 @@ def szazalek(v, tizedes=1):
     return "–" if v is None else sz(v, tizedes) + "%"
 
 
+def png_meret(fajl):
+    """PNG kép szélessége és magassága pixelben (a fájl fejlécéből)."""
+    import struct
+    with open(fajl, "rb") as f:
+        fej = f.read(24)
+    if fej[:8] != b"\x89PNG\r\n\x1a\n":
+        return None
+    return struct.unpack(">II", fej[16:24])
+
+
 def magyar_datum(d):
     return "%d. %s %d." % (d.year, HONAPOK[d.month - 1], d.day)
 
@@ -300,6 +310,139 @@ def abra_osszehasonlitas(programok, fajl):
     plt.close(fig)
 
 
+def abra_zona_tavolsag(d, fajl):
+    """A TCP távolsága a tiltott zónától az idő függvényében."""
+    plt = grafikon_modul()
+    t, z = d["ido_s"], d["zona_tavolsag_mm"]
+    fig, ax = plt.subplots(figsize=(6.3, 2.4))
+    ax.axhline(0, color=SZIN["kritikus"], lw=1.0)
+    ax.text(t[-1], 0, " zóna határa", va="bottom", ha="right", color=SZIN["szoveg2"], fontsize=8)
+    ax.plot(t, z, color=SZIN["sorozat"])
+    i = min(range(len(z)), key=lambda k: z[k])
+    ax.plot([t[i]], [z[i]], "o", ms=6, color=SZIN["sorozat"], mec="white", mew=1.5, zorder=3)
+    jobbra = t[i] < t[0] + 0.75 * (t[-1] - t[0])
+    ax.annotate("min. " + sz(z[i], 1, "mm"), (t[i], z[i]), xytext=(7 if jobbra else -7, 4), textcoords="offset points",
+                ha="left" if jobbra else "right", va="bottom", color=SZIN["szoveg2"], fontsize=8)
+    ax.set_xlim(t[0], t[-1])
+    ax.set_ylim(min(0.0, min(z)) - 5, max(z) * 1.1 + 5)
+    ax.set_xlabel("idő [s]")
+    ax.set_ylabel("távolság a zónától [mm]")
+    _vesszos_tengely(ax)
+    fig.tight_layout()
+    fig.savefig(fajl, bbox_inches="tight", pad_inches=0.04)
+    plt.close(fig)
+
+
+def abra_program_idok(nevek, idok, fajl):
+    """Programonként a ciklusidő (vízszintes oszlopok, érték az oszlop végén)."""
+    plt = grafikon_modul()
+    fig, ax = plt.subplots(figsize=(6.3, 0.34 * len(nevek) + 0.75))
+    y = list(range(len(nevek)))[::-1]
+    ax.barh(y, idok, height=0.5, color=SZIN["sorozat"], lw=0)
+    felso = max(idok) if idok else 1.0
+    for yy, v in zip(y, idok):
+        ax.text(v + felso * 0.01, yy, sz(v, 2, "s"), va="center", ha="left", color=SZIN["szoveg2"], fontsize=8)
+    ax.set_yticks(y)
+    ax.set_yticklabels(nevek)
+    ax.set_xlim(0, felso * 1.16)
+    ax.set_ylim(-0.6, len(nevek) - 0.4)
+    ax.grid(axis="y", visible=False)
+    ax.set_xlabel("ciklusidő [s]")
+    _vesszos_tengely(ax, y=False)
+    fig.tight_layout()
+    fig.savefig(fajl, bbox_inches="tight", pad_inches=0.04)
+    plt.close(fig)
+
+
+def abra_movej_movel(cimkek, j_idok, l_idok, fajl):
+    """MoveJ és MoveL változat ciklusideje változatonként (két sorozat, jelmagyarázattal)."""
+    plt = grafikon_modul()
+    fig, ax = plt.subplots(figsize=(6.3, 0.62 * len(cimkek) + 0.95))
+    y = list(range(len(cimkek)))[::-1]
+    h = 0.32
+    felso = max(j_idok + l_idok) if (j_idok or l_idok) else 1.0
+    for eltolas, idok, szin, nev in ((h / 2 + 0.02, j_idok, SZIN["sorozat"], "MoveJ (csuklómozgás)"),
+                                      (-h / 2 - 0.02, l_idok, "#eb6834", "MoveL (lineáris mozgás)")):
+        ax.barh([v + eltolas for v in y], idok, height=h, color=szin, lw=0, label=nev)
+        for yy, v in zip(y, idok):
+            ax.text(v + felso * 0.01, yy + eltolas, sz(v, 2, "s"), va="center", ha="left", color=SZIN["szoveg2"], fontsize=8)
+    ax.set_yticks(y)
+    ax.set_yticklabels(cimkek)
+    ax.set_xlim(0, felso * 1.18)
+    ax.grid(axis="y", visible=False)
+    ax.set_xlabel("ciklusidő [s]")
+    ax.legend(loc="lower right", fontsize=8)
+    _vesszos_tengely(ax, y=False)
+    fig.tight_layout()
+    fig.savefig(fajl, bbox_inches="tight", pad_inches=0.04)
+    plt.close(fig)
+
+
+def abra_kis_tobbszoros(sorozatok, x_kulcs, y_kulcs, x_cimke, y_cimke, fajl, felulnezet=False, zona=False):
+    """Programonként egy kis panel azonos skálával (small multiples) - a programok összevetéséhez."""
+    plt = grafikon_modul()
+    n = len(sorozatok)
+    oszlop = 1 if n == 1 else (3 if (felulnezet and n > 4) else 2)
+    sor = int(math.ceil(n / float(oszlop)))
+    magas = (2.35 if oszlop == 2 else 1.75) if felulnezet else (1.6 if n <= 4 else 1.35)
+    fig, tengelyek = plt.subplots(sor, oszlop, figsize=(6.3, magas * sor + 0.35), squeeze=False)
+    ymin = min(min(d[y_kulcs]) for _, d in sorozatok)
+    ymax = max(max(d[y_kulcs]) for _, d in sorozatok)
+    xmin = min(min(d[x_kulcs]) for _, d in sorozatok)
+    xmax = max(max(d[x_kulcs]) for _, d in sorozatok)
+    for k in range(sor * oszlop):
+        ax = tengelyek[k // oszlop][k % oszlop]
+        if k >= n:
+            ax.set_visible(False)
+            continue
+        cim, d = sorozatok[k]
+        x, y = d[x_kulcs], d[y_kulcs]
+        if zona:
+            ax.axhline(0, color=SZIN["kritikus"], lw=0.9)
+        ax.plot(x, y, color=SZIN["sorozat"], lw=1.3)
+        if felulnezet:
+            ax.plot([x[0]], [y[0]], "o", ms=5, color=SZIN["sorozat"], mec="white", mew=1.2, zorder=3)
+            szel = max(xmax - xmin, ymax - ymin) * 0.55
+            kx, ky = (xmin + xmax) / 2, (ymin + ymax) / 2
+            ax.set_xlim(kx - szel, kx + szel)
+            ax.set_ylim(ky - szel, ky + szel)
+            ax.set_aspect("equal", adjustable="box")
+        else:
+            ax.set_xlim(min(x), max(x))
+            ax.set_ylim(min(0.0, ymin) - (5 if zona else 0), ymax * 1.08 + (5 if zona else 0))
+            i = max(range(len(y)), key=lambda j: y[j]) if not zona else min(range(len(y)), key=lambda j: y[j])
+            ax.plot([x[i]], [y[i]], "o", ms=4.5, color=SZIN["sorozat"], mec="white", mew=1.0, zorder=3)
+            ax.annotate(("min. " if zona else "max. ") + sz(y[i], 0 if not zona else 1), (x[i], y[i]),
+                        xytext=(5, 3), textcoords="offset points", color=SZIN["szoveg2"], fontsize=7.5,
+                        ha="left" if x[i] < min(x) + 0.7 * (max(x) - min(x)) else "right")
+        ax.set_title(cim, loc="left", fontsize=8.5)
+        ax.tick_params(labelsize=7.5)
+        _vesszos_tengely(ax)
+        if k % oszlop == 0:
+            ax.set_ylabel(y_cimke, fontsize=8)
+        if k // oszlop == sor - 1 or k + oszlop >= n:
+            ax.set_xlabel(x_cimke, fontsize=8)
+    fig.tight_layout(h_pad=0.8, w_pad=1.0)
+    fig.savefig(fajl, bbox_inches="tight", pad_inches=0.04)
+    plt.close(fig)
+
+
+def program_alairas(p):
+    """Az utasítások szerkezete a számértékek nélkül (azonos szerkezetű programok felismeréséhez)."""
+    return tuple((u.get("tipus"), u.get("mozgas"), u["nev"] if u.get("mozgas") else "") for u in p.get("utasitasok", []))
+
+
+def movej_movel_parok(programok):
+    """Olyan programpárok, amelyek neve csak a MoveJ/MoveL szóban tér el: [(változat, MoveJ-prog, MoveL-prog)]."""
+    nevek = {p["nev"]: p for p in programok}
+    parok = []
+    for nev, p in nevek.items():
+        if "MoveJ" in nev and nev.replace("MoveJ", "MoveL") in nevek:
+            valtozat = nev.replace("MoveJ", "").replace("__", "_").strip("_") or nev
+            parok.append((valtozat, p, nevek[nev.replace("MoveJ", "MoveL")]))
+    return parok
+
+
 # ---------------------------------------------------------------------------
 # Word segédfüggvények
 # ---------------------------------------------------------------------------
@@ -447,6 +590,11 @@ class Jegyzokonyv(object):
             self.kitoltendo("ide kerül a kép („%s”) – mentsd el kézzel ezen a néven: %s, és futtasd újra a "
                             "jegyzőkönyv-készítőt (vagy illeszd be Wordben)." % (cim, kep or "-"))
             return
+        meret = png_meret(kep)
+        if meret and meret[0] > 0:  # a kép (felirattal együtt) férjen el egy oldalon
+            max_magassag_cm = 21.0
+            if szelesseg_cm * meret[1] / float(meret[0]) > max_magassag_cm:
+                szelesseg_cm = max_magassag_cm * meret[0] / float(meret[1])
         p = self.doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         p.paragraph_format.keep_with_next = True
@@ -610,6 +758,22 @@ class Jegyzokonyv(object):
                       "(H = Transl·Rot(x)·Rot(y)·Rot(z)).")
         self.kitoltendo("a gyakorlat célja néhány mondatban (pl. ipari robot offline programozásának és szimulációjának "
                         "elsajátítása, ciklusidő-becslés, elérhetőség vizsgálata).")
+        if any(f["meres"] for f in feladatok):
+            self.cimsor("Mérési módszer és korlátai", 2)
+            for sor in (
+                "Ciklusidő és pályahossz: a RoboDK pályaszámítása (program frissítése) adja. A mérés előtt a robot a "
+                "program első célpontjába áll, így az eredmény nem függ attól, hol állt korábban a robot.",
+                "Pálya: a RoboDK időalapú mintavételezésével rögzített csuklószögek és TCP-pozíciók (az időlépés "
+                "programonként a táblázatokban szerepel). A sebességek és gyorsulások ebből származnak.",
+                "Célpontok elérése: a célpontot a TCP helyzete alapján azonosítom (tűrés: 0,1 mm). Az eltérés a célpont "
+                "és a mintapontok közötti, interpolált pálya legkisebb távolsága. Megálló célpontnál ez a mintavétel "
+                "felbontásán belüli érték, lekerekített (nem megálló) célpontnál a sarok levágásának mértéke.",
+                "Korlát: a RoboDK ideális kinematikai modellel szimulál. A megálló célpontokat a robot sebességtől "
+                "függetlenül pontosan eléri, és a mozgás determinisztikus, ezért az ismételhetőség is ideális. "
+                "A valódi robot pozicionálási pontosságát és ismételhetőségét (ISO 9283) a hajtások dinamikája, "
+                "a mechanikai rugalmasság és a tűrések határozzák meg, ezeket a szimuláció nem modellezi.",
+            ):
+                self.felsorolas(sor)
 
     def feladat(self, fsz, f):
         self.uj_oldal()
@@ -726,29 +890,105 @@ class Jegyzokonyv(object):
         programok = m.get("programok", [])
         if not programok:
             self.megjegyzes("Nem található program az állomásban.")
+        self._alairasok, self._programok, self._abrazolt = {}, programok, set()
         for pi, p in enumerate(programok, 1):
             self.program(fsz, pi, p, mm)
 
         alfejezet = 7
+        if len([p for p in programok if p.get("frissites")]) > 1:
+            self.programok_osszehasonlitasa(fsz, alfejezet, programok, mm)
+            alfejezet += 1
         if len(f["osszes_meres"]) > 1:
             self.osszehasonlitas(fsz, alfejezet, f)
             alfejezet += 1
 
         # értékelés
         self.cimsor("%d.%d Értékelés" % (fsz, alfejezet), 2)
-        if programok:
+        if len(programok) == 1:
             self.bekezdes("A mérések alapján (automatikusan összeállított összefoglaló):", felkover=True)
-            for p in programok:
-                if len(programok) > 1:
-                    self.bekezdes(p["nev"], felkover=True, utana=2).paragraph_format.keep_with_next = True
-                for mondat in automatikus_ertekeles(p):
+            for mondat in automatikus_ertekeles(programok[0]):
+                self.felsorolas(mondat)
+        elif programok:
+            self.bekezdes("A mérések alapján (automatikusan összeállított összefoglaló):", felkover=True)
+            mondatok = [automatikus_ertekeles(p)[1:] for p in programok]  # az 1. mondat programonként egyedi
+            kozos = [x for x in mondatok[0] if all(x in m_ for m_ in mondatok[1:])]
+            if kozos:
+                self.bekezdes("Minden programra érvényes:", utana=2).paragraph_format.keep_with_next = True
+                for mondat in kozos:
                     self.felsorolas(mondat)
+            self.bekezdes("Programonként:", utana=2).paragraph_format.keep_with_next = True
+            for p, mm_ in zip(programok, mondatok):
+                egyedi = [x for x in mm_ if x not in kozos]
+                self.felsorolas(" ".join([automatikus_ertekeles(p)[0]] + egyedi))
         self.kitoltendo("saját értékelés: teljesíti-e a megoldás a feladat követelményeit? Megfelel-e a ciklusidő? "
                         "Mit lehetne javítani (sebesség, lekerekítés/blending, MoveJ a MoveL helyett, célpontok "
                         "áthelyezése)? Milyen problémák merültek fel (elérhetőség, szingularitás, ütközés), és hogyan "
                         "oldottad meg őket?")
         if m.get("figyelmeztetesek"):
             self.megjegyzes("A mérőszkript figyelmeztetései: " + " | ".join(m["figyelmeztetesek"]))
+
+    def programok_osszehasonlitasa(self, fsz, alfejezet, programok, mm):
+        self.cimsor("%d.%d Programok összehasonlítása" % (fsz, alfejezet), 2)
+        progs = [p for p in programok if p.get("frissites")]
+        st = {p["nev"]: (p.get("palya") or {}).get("statisztika") or {} for p in progs}
+        van_zona = any(s.get("zona") for s in st.values())
+        fejlec = ["Program", "Ciklusidő [s]", "Pályahossz [mm]", "Max TCP seb. [mm/s]", "Max eltérés, megálló [mm]",
+                  "Max eltérés egyenestől [mm]"] + (["Zóna min. táv. [mm]"] if van_zona else [])
+        sorok = []
+        for p in progs:
+            s = st[p["nev"]]
+            sor = [p["nev"], sz(p["frissites"]["ciklusido_s"], 3), sz(p["frissites"]["palyahossz_mm"], 1),
+                   sz(s.get("tcp_max_sebesseg_mm_s"), 1), sz(s.get("max_elteres_megallo_mm"), 4),
+                   sz(s.get("max_palya_elteres_mm"), 3)]
+            if van_zona:
+                sor.append(sz((s.get("zona") or {}).get("min_tavolsag_mm"), 1))
+            sorok.append(sor)
+        szel = [4.2, 1.9, 2.0, 2.0, 2.0, 2.0] + ([1.9] if van_zona else [])
+        szel = [w * 16.0 / sum(szel) for w in szel]
+        self.tablazat(fejlec, sorok, "A programok fő mérési eredményei", szel, jobbra=range(1, len(fejlec)),
+                      meret=self.args.betumeret - 2.5)
+        abrak = os.path.join(mm, "abrak")
+        os.makedirs(abrak, exist_ok=True)
+        abra_program_idok([p["nev"] for p in progs], [p["frissites"]["ciklusido_s"] for p in progs],
+                          os.path.join(abrak, "programok_ciklusido.png"))
+        self.abra(os.path.join(abrak, "programok_ciklusido.png"), "A programok ciklusideje")
+        parok = movej_movel_parok(progs)
+        if parok:
+            psorok = []
+            for valtozat, j, l in parok:
+                tj, tl = j["frissites"]["ciklusido_s"], l["frissites"]["ciklusido_s"]
+                psorok.append([valtozat, sz(tj, 3), sz(tl, 3), sz(tl - tj, 3), szazalek(100.0 * (tl - tj) / tj if tj else None, 1),
+                               sz(j["frissites"]["palyahossz_mm"], 1), sz(l["frissites"]["palyahossz_mm"], 1)])
+            self.tablazat(["Változat", "MoveJ [s]", "MoveL [s]", "Különbség [s]", "Különbség [%]", "Út MoveJ [mm]",
+                           "Út MoveL [mm]"], psorok, "A MoveJ és a MoveL változat végrehajtási ideje és úthossza",
+                          [2.8, 2.0, 2.0, 2.2, 2.2, 2.4, 2.4], jobbra=range(1, 7))
+            self.megjegyzes("Különbség = MoveL − MoveJ, a százalék a MoveJ idejéhez viszonyítva; pozitív érték "
+                            "esetén a MoveJ-s változat a gyorsabb.")
+            abra_movej_movel([v for v, _, _ in parok], [j["frissites"]["ciklusido_s"] for _, j, _ in parok],
+                             [l["frissites"]["ciklusido_s"] for _, _, l in parok], os.path.join(abrak, "movej_movel.png"))
+            self.abra(os.path.join(abrak, "movej_movel.png"), "A MoveJ és a MoveL változat ciklusideje")
+        adatok = []
+        for p in progs:
+            try:
+                adatok.append((p["nev"], palya_csv(os.path.join(mm, p["palya"]["csv"]))))
+            except Exception:
+                pass
+        if len(adatok) > 1:
+            abra_kis_tobbszoros(adatok, "ido_s", "TCP_sebesseg_mm_s", "idő [s]", "TCP seb. [mm/s]",
+                                os.path.join(abrak, "kis_tcp_sebesseg.png"))
+            self.abra(os.path.join(abrak, "kis_tcp_sebesseg.png"),
+                      "A TCP pályasebessége programonként (közös függőleges skála)")
+            abra_kis_tobbszoros(adatok, "TCP_X_mm", "TCP_Y_mm", "X [mm]", "Y [mm]",
+                                os.path.join(abrak, "kis_tcp_palya.png"), felulnezet=True)
+            self.abra(os.path.join(abrak, "kis_tcp_palya.png"), "A TCP pályája felülnézetben programonként (azonos skála)")
+            zonas = [(nev, d) for nev, d in adatok if "zona_tavolsag_mm" in d]
+            if zonas:
+                abra_kis_tobbszoros(zonas, "ido_s", "zona_tavolsag_mm", "idő [s]", "táv. a zónától [mm]",
+                                    os.path.join(abrak, "kis_zona.png"), zona=True)
+                self.abra(os.path.join(abrak, "kis_zona.png"), "A TCP távolsága a tiltott zónától programonként")
+        self.bekezdes("Megállapítások (a mérésekből automatikusan):", felkover=True)
+        for mondat in osszehasonlito_mondatok(progs):
+            self.felsorolas(mondat)
 
     def osszehasonlitas(self, fsz, alfejezet, f):
         self.cimsor("%d.%d Mérések összehasonlítása" % (fsz, alfejezet), 2)
@@ -782,7 +1022,15 @@ class Jegyzokonyv(object):
         self.cimsor("%d.6.%d %s" % (fsz, pi, p["nev"]), 3)
         if p.get("robot"):
             self.bekezdes("Robot: %s. Utasítások száma: %d." % (p["robot"], len(p.get("utasitasok", []))))
-        if p.get("utasitasok"):
+        alairas = program_alairas(p)
+        azonos = self._alairasok.get(alairas)
+        if azonos and p.get("utasitasok"):
+            masik = next(q for q in self._programok if q["nev"] == azonos)
+            elteres = [u["nev"] for u, v in zip(p["utasitasok"], masik["utasitasok"]) if u["nev"] != v["nev"]]
+            self.bekezdes("Az utasítások szerkezete megegyezik a(z) %s programéval%s." % (
+                azonos, (", eltérés: " + "; ".join(elteres)) if elteres else ""))
+        elif p.get("utasitasok"):
+            self._alairasok[alairas] = p["nev"]
             self.tablazat(
                 ["#", "Utasítás (RoboDK)", "Típus", "Mozgás", "Cél"],
                 [[u["sorszam"], u["nev"], u["tipus"], u.get("mozgas", ""),
@@ -810,6 +1058,27 @@ class Jegyzokonyv(object):
                 ("TCP pályahossz a mintavételezett pályából", sz(st["tcp_palyahossz_mm"], 1, "mm")),
                 ("Átlagos TCP sebesség", sz(st["tcp_atlag_sebesseg_mm_s"], 1, "mm/s")),
                 ("Legnagyobb TCP sebesség", sz(st["tcp_max_sebesseg_mm_s"], 1, "mm/s")),
+            ]
+            if st.get("felveteltol_lerakasig_s") is not None:
+                sorok.append(("Felvételtől lerakásig (a felvételi pont elhagyásától a lerakási pont eléréséig)",
+                              sz(st["felveteltol_lerakasig_s"], 3, "s")))
+            if st.get("max_elteres_megallo_mm") is not None:
+                sorok.append(("Legnagyobb eltérés a megálló célpontokban", sz(st["max_elteres_megallo_mm"], 4, "mm")))
+            if st.get("max_elteres_lekerekitett_mm") is not None:
+                sorok.append(("Legnagyobb eltérés a lekerekített (nem megálló) célpontokban",
+                              sz(st["max_elteres_lekerekitett_mm"], 3, "mm")))
+            if st.get("max_palya_elteres_mm") is not None:
+                sorok.append(("Legnagyobb eltérés az egyenes pályától (MoveL szakaszok)", sz(st["max_palya_elteres_mm"], 3, "mm")))
+            if st.get("ismetlesi_elteres_mm") is not None:
+                sorok.append(("Ugyanazon célpont ismételt elérésének eltérése", sz(st["ismetlesi_elteres_mm"], 4, "mm")))
+            if st.get("kezdo_veg_elteres_mm") is not None:
+                sorok.append(("A program kezdő- és végpontjának távolsága", sz(st["kezdo_veg_elteres_mm"], 3, "mm")))
+            z = st.get("zona")
+            if z:
+                sorok.append(("Legkisebb távolság a tiltott zónától (TCP)",
+                              ("BELÉPETT a zónába (%s)" % z["zona"]) if z["belepett"] else "%s (t = %s, %s)" % (
+                                  sz(z["min_tavolsag_mm"], 1, "mm"), sz(z["ido_s"], 2, "s"), z["zona"])))
+            sorok += [
                 ("Mintavétel", "%d minta, %s időlépés" % (st["mintak_szama"], sz(p["palya"]["idolepes_s"], 4, "s"))),
                 ("Hibás minták (szingularitás, elérhetőség, ütközés)", str(st["hibas_mintak"])),
             ]
@@ -818,7 +1087,34 @@ class Jegyzokonyv(object):
         palya = p.get("palya")
         if not palya:
             return
-        if palya.get("kep"):
+        cp = palya.get("celpontok")
+        if cp:
+            self.tablazat(
+                ["#", "Célpont", "Mozgás", "Érkezés [s]", "Szakaszidő [s]", "Úthossz [mm]", "Eltérés [mm]", "Egyenestől [mm]"],
+                [[c["sorszam"], c["celpont"] + ("" if c["megallt"] else " *"), c["mozgas"].split(" ")[0],
+                  sz(c["erkezes_s"], 3), sz(c["szakaszido_s"], 3), sz(c["szakasz_hossz_mm"], 1), sz(c["elteres_mm"], 4),
+                  sz(c["palya_elteres_mm"], 3) if "palya_elteres_mm" in c else "–"] for c in cp],
+                "Célpontok elérése és pályaszakaszok – %s" % p["nev"], [0.8, 2.8, 1.6, 1.9, 2.1, 2.0, 2.2, 2.6],
+                jobbra=[0, 3, 4, 5, 6, 7])
+            self.megjegyzes("Szakaszidő és úthossz: az előző célpont elhagyásától ennek eléréséig. Eltérés: a célpont "
+                            "és a pálya legkisebb távolsága (megálló célpontnál a mintavétel felbontásán belüli érték). "
+                            "Egyenestől: MoveL-szakaszon a pálya legnagyobb távolsága az ideális egyenestől. "
+                            "* = lekerekített, nem megálló célpont.")
+            n_cs = len(cp[0]["csuklo_valtozas_fok"])
+            osszes = [sum(abs(c["csuklo_valtozas_fok"][k]) for c in cp) for k in range(n_cs)]
+        if cp and (alairas not in self._abrazolt or self.args.reszletes):  # azonos célpontoknál a tengelyelfordulás is azonos
+            self.tablazat(
+                ["#", "Célpont"] + ["ΔJ%d [°]" % (k + 1) for k in range(n_cs)],
+                [[c["sorszam"], c["celpont"]] + [sz(v, 1) for v in c["csuklo_valtozas_fok"]] for c in cp]
+                + [["", "Σ |Δ|"] + [sz(v, 1) for v in osszes]],
+                "A tengelyek elfordulása szakaszonként – %s" % p["nev"], [0.8, 2.8] + [12.4 / n_cs] * n_cs,
+                jobbra=[0] + list(range(2, n_cs + 2)), meret=self.args.betumeret - 2.5)
+        kepviselo = alairas not in self._abrazolt
+        self._abrazolt.add(alairas)
+        if not (kepviselo or self.args.reszletes):
+            self.megjegyzes("A pályakép és a grafikonok a(z) %s programéhoz hasonlók; a programokat a %d.7 alfejezet "
+                            "közös skálájú grafikonjai hasonlítják össze." % (self._alairasok.get(alairas, "előző"), fsz))
+        if palya.get("kep") and (kepviselo or self.args.reszletes):
             self.abra(os.path.join(mm, palya["kep"]), "A(z) %s program pályája (átlátszó „szellemrobotok”)" % p["nev"])
         try:
             d = palya_csv(os.path.join(mm, palya["csv"]))
@@ -829,16 +1125,19 @@ class Jegyzokonyv(object):
         os.makedirs(abrak, exist_ok=True)
         alap = os.path.join(abrak, os.path.splitext(palya["csv"])[0])
         n = len(st["csuklok"]) if st else 0
-        if d and n:
+        if d and n and (kepviselo or self.args.reszletes):
             abra_csuklo_idosor(d, n, "J%d_fok", "°", alap + "_csuklok.png")
             self.abra(alap + "_csuklok.png", "Csuklószögek az idő függvényében – %s" % p["nev"])
-            if "v_J1_fok_s" in d:
+            if "v_J1_fok_s" in d and self.args.reszletes:
                 abra_csuklo_idosor(d, n, "v_J%d_fok_s", "°/s", alap + "_csuklosebesseg.png")
                 self.abra(alap + "_csuklosebesseg.png", "Csuklók szögsebessége az idő függvényében – %s" % p["nev"])
             abra_tcp_sebesseg(d, alap + "_tcp_sebesseg.png")
             self.abra(alap + "_tcp_sebesseg.png", "A TCP pályasebessége az idő függvényében – %s" % p["nev"])
             abra_tcp_palya(d, alap + "_tcp_palya.png")
             self.abra(alap + "_tcp_palya.png", "A TCP pályája felül- és oldalnézetben – %s" % p["nev"])
+            if "zona_tavolsag_mm" in d:
+                abra_zona_tavolsag(d, alap + "_zona.png")
+                self.abra(alap + "_zona.png", "A TCP távolsága a tiltott zónától – %s" % p["nev"])
         if st:
             self.tablazat(
                 ["Csukló", "Min [°]", "Max [°]", "Bejárt [°]", "Tartalék alsó / felső [°]", "Kihaszn.", "Max ω [°/s]", "Max ε [°/s²]"],
@@ -847,9 +1146,9 @@ class Jegyzokonyv(object):
                   szazalek(c.get("kihasznaltsag_szazalek"), 0), sz(c.get("max_sebesseg_fok_s")), sz(c.get("max_gyorsulas_fok_s2"), 0)]
                  for c in st["csuklok"]],
                 "Csuklóstatisztika – %s" % p["nev"], [1.5, 1.7, 1.7, 1.8, 3.3, 1.6, 2.1, 2.3], jobbra=range(1, 8))
-            if abra_kihasznaltsag(st["csuklok"], alap + "_kihasznaltsag.png"):
+            if self.args.reszletes and abra_kihasznaltsag(st["csuklok"], alap + "_kihasznaltsag.png"):
                 self.abra(alap + "_kihasznaltsag.png", "A csuklótartományok kihasználtsága – %s" % p["nev"])
-            szak = st.get("szakaszok", [])
+            szak = st.get("szakaszok", []) if not cp else []
             if szak:
                 max_sor = 60
                 self.tablazat(
@@ -874,12 +1173,15 @@ class Jegyzokonyv(object):
             for p in (f["meres"] or {}).get("programok", []):
                 fr = p.get("frissites") or {}
                 ut = p.get("utkozes")
+                st = (p.get("palya") or {}).get("statisztika") or {}
                 sorok.append(["%d." % fsz, p["nev"], sz(fr.get("ciklusido_s"), 2), sz(fr.get("palyahossz_mm"), 1),
+                              sz(st.get("tcp_max_sebesseg_mm_s"), 1),
                               szazalek(100.0 * fr["ervenyesseg_arany"], 0) if fr else "–",
                               "–" if not ut else ("nincs" if ut.get("utkozesmentes") else "VAN")])
         if sorok:
-            self.tablazat(["Feladat", "Program", "Ciklusidő [s]", "Pályahossz [mm]", "Érvényes", "Ütközés"], sorok,
-                          "A programok fő mérési eredményei", [1.8, 4.6, 2.4, 2.8, 2.2, 2.2], jobbra=[2, 3, 4])
+            self.tablazat(["Feladat", "Program", "Ciklusidő [s]", "Pályahossz [mm]", "Max TCP seb. [mm/s]", "Érvényes",
+                           "Ütközés"], sorok, "Az összes program fő mérési eredményei",
+                          [1.4, 4.4, 2.0, 2.2, 2.2, 1.9, 1.9], jobbra=[2, 3, 4, 5])
         self.kitoltendo("néhány mondatos összefoglalás: mit valósítottál meg, mik a legfontosabb eredmények, mit tanultál.")
 
         self.cimsor("Mellékletek", 1)
@@ -923,11 +1225,78 @@ def automatikus_ertekeles(p):
                      "a(z) %s csukló került (%s tartalék)." % (
                          szazalek(legtobb["kihasznaltsag_szazalek"], 0), legtobb["nev"], legkozelebb["nev"],
                          sz(min(legkozelebb["tartalek_also"], legkozelebb["tartalek_felso"]), 1, "°")))
+        if st.get("felveteltol_lerakasig_s") is not None:
+            m.append("A felvételi pont elhagyásától a lerakási pont eléréséig %s telt el."
+                     % sz(st["felveteltol_lerakasig_s"], 2, "s"))
+        cp = (p.get("palya") or {}).get("celpontok") or []
+        megallo = [c for c in cp if c["megallt"]]
+        if megallo:
+            felb = max(c["felbontas_mm"] for c in megallo)
+            if st["max_elteres_megallo_mm"] <= max(felb, 0.001):
+                m.append("A %d megálló célpontot a robot a mintavétel felbontásán belül (≤ %s) érte el, vagyis "
+                         "gyakorlatilag eltérés nélkül." % (len(megallo), sz(max(felb, 0.001), 3, "mm")))
+            else:
+                m.append("A megálló célpontokban a legnagyobb eltérés %s volt." % sz(st["max_elteres_megallo_mm"], 3, "mm"))
+        if st.get("max_elteres_lekerekitett_mm") is not None:
+            m.append("A lekerekített célpontoknál a pálya legfeljebb %s-re közelítette meg a célpontot: ezt a "
+                     "lekerekítés (blending) okozza." % sz(st["max_elteres_lekerekitett_mm"], 2, "mm"))
+        if st.get("max_palya_elteres_mm") is not None:
+            if st["max_palya_elteres_mm"] < 0.001:
+                m.append("A MoveL-szakaszokon a pálya mérhetően nem tért el az ideális egyenestől (< 0,001 mm).")
+            else:
+                m.append("A MoveL-szakaszokon a pálya legfeljebb %s-re tért el az ideális egyenestől."
+                         % sz(st["max_palya_elteres_mm"], 3, "mm"))
+        if st.get("ismetlesi_elteres_mm") is not None:
+            m.append("Ugyanazt a célpontot többször elérve az elért helyzetek legfeljebb %s-re estek egymástól "
+                     "(ismételhetőség a szimulációban)." % sz(st["ismetlesi_elteres_mm"], 4, "mm"))
+        z = st.get("zona")
+        if z:
+            m.append("A TCP BELÉPETT a tiltott zónába (%s)!" % z["zona"] if z["belepett"] else
+                     "A TCP legkisebb távolsága a tiltott zónától %s volt (t = %s): a robot nem lépett be a zónába."
+                     % (sz(z["min_tavolsag_mm"], 1, "mm"), sz(z["ido_s"], 2, "s")))
         if st["hibas_mintak"]:
             m.append("A mintavételezett pályán %d mintában jelentkezett hiba: %s."
                      % (st["hibas_mintak"], "; ".join(h["leiras"] for h in st["hibak"])))
         else:
             m.append("A mintavételezett pályán nem jelentkezett szingularitás, elérhetetlenség vagy ütközés.")
+    return m
+
+
+def osszehasonlito_mondatok(progs):
+    """Több program összevetéséből levont, tényszerű megállapítások."""
+    m = []
+    idok = [(p["frissites"]["ciklusido_s"], p["nev"]) for p in progs]
+    (tmin, gyors), (tmax, lassu) = min(idok), max(idok)
+    m.append("A leggyorsabb program a(z) %s (%s), a leglassabb a(z) %s (%s); a különbség %s."
+             % (gyors, sz(tmin, 2, "s"), lassu, sz(tmax, 2, "s"), sz(tmax - tmin, 2, "s")))
+    for valtozat, j, l in movej_movel_parok(progs):
+        tj, tl = j["frissites"]["ciklusido_s"], l["frissites"]["ciklusido_s"]
+        lj, ll = j["frissites"]["palyahossz_mm"], l["frissites"]["palyahossz_mm"]
+        if tj <= tl:
+            szoveg = "a MoveJ-es változat %s-mal gyorsabb (a MoveL-es %s-kal tovább tart)" % (
+                sz(tl - tj, 2, "s"), szazalek(100.0 * (tl - tj) / tj if tj else None, 1))
+        else:
+            szoveg = "a MoveL-es változat %s-mal gyorsabb (a MoveJ-es %s-kal tovább tart)" % (
+                sz(tj - tl, 2, "s"), szazalek(100.0 * (tj - tl) / tl if tl else None, 1))
+        m.append("%s: %s; a TCP útja MoveJ-vel %s, MoveL-lel %s (a MoveL egyenes vonalon visz)." % (
+            valtozat, szoveg, sz(lj, 0, "mm"), sz(ll, 0, "mm")))
+    st = [((p.get("palya") or {}).get("statisztika") or {}, p) for p in progs]
+    megallo = [s["max_elteres_megallo_mm"] for s, _ in st if s.get("max_elteres_megallo_mm") is not None]
+    if megallo:
+        m.append("A megálló célpontokban mért legnagyobb eltérés minden programban legfeljebb %s volt: a sebesség "
+                 "a célpontok elérésének pontosságát a szimulációban nem befolyásolta, csak a végrehajtási időt."
+                 % sz(max(megallo), 3, "mm"))
+    kerek = [(s["max_elteres_lekerekitett_mm"], p["nev"]) for s, p in st if s.get("max_elteres_lekerekitett_mm") is not None]
+    if kerek:
+        m.append("Lekerekítéssel (%s) a célpontok közelében legfeljebb %s eltérés jelent meg, cserébe rövidebb a "
+                 "ciklusidő. A pontosság és a sebesség között tehát a lekerekítés jelent kompromisszumot, nem maga "
+                 "a sebesség." % (", ".join(n for _, n in kerek), sz(max(v for v, _ in kerek), 2, "mm")))
+    zonak = [s["zona"]["min_tavolsag_mm"] for s, _ in st if s.get("zona")]
+    if zonak:
+        belepett = [p["nev"] for s, p in st if s.get("zona") and s["zona"]["belepett"]]
+        m.append(("A TCP a következő programokban belépett a tiltott zónába: %s." % ", ".join(belepett)) if belepett else
+                 "A TCP és a tiltott zóna legkisebb távolsága a programokban %s és %s között volt; a robot egyik "
+                 "változatban sem lépett be a zónába." % (sz(min(zonak), 1, "mm"), sz(max(zonak), 1, "mm")))
     return m
 
 
@@ -970,6 +1339,8 @@ def main():
     ap.add_argument("--betutipus", default="Calibri", help="betűtípus (pl. 'Times New Roman')")
     ap.add_argument("--betumeret", type=float, default=11, help="betűméret pontban")
     ap.add_argument("--pdf", action="store_true", help="PDF is készüljön (Word vagy LibreOffice kell hozzá)")
+    ap.add_argument("--reszletes", action="store_true",
+                    help="programonként a csuklósebesség- és csuklótartomány-grafikon is bekerül")
     ap.add_argument("--minta", action="store_true", help=argparse.SUPPRESS)
     args = ap.parse_args()
 

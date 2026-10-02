@@ -1,0 +1,21 @@
+Csuklós robot: pályakövetés
+Feladat: Programozz egy csuklós robotot úgy, hogy a robot végrehajtó szerve egy előre meghatározott, például négyzet vagy háromszög alakú pályát kövessen.
+A feladat célja:
+- a csuklós robot tengelyeinek megismerése,
+- a koordinátarendszer használata,
+- pontos pozíciók meghatározása,
+- a robot pályakövetési pontosságának vizsgálata.
+Mérendő adatok:
+- Az egyes pályaszakaszok végrehajtási ideje.
+- A kezdő- és végpozíció közötti eltérés.
+- A robot egyes tengelyeinek elfordulása.
+- A különböző sebességek hatása a pályakövetés pontosságára.
+Feladat menete:
+- Határozz meg négy pontot egy négyzet alakú pályán.
+- Programozd be a robotot, hogy a pontokat sorrendben érintse.
+- Először lassú sebességgel hajtsd végre a mozgást.
+- Mérd meg a végrehajtási időt.
+- Ismételd meg nagyobb sebességgel.
+- Hasonlítsd össze a két mérés eredményét.
+- Vizsgáld meg, hogy a nagyobb sebesség okoz-e nagyobb pozicionálási eltérést.
+Értékelés: Értékeld a robot pontosságát, ismételhetőségét és a sebességváltoztatás hatását a mozgásra.

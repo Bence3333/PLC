@@ -1,0 +1,5586 @@
+{
+  "formatum_verzio": 1,
+  "letrehozva": "2026-10-02 18:38:18",
+  "megnevezes": "végleges változat",
+  "allomas": {
+    "nev": "Feladat1",
+    "mappa": "(minta)",
+    "robodk_verzio": "5.9.0 (MINTA - szimulált)",
+    "python_verzio": "3.11.15",
+    "fajl": "Feladat1.rdk"
+  },
+  "beallitasok": {
+    "utkozesvizsgalat": true,
+    "idolepes_s": null
+  },
+  "robotok": [
+    {
+      "nev": "UR5e",
+      "csuklok_fok": [
+        0.0,
+        -90.0,
+        0.0,
+        -90.0,
+        0.0,
+        0.0
+      ],
+      "szabadsagfok": 6,
+      "also_hatar": [
+        -360.0,
+        -360.0,
+        -360.0,
+        -360.0,
+        -360.0,
+        -360.0
+      ],
+      "felso_hatar": [
+        360.0,
+        360.0,
+        360.0,
+        360.0,
+        360.0,
+        360.0
+      ],
+      "bazis_abszolut": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "tcp_aktualis": [
+        -400.00000000000006,
+        -392.9,
+        1079.4,
+        90.0,
+        -1.7235016747783145e-47,
+        -180.0
+      ],
+      "aktiv_szerszam": "Megfogo",
+      "aktiv_referencia": "Asztal"
+    }
+  ],
+  "szerszamok": [
+    {
+      "nev": "Megfogo",
+      "szulo": "UR5e",
+      "tcp": [
+        0.0,
+        0.0,
+        160.0,
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "abszolut": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ]
+    }
+  ],
+  "referenciak": [
+    {
+      "nev": "UR5e Base",
+      "szulo": "Feladat1",
+      "relativ": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "abszolut": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "nev": "Asztal",
+      "szulo": "Feladat1",
+      "relativ": [
+        400.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "abszolut": [
+        400.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ]
+    }
+  ],
+  "objektumok": [
+    {
+      "nev": "Asztallap",
+      "szulo": "Asztal",
+      "relativ": [
+        0.0,
+        0.0,
+        -20.0,
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "abszolut": [
+        400.0,
+        0.0,
+        -20.0,
+        -0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "nev": "Munkadarab",
+      "szulo": "Asztal",
+      "relativ": [
+        0.0,
+        -200.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "abszolut": [
+        400.0,
+        -200.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "nev": "Lerakohely",
+      "szulo": "Asztal",
+      "relativ": [
+        0.0,
+        200.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "abszolut": [
+        400.0,
+        200.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ]
+    }
+  ],
+  "celpontok": [
+    {
+      "nev": "Home",
+      "referencia": "Asztal",
+      "csuklo_target": true,
+      "poz": [
+        -50.000001261248826,
+        2.0608810115682404e-06,
+        299.99999999999966,
+        -179.99999926200118,
+        -4.516510791425811e-07,
+        -5.246677897708419e-07
+      ],
+      "abszolut": [
+        349.9999999994544,
+        -6.944734263761906e-10,
+        300.0000000000026,
+        179.99999997786048,
+        7.290266548690292e-09,
+        -7.181158731640328e-12
+      ],
+      "csuklok_fok": [
+        22.386785902118767,
+        -179.3389309027165,
+        89.57995495222745,
+        -0.24102418605072762,
+        -90.00000085439325,
+        112.38678537745098
+      ],
+      "robot": "UR5e"
+    },
+    {
+      "nev": "Felvetel_felett",
+      "referencia": "Asztal",
+      "csuklo_target": false,
+      "poz": [
+        0.0,
+        -200.0,
+        125.0,
+        180.0,
+        0.0,
+        -0.0
+      ],
+      "abszolut": [
+        400.0,
+        -200.0,
+        125.0,
+        180.0,
+        0.0,
+        -0.0
+      ],
+      "csuklok_fok": [
+        -9.22345985753152,
+        -200.4507807692079,
+        91.34504373738366,
+        19.105736876123398,
+        -89.99999990984477,
+        80.77654014372062
+      ],
+      "robot": "UR5e"
+    },
+    {
+      "nev": "Felvetel",
+      "referencia": "Asztal",
+      "csuklo_target": false,
+      "poz": [
+        0.0,
+        -200.0,
+        25.0,
+        180.0,
+        0.0,
+        -0.0
+      ],
+      "abszolut": [
+        400.0,
+        -200.0,
+        25.0,
+        180.0,
+        0.0,
+        -0.0
+      ],
+      "csuklok_fok": [
+        -9.223459857782762,
+        -212.97519762148215,
+        97.28020584394642,
+        25.69499160818026,
+        -89.999999910924,
+        80.77654014345005
+      ],
+      "robot": "UR5e"
+    },
+    {
+      "nev": "Lerakas_felett",
+      "referencia": "Asztal",
+      "csuklo_target": false,
+      "poz": [
+        0.0,
+        200.0,
+        125.0,
+        180.0,
+        0.0,
+        -0.0
+      ],
+      "abszolut": [
+        400.0,
+        200.0,
+        125.0,
+        180.0,
+        0.0,
+        -0.0
+      ],
+      "csuklok_fok": [
+        43.90664248048309,
+        -200.45078074639474,
+        91.34504375713269,
+        19.10573697948418,
+        -89.99999997903036,
+        133.90664248044973
+      ],
+      "robot": "UR5e"
+    },
+    {
+      "nev": "Lerakas",
+      "referencia": "Asztal",
+      "csuklo_target": false,
+      "poz": [
+        0.0,
+        200.0,
+        25.0,
+        180.0,
+        0.0,
+        -0.0
+      ],
+      "abszolut": [
+        400.0,
+        200.0,
+        25.0,
+        180.0,
+        0.0,
+        -0.0
+      ],
+      "csuklok_fok": [
+        43.9066424803257,
+        -212.9751976022598,
+        97.28020587459872,
+        25.694991712113264,
+        -89.99999997970353,
+        133.90664248059093
+      ],
+      "robot": "UR5e"
+    }
+  ],
+  "kepek": {
+    "allomas": "kepek/allomas.png"
+  },
+  "tiltott_zonak": [],
+  "programok": [
+    {
+      "nev": "PP_MoveJ_lassu",
+      "robot": "UR5e",
+      "utasitasok": [
+        {
+          "sorszam": 1,
+          "nev": "Set Reference Frame (Asztal)",
+          "tipus": "Referencia beállítása"
+        },
+        {
+          "sorszam": 2,
+          "nev": "Set Tool (Megfogo)",
+          "tipus": "Szerszám beállítása"
+        },
+        {
+          "sorszam": 3,
+          "nev": "Set Speed (100 mm/s)",
+          "tipus": "Sebesség beállítása"
+        },
+        {
+          "sorszam": 4,
+          "nev": "Set Rounding (-1)",
+          "tipus": "Lekerekítés"
+        },
+        {
+          "sorszam": 5,
+          "nev": "Alaphelyzet",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 6,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        },
+        {
+          "sorszam": 7,
+          "nev": "MoveJ (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 8,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 9,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 10,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 11,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 12,
+          "nev": "MoveJ (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 13,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 14,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 15,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 16,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 17,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        }
+      ],
+      "kezdohelyzet": "a program első célpontja",
+      "frissites": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 11.242006840565342,
+        "palyahossz_mm": 1364.517217774308,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)"
+      },
+      "utkozes": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 11.242006840565342,
+        "palyahossz_mm": 1364.517217774308,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)",
+        "utkozesmentes": true
+      },
+      "palya": {
+        "csv": "palya_PP_MoveJ_lassu.csv",
+        "idolepes_s": 0.0037473356135217808,
+        "uzenet": "",
+        "allapot": 17,
+        "statisztika": {
+          "mintak_szama": 3001,
+          "idotartam_s": 11.242006840565342,
+          "tcp_palyahossz_mm": 1364.5237666810042,
+          "tcp_max_sebesseg_mm_s": 383.8085336485976,
+          "tcp_atlag_sebesseg_mm_s": 121.37724038356701,
+          "csuklok": [
+            {
+              "nev": "J1",
+              "min": -9.223459912332995,
+              "max": 43.90664248026299,
+              "mozgastartomany": 53.13010239259599,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 350.776540087667,
+              "tartalek_felso": 316.093357519737,
+              "kihasznaltsag_szazalek": 7.379180887860555,
+              "max_sebesseg_fok_s": 30.00000000000182,
+              "max_gyorsulas_fok_s2": 60.000000000299906
+            },
+            {
+              "nev": "J2",
+              "min": -212.97519760238748,
+              "max": -179.3389309027165,
+              "mozgastartomany": 33.63626669967098,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 147.02480239761252,
+              "tartalek_felso": 539.3389309027165,
+              "kihasznaltsag_szazalek": 4.6717037082876365,
+              "max_sebesseg_fok_s": 29.431212872579636,
+              "max_gyorsulas_fok_s2": 58.86242574725935
+            },
+            {
+              "nev": "J3",
+              "min": 89.57995495222745,
+              "max": 97.28020587493897,
+              "mozgastartomany": 7.700250922711518,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 449.57995495222747,
+              "tartalek_felso": 262.719794125061,
+              "kihasznaltsag_szazalek": 1.0694792948210443,
+              "max_sebesseg_fok_s": 6.9449723749748955,
+              "max_gyorsulas_fok_s2": 19.088744713157045
+            },
+            {
+              "nev": "J4",
+              "min": -0.24102418605072762,
+              "max": 25.69499171991614,
+              "mozgastartomany": 25.936015905966865,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 359.7589758139493,
+              "tartalek_felso": 334.3050082800839,
+              "kihasznaltsag_szazalek": 3.6022244313842866,
+              "max_sebesseg_fok_s": 26.97057106733382,
+              "max_gyorsulas_fok_s2": 53.941142134882284
+            },
+            {
+              "nev": "J5",
+              "min": -90.00000085439325,
+              "max": -89.9999999097384,
+              "mozgastartomany": 9.446548432379132e-07,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 269.99999914560675,
+              "tartalek_felso": 449.9999999097384,
+              "kihasznaltsag_szazalek": 1.3120206156082128e-07,
+              "max_sebesseg_fok_s": 1.2043370588799007e-05,
+              "max_gyorsulas_fok_s2": 0.001606914761753135
+            },
+            {
+              "nev": "J6",
+              "min": 80.77654008766702,
+              "max": 133.90664248011302,
+              "mozgastartomany": 53.130102392446005,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 440.776540087667,
+              "tartalek_felso": 226.09335751988698,
+              "kihasznaltsag_szazalek": 7.379180887839723,
+              "max_sebesseg_fok_s": 30.000000000007276,
+              "max_gyorsulas_fok_s2": 60.00000000175578
+            }
+          ],
+          "hibas_mintak": 0,
+          "hibak": [],
+          "szakaszok": [
+            {
+              "sorszam": 1,
+              "move_id": 6,
+              "kezdet_s": 0.0,
+              "veg_s": 1.5551442796115391,
+              "idotartam_s": 1.5551442796115391,
+              "hossz_mm": 275.7262394747275
+            },
+            {
+              "sorszam": 2,
+              "move_id": 7,
+              "kezdet_s": 1.5551442796115391,
+              "veg_s": 2.956647799068685,
+              "idotartam_s": 1.4015035194571457,
+              "hossz_mm": 99.99973010026694
+            },
+            {
+              "sorszam": 3,
+              "move_id": 8,
+              "kezdet_s": 2.956647799068685,
+              "veg_s": 3.2564346481504276,
+              "idotartam_s": 0.2997868490817428,
+              "hossz_mm": 0.0009520549222089342
+            },
+            {
+              "sorszam": 4,
+              "move_id": 10,
+              "kezdet_s": 3.2564346481504276,
+              "veg_s": 4.654190831994052,
+              "idotartam_s": 1.3977561838436245,
+              "hossz_mm": 99.99904943330152
+            },
+            {
+              "sorszam": 5,
+              "move_id": 11,
+              "kezdet_s": 4.654190831994052,
+              "veg_s": 6.925076213788251,
+              "idotartam_s": 2.2708853817941987,
+              "hossz_mm": 414.69890900487826
+            },
+            {
+              "sorszam": 6,
+              "move_id": 12,
+              "kezdet_s": 6.925076213788251,
+              "veg_s": 8.326579733245397,
+              "idotartam_s": 1.4015035194571466,
+              "hossz_mm": 99.999980205143
+            },
+            {
+              "sorszam": 7,
+              "move_id": 13,
+              "kezdet_s": 8.326579733245397,
+              "veg_s": 8.626366582327138,
+              "idotartam_s": 0.299786849081741,
+              "hossz_mm": 0.00035629958231582964
+            },
+            {
+              "sorszam": 8,
+              "move_id": 15,
+              "kezdet_s": 8.626366582327138,
+              "veg_s": 10.027870101784286,
+              "idotartam_s": 1.4015035194571475,
+              "hossz_mm": 100.00355618787385
+            },
+            {
+              "sorszam": 9,
+              "move_id": 16,
+              "kezdet_s": 10.027870101784286,
+              "veg_s": 11.242006840565342,
+              "idotartam_s": 1.2141367387810558,
+              "hossz_mm": 274.09499392030494
+            }
+          ],
+          "max_elteres_megallo_mm": 0.00018693472559046858,
+          "max_elteres_lekerekitett_mm": null,
+          "max_palya_elteres_mm": 5.341322535513503e-07,
+          "ismetlesi_elteres_mm": 0.0001482479736562051,
+          "kezdo_veg_elteres_mm": 2.3154047953846246e-15,
+          "pozicio_forras": "RoboDK pályaadat (XYZ)",
+          "felveteltol_lerakasig_s": 5.04766107141384
+        },
+        "celpontok": [
+          {
+            "sorszam": 1,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 0.0,
+            "indulas_s": 0.018736678067608904,
+            "szakaszido_s": 0.0,
+            "szakasz_hossz_mm": 0,
+            "szakasz_max_sebesseg_mm_s": 0.0,
+            "elteres_mm": 0.0,
+            "felbontas_mm": 0.003261979380571446,
+            "csuklo_elteres_fok": 0.0,
+            "csuklo_valtozas_fok": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "sorszam": 2,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveJ (Felvetel_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 1.5551442796115391,
+            "indulas_s": 1.5813756289061915,
+            "szakaszido_s": 1.5364076015439303,
+            "szakasz_hossz_mm": 275.64468633006925,
+            "szakasz_max_sebesseg_mm_s": 276.26463342293147,
+            "elteres_mm": 0.00018693472559046858,
+            "felbontas_mm": 0.001673405631518664,
+            "csuklo_elteres_fok": 3.440709841129319e-05,
+            "csuklo_valtozas_fok": [
+              -31.59971390026599,
+              -21.10485023314962,
+              1.7645213687355294,
+              19.340328845075607,
+              9.44340143860245e-07,
+              -31.59971337451981
+            ]
+          },
+          {
+            "sorszam": 3,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 2.956647799068685,
+            "indulas_s": 3.278918661831558,
+            "szakaszido_s": 1.3752721701624933,
+            "szakasz_hossz_mm": 99.90408341592381,
+            "szakasz_max_sebesseg_mm_s": 100.00000000012514,
+            "elteres_mm": 5.213007590091793e-07,
+            "felbontas_mm": 7.496211778594637e-05,
+            "csuklo_elteres_fok": 1.1173587921575745e-07,
+            "csuklo_valtozas_fok": [
+              3.3619629746795e-08,
+              -12.51219505707951,
+              5.927838954421873,
+              6.584356097024379,
+              -5.975238082100987e-10,
+              3.360345601777226e-08
+            ],
+            "palya_elteres_mm": 5.341322535513503e-07
+          },
+          {
+            "sorszam": 4,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 4.654190831994052,
+            "indulas_s": 4.672927510061661,
+            "szakaszido_s": 1.3752721701624941,
+            "szakasz_hossz_mm": 99.92034528837053,
+            "szakasz_max_sebesseg_mm_s": 100.00000000013273,
+            "elteres_mm": 6.263968919890602e-05,
+            "felbontas_mm": 0.0013066959592412343,
+            "csuklo_elteres_fok": 7.9658889919898e-06,
+            "csuklo_valtozas_fok": [
+              7.986699200657199e-06,
+              12.514661147733534,
+              -5.9317906723141505,
+              -6.582870474398742,
+              2.937383669632254e-10,
+              7.98668580159756e-06
+            ],
+            "palya_elteres_mm": 5.214998940146971e-07
+          },
+          {
+            "sorszam": 5,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveJ (Lerakas_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 6.925076213788251,
+            "indulas_s": 6.951307563082903,
+            "szakaszido_s": 2.25214870372659,
+            "szakasz_hossz_mm": 414.6121763435906,
+            "szakasz_max_sebesseg_mm_s": 234.16045341626452,
+            "elteres_mm": 1.9794767870236126e-05,
+            "felbontas_mm": 0.0026269235461847274,
+            "csuklo_elteres_fok": 2.5227108437775314e-06,
+            "csuklo_valtozas_fok": [
+              53.118982413536244,
+              -2.524775851497907e-06,
+              1.5133394271060752e-06,
+              1.0006287389785484e-06,
+              2.0676765188909485e-08,
+              53.118982413516264
+            ]
+          },
+          {
+            "sorszam": 6,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 8.326579733245397,
+            "indulas_s": 8.652597931621791,
+            "szakaszido_s": 1.3752721701624946,
+            "szakasz_hossz_mm": 99.91136009785897,
+            "szakasz_max_sebesseg_mm_s": 100.00000000011757,
+            "elteres_mm": 3.6197691835024877e-09,
+            "felbontas_mm": 0.0004259081114113965,
+            "csuklo_elteres_fok": 8.053113731421035e-10,
+            "csuklo_valtozas_fok": [
+              7.631527410012495e-09,
+              -12.513122262762181,
+              5.928394470785278,
+              6.5847277849407,
+              -9.462155503570102e-10,
+              7.51475681681768e-09
+            ],
+            "palya_elteres_mm": 7.105692118654608e-08
+          },
+          {
+            "sorszam": 7,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 10.024122766170764,
+            "indulas_s": 10.03911210862485,
+            "szakaszido_s": 1.371524834548973,
+            "szakasz_hossz_mm": 99.9025229941883,
+            "szakasz_max_sebesseg_mm_s": 100.00000000010998,
+            "elteres_mm": 2.776563502293693e-05,
+            "felbontas_mm": 0.003951059458444768,
+            "csuklo_elteres_fok": 4.913210915447053e-06,
+            "csuklo_valtozas_fok": [
+              2.8252600259293104e-09,
+              12.512478336396242,
+              -5.931034796423347,
+              -6.581443523153293,
+              -2.0032587144669378e-08,
+              2.9758098207821604e-09
+            ],
+            "palya_elteres_mm": 8.209924009022468e-08
+          },
+          {
+            "sorszam": 8,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 11.242006840565342,
+            "indulas_s": 11.242006840565342,
+            "szakaszido_s": 1.202894731940491,
+            "szakasz_hossz_mm": 274.01866553739376,
+            "szakasz_max_sebesseg_mm_s": 383.8085336485976,
+            "elteres_mm": 2.3154772167016148e-15,
+            "felbontas_mm": 0.005292393329554709,
+            "csuklo_elteres_fok": 1.3322676295501878e-15,
+            "csuklo_valtozas_fok": [
+              -21.51360650331948,
+              21.10571826988601,
+              -1.764576165310629,
+              -19.34114224206971,
+              -8.544945444555196e-07,
+              -21.51360702795317
+            ]
+          }
+        ],
+        "kep": "kepek/palya_PP_MoveJ_lassu.png"
+      }
+    },
+    {
+      "nev": "PP_MoveJ_kozepes",
+      "robot": "UR5e",
+      "utasitasok": [
+        {
+          "sorszam": 1,
+          "nev": "Set Reference Frame (Asztal)",
+          "tipus": "Referencia beállítása"
+        },
+        {
+          "sorszam": 2,
+          "nev": "Set Tool (Megfogo)",
+          "tipus": "Szerszám beállítása"
+        },
+        {
+          "sorszam": 3,
+          "nev": "Set Speed (300 mm/s)",
+          "tipus": "Sebesség beállítása"
+        },
+        {
+          "sorszam": 4,
+          "nev": "Set Rounding (-1)",
+          "tipus": "Lekerekítés"
+        },
+        {
+          "sorszam": 5,
+          "nev": "Alaphelyzet",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 6,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        },
+        {
+          "sorszam": 7,
+          "nev": "MoveJ (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 8,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 9,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 10,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 11,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 12,
+          "nev": "MoveJ (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 13,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 14,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 15,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 16,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 17,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        }
+      ],
+      "kezdohelyzet": "a program első célpontja",
+      "frissites": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 6.048418278083106,
+        "palyahossz_mm": 1364.517217774308,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)"
+      },
+      "utkozes": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 6.048418278083106,
+        "palyahossz_mm": 1364.517217774308,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)",
+        "utkozesmentes": true
+      },
+      "palya": {
+        "csv": "palya_PP_MoveJ_kozepes.csv",
+        "idolepes_s": 0.002016139426027702,
+        "uzenet": "",
+        "allapot": 17,
+        "statisztika": {
+          "mintak_szama": 3001,
+          "idotartam_s": 6.048418278083106,
+          "tcp_palyahossz_mm": 1364.523746504508,
+          "tcp_max_sebesseg_mm_s": 792.6830684928739,
+          "tcp_atlag_sebesseg_mm_s": 225.60009638370437,
+          "csuklok": [
+            {
+              "nev": "J1",
+              "min": -9.223459912347108,
+              "max": 43.90664248026299,
+              "mozgastartomany": 53.1301023926101,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 350.7765400876529,
+              "tartalek_felso": 316.093357519737,
+              "kihasznaltsag_szazalek": 7.379180887862513,
+              "max_sebesseg_fok_s": 90.00000000000273,
+              "max_gyorsulas_fok_s2": 180.0000000012169
+            },
+            {
+              "nev": "J2",
+              "min": -212.97519760238748,
+              "max": -179.3389309027165,
+              "mozgastartomany": 33.63626669967098,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 147.02480239761252,
+              "tartalek_felso": 539.3389309027165,
+              "kihasznaltsag_szazalek": 4.6717037082876365,
+              "max_sebesseg_fok_s": 60.83561094197648,
+              "max_gyorsulas_fok_s2": 176.587277241661
+            },
+            {
+              "nev": "J3",
+              "min": 89.57995495222745,
+              "max": 97.28020587493897,
+              "mozgastartomany": 7.700250922711518,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 449.57995495222747,
+              "tartalek_felso": 262.719794125061,
+              "kihasznaltsag_szazalek": 1.0694792948210443,
+              "max_sebesseg_fok_s": 16.755866994273674,
+              "max_gyorsulas_fok_s2": 73.72752184992532
+            },
+            {
+              "nev": "J4",
+              "min": -0.24102418605072762,
+              "max": 25.69499171991614,
+              "mozgastartomany": 25.936015905966865,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 359.7589758139493,
+              "tartalek_felso": 334.3050082800839,
+              "kihasznaltsag_szazalek": 3.6022244313842866,
+              "max_sebesseg_fok_s": 55.74935614916467,
+              "max_gyorsulas_fok_s2": 161.8234594076177
+            },
+            {
+              "nev": "J5",
+              "min": -90.00000085439325,
+              "max": -89.99999990973839,
+              "mozgastartomany": 9.446548574487679e-07,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 269.99999914560675,
+              "tartalek_felso": 449.9999999097384,
+              "kihasznaltsag_szazalek": 1.312020635345511e-07,
+              "max_sebesseg_fok_s": 2.238474553450942e-05,
+              "max_gyorsulas_fok_s2": 0.005551373838006704
+            },
+            {
+              "nev": "J6",
+              "min": 80.7765400876529,
+              "max": 133.90664248011302,
+              "mozgastartomany": 53.13010239246012,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 440.7765400876529,
+              "tartalek_felso": 226.09335751988698,
+              "kihasznaltsag_szazalek": 7.379180887841684,
+              "max_sebesseg_fok_s": 89.9999999999709,
+              "max_gyorsulas_fok_s2": 180.00000000525688
+            }
+          ],
+          "hibas_mintak": 0,
+          "hibak": [],
+          "szakaszok": [
+            {
+              "sorszam": 1,
+              "move_id": 6,
+              "kezdet_s": 0.0,
+              "veg_s": 0.838714001227524,
+              "idotartam_s": 0.838714001227524,
+              "hossz_mm": 275.7261373590721
+            },
+            {
+              "sorszam": 2,
+              "move_id": 7,
+              "kezdet_s": 0.838714001227524,
+              "veg_s": 1.5463789397632475,
+              "idotartam_s": 0.7076649385357234,
+              "hossz_mm": 99.99986021442523
+            },
+            {
+              "sorszam": 3,
+              "move_id": 8,
+              "kezdet_s": 1.5463789397632475,
+              "veg_s": 1.846783714241375,
+              "idotartam_s": 0.3004047744781275,
+              "hossz_mm": 0.0009660742186953085
+            },
+            {
+              "sorszam": 4,
+              "move_id": 10,
+              "kezdet_s": 1.846783714241375,
+              "veg_s": 2.5524325133510706,
+              "idotartam_s": 0.7056487991096956,
+              "hossz_mm": 99.99903394008348
+            },
+            {
+              "sorszam": 5,
+              "move_id": 11,
+              "kezdet_s": 2.5524325133510706,
+              "veg_s": 3.6431639428320572,
+              "idotartam_s": 1.0907314294809867,
+              "hossz_mm": 414.69892490275146
+            },
+            {
+              "sorszam": 6,
+              "move_id": 12,
+              "kezdet_s": 3.6431639428320572,
+              "veg_s": 4.3508288813677805,
+              "idotartam_s": 0.7076649385357232,
+              "hossz_mm": 99.99990275541036
+            },
+            {
+              "sorszam": 7,
+              "move_id": 13,
+              "kezdet_s": 4.3508288813677805,
+              "veg_s": 4.651233655845909,
+              "idotartam_s": 0.3004047744781282,
+              "hossz_mm": 0.0008479689005663599
+            },
+            {
+              "sorszam": 8,
+              "move_id": 15,
+              "kezdet_s": 4.651233655845909,
+              "veg_s": 5.358898594381632,
+              "idotartam_s": 0.7076649385357232,
+              "hossz_mm": 100.00384019222136
+            },
+            {
+              "sorszam": 9,
+              "move_id": 16,
+              "kezdet_s": 5.358898594381632,
+              "veg_s": 6.048418278083106,
+              "idotartam_s": 0.6895196837014739,
+              "hossz_mm": 274.0942330974229
+            }
+          ],
+          "max_elteres_megallo_mm": 0.00010324010372074511,
+          "max_elteres_lekerekitett_mm": null,
+          "max_palya_elteres_mm": 5.342711860549887e-07,
+          "ismetlesi_elteres_mm": 9.901210864661058e-05,
+          "kezdo_veg_elteres_mm": 2.3154047953846246e-15,
+          "pozicio_forras": "RoboDK pályaadat (XYZ)",
+          "felveteltol_lerakasig_s": 2.4899321911442116
+        },
+        "celpontok": [
+          {
+            "sorszam": 1,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 0.0,
+            "indulas_s": 0.01008069713013851,
+            "szakaszido_s": 0.0,
+            "szakasz_hossz_mm": 0,
+            "szakasz_max_sebesseg_mm_s": 0.0,
+            "elteres_mm": 0.0,
+            "felbontas_mm": 0.002832685132734363,
+            "csuklo_elteres_fok": 0.0,
+            "csuklo_valtozas_fok": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "sorszam": 2,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveJ (Felvetel_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 0.838714001227524,
+            "indulas_s": 0.8528269772097179,
+            "szakaszido_s": 0.8286333040973856,
+            "szakasz_hossz_mm": 275.6553174705952,
+            "szakasz_max_sebesseg_mm_s": 658.956688019405,
+            "elteres_mm": 0.00010324010372074511,
+            "felbontas_mm": 0.0018410261452208117,
+            "csuklo_elteres_fok": 1.7827603414843907e-05,
+            "csuklo_valtozas_fok": [
+              -31.60109995249964,
+              -21.105759370173416,
+              1.764588828513908,
+              19.341170522320215,
+              9.443815685017398e-07,
+              -31.601099426730386
+            ]
+          },
+          {
+            "sorszam": 3,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 1.5463789397632475,
+            "indulas_s": 1.8608966902235689,
+            "szakaszido_s": 0.6935519625535296,
+            "szakasz_hossz_mm": 99.9135154156279,
+            "szakasz_max_sebesseg_mm_s": 282.13898702622697,
+            "elteres_mm": 5.213007590091793e-07,
+            "felbontas_mm": 0.0003005575104501794,
+            "csuklo_elteres_fok": 1.1173587921575745e-07,
+            "csuklo_valtozas_fok": [
+              3.362294442865732e-08,
+              -12.513396877116804,
+              5.92855893536067,
+              6.584837936124451,
+              -5.96983795730921e-10,
+              3.360679556863033e-08
+            ],
+            "palya_elteres_mm": 5.342711860549887e-07
+          },
+          {
+            "sorszam": 4,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 2.5524325133510706,
+            "indulas_s": 2.5625132104812094,
+            "szakaszido_s": 0.6915358231275017,
+            "szakasz_hossz_mm": 99.90181727447273,
+            "szakasz_max_sebesseg_mm_s": 282.4261999724986,
+            "elteres_mm": 6.866655540607193e-06,
+            "felbontas_mm": 0.0014746230261046328,
+            "csuklo_elteres_fok": 8.102813229271533e-07,
+            "csuklo_valtozas_fok": [
+              8.310915315945522e-07,
+              12.512392088172419,
+              -5.931006224673979,
+              -6.5813858624797845,
+              2.935820475613582e-10,
+              8.310782106946135e-07
+            ],
+            "palya_elteres_mm": 5.214059642379274e-07
+          },
+          {
+            "sorszam": 5,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveJ (Lerakas_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 3.6431639428320572,
+            "indulas_s": 3.6572769188142513,
+            "szakaszido_s": 1.0806507323508479,
+            "szakasz_hossz_mm": 414.62617728734944,
+            "szakasz_max_sebesseg_mm_s": 702.4811793635077,
+            "elteres_mm": 9.707569896373925e-05,
+            "felbontas_mm": 0.001632423931568445,
+            "csuklo_elteres_fok": 1.2391563586788834e-05,
+            "csuklo_valtozas_fok": [
+              53.12078129487413,
+              -1.2393628651352628e-05,
+              7.427795452485952e-06,
+              4.955025126207602e-06,
+              2.0677475731645245e-08,
+              53.12078129485417
+            ]
+          },
+          {
+            "sorszam": 6,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 4.3508288813677805,
+            "indulas_s": 4.665346631828102,
+            "szakaszido_s": 0.6935519625535291,
+            "szakasz_hossz_mm": 99.91466544615564,
+            "szakasz_max_sebesseg_mm_s": 282.20291234587694,
+            "elteres_mm": 3.6197691835024877e-09,
+            "felbontas_mm": 0.00037242912614778067,
+            "csuklo_elteres_fok": 8.053113731421035e-10,
+            "csuklo_valtozas_fok": [
+              7.631754783687938e-09,
+              -12.51354342885466,
+              5.9286467855340135,
+              6.584896636284352,
+              -9.463860806135926e-10,
+              7.514927347074263e-09
+            ],
+            "palya_elteres_mm": 7.789509383662575e-08
+          },
+          {
+            "sorszam": 7,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 5.3568824549556044,
+            "indulas_s": 5.364947012659715,
+            "szakaszido_s": 0.6915358231275022,
+            "szakasz_hossz_mm": 99.90304285398449,
+            "szakasz_max_sebesseg_mm_s": 282.40813839625486,
+            "elteres_mm": 4.454112852587034e-08,
+            "felbontas_mm": 0.0046881621138149645,
+            "csuklo_elteres_fok": 2.0968940361854038e-08,
+            "csuklo_valtozas_fok": [
+              2.8252173933651648e-09,
+              12.51254219800444,
+              -5.931058122327784,
+              -6.581484058860138,
+              -2.0032985048601404e-08,
+              2.9751276997558307e-09
+            ],
+            "palya_elteres_mm": 7.472111647856228e-08
+          },
+          {
+            "sorszam": 8,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 6.048418278083106,
+            "indulas_s": 6.048418278083106,
+            "szakaszido_s": 0.6834712654233908,
+            "szakasz_hossz_mm": 274.0237996388078,
+            "szakasz_max_sebesseg_mm_s": 792.6830684928739,
+            "elteres_mm": 2.3154772167016148e-15,
+            "felbontas_mm": 0.004595886469867227,
+            "csuklo_elteres_fok": 1.3322676295501878e-15,
+            "csuklo_valtozas_fok": [
+              -21.51400611939686,
+              21.1061103094236,
+              -1.7646089423815141,
+              -19.34150150453896,
+              -8.545104179802365e-07,
+              -21.514006644040293
+            ]
+          }
+        ],
+        "kep": "kepek/palya_PP_MoveJ_kozepes.png"
+      }
+    },
+    {
+      "nev": "PP_MoveJ_gyors",
+      "robot": "UR5e",
+      "utasitasok": [
+        {
+          "sorszam": 1,
+          "nev": "Set Reference Frame (Asztal)",
+          "tipus": "Referencia beállítása"
+        },
+        {
+          "sorszam": 2,
+          "nev": "Set Tool (Megfogo)",
+          "tipus": "Szerszám beállítása"
+        },
+        {
+          "sorszam": 3,
+          "nev": "Set Speed (800 mm/s)",
+          "tipus": "Sebesség beállítása"
+        },
+        {
+          "sorszam": 4,
+          "nev": "Set Rounding (-1)",
+          "tipus": "Lekerekítés"
+        },
+        {
+          "sorszam": 5,
+          "nev": "Alaphelyzet",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 6,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        },
+        {
+          "sorszam": 7,
+          "nev": "MoveJ (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 8,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 9,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 10,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 11,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 12,
+          "nev": "MoveJ (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 13,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 14,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 15,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 16,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 17,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        }
+      ],
+      "kezdohelyzet": "a program első célpontja",
+      "frissites": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 4.1438832673227965,
+        "palyahossz_mm": 1364.517217774308,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)"
+      },
+      "utkozes": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 4.1438832673227965,
+        "palyahossz_mm": 1364.517217774308,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)",
+        "utkozesmentes": true
+      },
+      "palya": {
+        "csv": "palya_PP_MoveJ_gyors.csv",
+        "idolepes_s": 0.002,
+        "uzenet": "",
+        "allapot": 17,
+        "statisztika": {
+          "mintak_szama": 2073,
+          "idotartam_s": 4.1438832673227965,
+          "tcp_palyahossz_mm": 1364.5229991229508,
+          "tcp_max_sebesseg_mm_s": 1178.711711960386,
+          "tcp_atlag_sebesseg_mm_s": 329.28606118881254,
+          "csuklok": [
+            {
+              "nev": "J1",
+              "min": -9.223459912352434,
+              "max": 43.90664248026299,
+              "mozgastartomany": 53.13010239261542,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 350.77654008764756,
+              "tartalek_felso": 316.093357519737,
+              "kihasznaltsag_szazalek": 7.379180887863252,
+              "max_sebesseg_fok_s": 145.30142416717536,
+              "max_gyorsulas_fok_s2": 400.0000000010041
+            },
+            {
+              "nev": "J2",
+              "min": -212.97519760238748,
+              "max": -179.3389309027165,
+              "mozgastartomany": 33.63626669967098,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 147.02480239761252,
+              "tartalek_felso": 539.3389309027165,
+              "kihasznaltsag_szazalek": 4.6717037082876365,
+              "max_sebesseg_fok_s": 90.62712902874046,
+              "max_gyorsulas_fok_s2": 392.41617163683986
+            },
+            {
+              "nev": "J3",
+              "min": 89.57995495222745,
+              "max": 97.28020587493897,
+              "mozgastartomany": 7.700250922711518,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 449.57995495222747,
+              "tartalek_felso": 262.719794125061,
+              "kihasznaltsag_szazalek": 1.0694792948210443,
+              "max_sebesseg_fok_s": 26.465561605771654,
+              "max_gyorsulas_fok_s2": 182.93706188615033
+            },
+            {
+              "nev": "J4",
+              "min": -0.24102418605072762,
+              "max": 25.69499171991614,
+              "mozgastartomany": 25.936015905966865,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 359.7589758139493,
+              "tartalek_felso": 334.3050082800839,
+              "kihasznaltsag_szazalek": 3.6022244313842866,
+              "max_sebesseg_fok_s": 83.05010855925093,
+              "max_gyorsulas_fok_s2": 359.607614231719
+            },
+            {
+              "nev": "J5",
+              "min": -90.00000085439325,
+              "max": -89.99999990973845,
+              "mozgastartomany": 9.44654800605349e-07,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 269.99999914560675,
+              "tartalek_felso": 449.99999990973845,
+              "kihasznaltsag_szazalek": 1.312020556396318e-07,
+              "max_sebesseg_fok_s": 2.25654621317517e-05,
+              "max_gyorsulas_fok_s2": 0.005649868398904794
+            },
+            {
+              "nev": "J6",
+              "min": 80.77654008764758,
+              "max": 133.90664248011302,
+              "mozgastartomany": 53.130102392465446,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 440.77654008764756,
+              "tartalek_felso": 226.09335751988698,
+              "kihasznaltsag_szazalek": 7.3791808878424225,
+              "max_sebesseg_fok_s": 145.3014241671226,
+              "max_gyorsulas_fok_s2": 400.00000000509317
+            }
+          ],
+          "hibas_mintak": 0,
+          "hibak": [],
+          "szakaszok": [
+            {
+              "sorszam": 1,
+              "move_id": 6,
+              "kezdet_s": 0.0,
+              "veg_s": 0.5640000000000001,
+              "idotartam_s": 0.5640000000000001,
+              "hossz_mm": 275.7290682088338
+            },
+            {
+              "sorszam": 2,
+              "move_id": 7,
+              "kezdet_s": 0.5640000000000001,
+              "veg_s": 1.01,
+              "idotartam_s": 0.44599999999999995,
+              "hossz_mm": 99.99686673915474
+            },
+            {
+              "sorszam": 3,
+              "move_id": 8,
+              "kezdet_s": 1.01,
+              "veg_s": 1.31,
+              "idotartam_s": 0.30000000000000004,
+              "hossz_mm": 0.00030970010425335805
+            },
+            {
+              "sorszam": 4,
+              "move_id": 10,
+              "kezdet_s": 1.31,
+              "veg_s": 1.758,
+              "idotartam_s": 0.44799999999999995,
+              "hossz_mm": 100.00210672341902
+            },
+            {
+              "sorszam": 5,
+              "move_id": 11,
+              "kezdet_s": 1.758,
+              "veg_s": 2.486,
+              "idotartam_s": 0.7280000000000002,
+              "hossz_mm": 414.69599430757165
+            },
+            {
+              "sorszam": 6,
+              "move_id": 12,
+              "kezdet_s": 2.486,
+              "veg_s": 2.934,
+              "idotartam_s": 0.44799999999999995,
+              "hossz_mm": 99.99980734603902
+            },
+            {
+              "sorszam": 7,
+              "move_id": 13,
+              "kezdet_s": 2.934,
+              "veg_s": 3.234,
+              "idotartam_s": 0.2999999999999998,
+              "hossz_mm": 0.001501429443583569
+            },
+            {
+              "sorszam": 8,
+              "move_id": 15,
+              "kezdet_s": 3.234,
+              "veg_s": 3.68,
+              "idotartam_s": 0.4460000000000002,
+              "hossz_mm": 99.99849881373723
+            },
+            {
+              "sorszam": 9,
+              "move_id": 16,
+              "kezdet_s": 3.68,
+              "veg_s": 4.1438832673227965,
+              "idotartam_s": 0.4638832673227964,
+              "hossz_mm": 274.0988458546483
+            }
+          ],
+          "max_elteres_megallo_mm": 0.0004268202358638557,
+          "max_elteres_lekerekitett_mm": null,
+          "max_palya_elteres_mm": 5.342669548675101e-07,
+          "ismetlesi_elteres_mm": 0.00042067494904330895,
+          "kezdo_veg_elteres_mm": 2.3154047953846246e-15,
+          "pozicio_forras": "RoboDK pályaadat (XYZ)",
+          "felveteltol_lerakasig_s": 1.616
+        },
+        "celpontok": [
+          {
+            "sorszam": 1,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 0.0,
+            "indulas_s": 0.008,
+            "szakaszido_s": 0.0,
+            "szakasz_hossz_mm": 0,
+            "szakasz_max_sebesseg_mm_s": 0.0,
+            "elteres_mm": 0.0,
+            "felbontas_mm": 0.006194489097591568,
+            "csuklo_elteres_fok": 0.0,
+            "csuklo_valtozas_fok": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "sorszam": 2,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveJ (Felvetel_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 0.562,
+            "indulas_s": 0.5720000000000001,
+            "szakaszido_s": 0.554,
+            "szakasz_hossz_mm": 275.62675330397377,
+            "szakasz_max_sebesseg_mm_s": 982.5831362323253,
+            "elteres_mm": 7.71687640697337e-05,
+            "felbontas_mm": 0.00319779970324113,
+            "csuklo_elteres_fok": 1.0570568310441786e-05,
+            "csuklo_valtozas_fok": [
+              -31.597435189081978,
+              -21.103293943054496,
+              1.7643734539748692,
+              19.33892046992629,
+              9.441656914077612e-07,
+              -31.597434663375182
+            ]
+          },
+          {
+            "sorszam": 3,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 1.01,
+            "indulas_s": 1.318,
+            "szakaszido_s": 0.43799999999999994,
+            "szakasz_hossz_mm": 99.90454509631988,
+            "szakasz_max_sebesseg_mm_s": 445.5135366429484,
+            "elteres_mm": 5.213007590091793e-07,
+            "felbontas_mm": 0.0020836719227213794,
+            "csuklo_elteres_fok": 1.1173587921575745e-07,
+            "csuklo_valtozas_fok": [
+              3.362001343987231e-08,
+              -12.512253884059191,
+              5.92787419556241,
+              6.584379682868782,
+              -5.965432592347497e-10,
+              3.3603853921704285e-08
+            ],
+            "palya_elteres_mm": 5.342669548675101e-07
+          },
+          {
+            "sorszam": 4,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 1.756,
+            "indulas_s": 1.764,
+            "szakaszido_s": 0.43799999999999994,
+            "szakasz_hossz_mm": 99.92635443167349,
+            "szakasz_max_sebesseg_mm_s": 446.2110663304482,
+            "elteres_mm": 0.0004268202358638557,
+            "felbontas_mm": 0.002848179102321035,
+            "csuklo_elteres_fok": 5.4992564685107936e-05,
+            "csuklo_valtozas_fok": [
+              -2.2367352414676134e-10,
+              12.515395163456446,
+              -5.932030448828911,
+              -6.5833647146335,
+              7.673861546209082e-13,
+              -2.2383517261914676e-10
+            ],
+            "palya_elteres_mm": 5.216643049734551e-07
+          },
+          {
+            "sorszam": 5,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveJ (Lerakas_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 2.486,
+            "indulas_s": 2.494,
+            "szakaszido_s": 0.7220000000000002,
+            "szakasz_hossz_mm": 414.61463924368564,
+            "szakasz_max_sebesseg_mm_s": 1136.2892368780408,
+            "elteres_mm": 0.000192410616954096,
+            "felbontas_mm": 0.0038090751201528463,
+            "csuklo_elteres_fok": 2.454888135616784e-05,
+            "csuklo_valtozas_fok": [
+              53.1193186811412,
+              -2.4550946363888215e-05,
+              1.471374081063459e-05,
+              9.826397803891496e-06,
+              2.0676907297456637e-08,
+              53.11931868112124
+            ]
+          },
+          {
+            "sorszam": 6,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 2.934,
+            "indulas_s": 3.242,
+            "szakaszido_s": 0.43999999999999995,
+            "szakasz_hossz_mm": 99.92878456791416,
+            "szakasz_max_sebesseg_mm_s": 446.1854137932655,
+            "elteres_mm": 3.6197691835024877e-09,
+            "felbontas_mm": 0.0006001257125606542,
+            "csuklo_elteres_fok": 8.053113731421035e-10,
+            "csuklo_valtozas_fok": [
+              1.252647052751854e-08,
+              -12.515342487694284,
+              5.929724615188988,
+              6.585617855682429,
+              2.0027641767228488e-08,
+              1.2376489166854299e-08
+            ],
+            "palya_elteres_mm": 7.134051741867627e-08
+          },
+          {
+            "sorszam": 7,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 3.68,
+            "indulas_s": 3.686,
+            "szakaszido_s": 0.43800000000000017,
+            "szakasz_hossz_mm": 99.91489356403044,
+            "szakasz_max_sebesseg_mm_s": 445.831015659145,
+            "elteres_mm": 1.9274081360113433e-07,
+            "felbontas_mm": 0.0039534503030995965,
+            "csuklo_elteres_fok": 3.2342292399789585e-08,
+            "csuklo_valtozas_fok": [
+              -2.4623432182124816e-08,
+              12.513993626744934,
+              -5.931559903804811,
+              -6.582433705125286,
+              -1.9683980667650758e-08,
+              -2.435501755826408e-08
+            ],
+            "palya_elteres_mm": 7.473492503013723e-08
+          },
+          {
+            "sorszam": 8,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 4.1438832673227965,
+            "indulas_s": 4.1438832673227965,
+            "szakaszido_s": 0.4578832673227966,
+            "szakasz_hossz_mm": 274.0060340987499,
+            "szakasz_max_sebesseg_mm_s": 1178.711711960386,
+            "elteres_mm": 2.3150435358326206e-15,
+            "felbontas_mm": 0.008911272389640729,
+            "csuklo_elteres_fok": 1.3322676295501878e-15,
+            "csuklo_valtozas_fok": [
+              -21.512628387880646,
+              21.10475869907279,
+              -1.7644959389111108,
+              -19.34026289764976,
+              -8.544556919787283e-07,
+              -21.512628912490484
+            ]
+          }
+        ],
+        "kep": "kepek/palya_PP_MoveJ_gyors.png"
+      }
+    },
+    {
+      "nev": "PP_MoveL_lassu",
+      "robot": "UR5e",
+      "utasitasok": [
+        {
+          "sorszam": 1,
+          "nev": "Set Reference Frame (Asztal)",
+          "tipus": "Referencia beállítása"
+        },
+        {
+          "sorszam": 2,
+          "nev": "Set Tool (Megfogo)",
+          "tipus": "Szerszám beállítása"
+        },
+        {
+          "sorszam": 3,
+          "nev": "Set Speed (100 mm/s)",
+          "tipus": "Sebesség beállítása"
+        },
+        {
+          "sorszam": 4,
+          "nev": "Set Rounding (-1)",
+          "tipus": "Lekerekítés"
+        },
+        {
+          "sorszam": 5,
+          "nev": "Alaphelyzet",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 6,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        },
+        {
+          "sorszam": 7,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 8,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 9,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 10,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 11,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 12,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 13,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 14,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 15,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 16,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 17,
+          "nev": "MoveL (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        }
+      ],
+      "kezdohelyzet": "a program első célpontja",
+      "frissites": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 16.808326917991756,
+        "palyahossz_mm": 1340.8326917991753,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)"
+      },
+      "utkozes": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 16.808326917991756,
+        "palyahossz_mm": 1340.8326917991753,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)",
+        "utkozesmentes": true
+      },
+      "palya": {
+        "csv": "palya_PP_MoveL_lassu.csv",
+        "idolepes_s": 0.005602775639330586,
+        "uzenet": "",
+        "allapot": 17,
+        "statisztika": {
+          "mintak_szama": 3001,
+          "idotartam_s": 16.808326917991756,
+          "tcp_palyahossz_mm": 1340.8319120286696,
+          "tcp_max_sebesseg_mm_s": 100.00032750113475,
+          "tcp_atlag_sebesseg_mm_s": 79.77188441006781,
+          "csuklok": [
+            {
+              "nev": "J1",
+              "min": -9.223459878660174,
+              "max": 43.906642585596586,
+              "mozgastartomany": 53.13010246425676,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 350.77654012133985,
+              "tartalek_felso": 316.0933574144034,
+              "kihasznaltsag_szazalek": 7.379180897813439,
+              "max_sebesseg_fok_s": 14.745367467105098,
+              "max_gyorsulas_fok_s2": 35.643001311336775
+            },
+            {
+              "nev": "J2",
+              "min": -212.97519760054612,
+              "max": -179.33893090144568,
+              "mozgastartomany": 33.636266699100446,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 147.02480239945388,
+              "tartalek_felso": 539.3389309014457,
+              "kihasznaltsag_szazalek": 4.671703708208396,
+              "max_sebesseg_fok_s": 12.666122750091745,
+              "max_gyorsulas_fok_s2": 31.855031026848337
+            },
+            {
+              "nev": "J3",
+              "min": 89.57995495192792,
+              "max": 99.97492914553175,
+              "mozgastartomany": 10.39497419360383,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 449.5799549519279,
+              "tartalek_felso": 260.02507085446825,
+              "kihasznaltsag_szazalek": 1.4437464157783098,
+              "max_sebesseg_fok_s": 7.653164483943328,
+              "max_gyorsulas_fok_s2": 21.19750311156365
+            },
+            {
+              "nev": "J4",
+              "min": -0.24102438511710225,
+              "max": 25.69499172195872,
+              "mozgastartomany": 25.936016107075822,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 359.7589756148829,
+              "tartalek_felso": 334.30500827804127,
+              "kihasznaltsag_szazalek": 3.602224459316086,
+              "max_sebesseg_fok_s": 10.07004790486485,
+              "max_gyorsulas_fok_s2": 26.05086571823547
+            },
+            {
+              "nev": "J5",
+              "min": -90.00000178392723,
+              "max": -89.99999933911295,
+              "mozgastartomany": 2.4448142852406818e-06,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 269.99999821607275,
+              "tartalek_felso": 449.99999933911295,
+              "kihasznaltsag_szazalek": 3.3955753961676135e-07,
+              "max_sebesseg_fok_s": 0.00015016292067703194,
+              "max_gyorsulas_fok_s2": 0.015306392278563044
+            },
+            {
+              "nev": "J6",
+              "min": 80.77654012133263,
+              "max": 133.9066425855966,
+              "mozgastartomany": 53.130102464263956,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 440.77654012133263,
+              "tartalek_felso": 226.0933574144034,
+              "kihasznaltsag_szazalek": 7.379180897814438,
+              "max_sebesseg_fok_s": 14.745367467170581,
+              "max_gyorsulas_fok_s2": 35.64300130121137
+            }
+          ],
+          "hibas_mintak": 0,
+          "hibak": [],
+          "szakaszok": [
+            {
+              "sorszam": 1,
+              "move_id": 6,
+              "kezdet_s": 0.0,
+              "veg_s": 3.109540479828475,
+              "idotartam_s": 3.109540479828475,
+              "hossz_mm": 270.41996118400806
+            },
+            {
+              "sorszam": 2,
+              "move_id": 7,
+              "kezdet_s": 3.109540479828475,
+              "veg_s": 4.504631614021791,
+              "idotartam_s": 1.3950911341933154,
+              "hossz_mm": 99.99638597891327
+            },
+            {
+              "sorszam": 3,
+              "move_id": 8,
+              "kezdet_s": 4.504631614021791,
+              "veg_s": 4.807181498545643,
+              "idotartam_s": 0.30254988452385234,
+              "hossz_mm": 0.0011385591271523634
+            },
+            {
+              "sorszam": 4,
+              "move_id": 10,
+              "kezdet_s": 4.807181498545643,
+              "veg_s": 6.207875408378289,
+              "idotartam_s": 1.400693909832646,
+              "hossz_mm": 100.00019387230643
+            },
+            {
+              "sorszam": 5,
+              "move_id": 11,
+              "kezdet_s": 6.207875408378289,
+              "veg_s": 10.6060542852528,
+              "idotartam_s": 4.3981788768745105,
+              "hossz_mm": 399.9983385078261
+            },
+            {
+              "sorszam": 6,
+              "move_id": 12,
+              "kezdet_s": 10.6060542852528,
+              "veg_s": 12.006748195085445,
+              "idotartam_s": 1.4006939098326452,
+              "hossz_mm": 99.99955310384105
+            },
+            {
+              "sorszam": 7,
+              "move_id": 13,
+              "kezdet_s": 12.006748195085445,
+              "veg_s": 12.309298079609297,
+              "idotartam_s": 0.30254988452385234,
+              "hossz_mm": 0.0032955235797577417
+            },
+            {
+              "sorszam": 8,
+              "move_id": 15,
+              "kezdet_s": 12.309298079609297,
+              "veg_s": 13.704389213802614,
+              "idotartam_s": 1.3950911341933168,
+              "hossz_mm": 99.99670860502164
+            },
+            {
+              "sorszam": 9,
+              "move_id": 16,
+              "kezdet_s": 13.704389213802614,
+              "veg_s": 16.808326917991756,
+              "idotartam_s": 3.1039377041891427,
+              "hossz_mm": 270.4163366940404
+            }
+          ],
+          "max_elteres_megallo_mm": 0.0004326220743730343,
+          "max_elteres_lekerekitett_mm": null,
+          "max_palya_elteres_mm": 2.4675290082528926e-06,
+          "ismetlesi_elteres_mm": 0.00043149210948436527,
+          "kezdo_veg_elteres_mm": 2.3713886038945868e-06,
+          "pozicio_forras": "RoboDK pályaadat (XYZ)",
+          "felveteltol_lerakasig_s": 7.17715559398248
+        },
+        "celpontok": [
+          {
+            "sorszam": 1,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 0.0,
+            "indulas_s": 0.02801387819665293,
+            "szakaszido_s": 0.0,
+            "szakasz_hossz_mm": 0,
+            "szakasz_max_sebesseg_mm_s": 0.0,
+            "elteres_mm": 1.6320596546006158e-06,
+            "felbontas_mm": 0.003925617764376981,
+            "csuklo_elteres_fok": 4.344581441273476e-07,
+            "csuklo_valtozas_fok": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "sorszam": 2,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 3.1039377041891445,
+            "indulas_s": 3.1319515823857973,
+            "szakaszido_s": 3.0759238259924917,
+            "szakasz_hossz_mm": 270.31824414356583,
+            "szakasz_max_sebesseg_mm_s": 100.00024260087808,
+            "elteres_mm": 4.60279476725569e-06,
+            "felbontas_mm": 0.0036181365402966096,
+            "csuklo_elteres_fok": 5.991966549601102e-07,
+            "csuklo_valtozas_fok": [
+              -31.597145946466796,
+              -21.103279816682118,
+              1.7592796621493108,
+              19.34400023850174,
+              9.710593928957678e-08,
+              -31.59714598809758
+            ],
+            "palya_elteres_mm": 2.117848737397149e-06
+          },
+          {
+            "sorszam": 3,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 4.504631614021791,
+            "indulas_s": 4.829592601102965,
+            "szakaszido_s": 1.3726800316359933,
+            "szakasz_hossz_mm": 99.90347763000085,
+            "szakasz_max_sebesseg_mm_s": 100.00000000015567,
+            "elteres_mm": 5.285775058315026e-07,
+            "felbontas_mm": 0.0032955605843832192,
+            "csuklo_elteres_fok": 1.1377845865467862e-07,
+            "csuklo_valtozas_fok": [
+              -1.2823520023630408e-11,
+              -12.51211788364634,
+              5.927792778691355,
+              6.584325102539388,
+              -1.4208012544258963e-10,
+              -3.1519675758318044e-11
+            ],
+            "palya_elteres_mm": 5.341628603698276e-07
+          },
+          {
+            "sorszam": 4,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 6.202272632738959,
+            "indulas_s": 6.230286510935612,
+            "szakaszido_s": 1.3726800316359942,
+            "szakasz_hossz_mm": 99.91872303726758,
+            "szakasz_max_sebesseg_mm_s": 100.0000000000317,
+            "elteres_mm": 0.0004326220743730343,
+            "felbontas_mm": 0.001779332094098773,
+            "csuklo_elteres_fok": 5.692235231435916e-05,
+            "csuklo_valtozas_fok": [
+              -1.6994405882542196e-11,
+              12.514460430793832,
+              -5.93170683518035,
+              -6.582753593154305,
+              1.5057821656228043e-10,
+              1.5631940186722204e-12
+            ],
+            "palya_elteres_mm": 5.28539460494441e-07
+          },
+          {
+            "sorszam": 5,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 10.6060542852528,
+            "indulas_s": 10.628465387810122,
+            "szakaszido_s": 4.375767774317188,
+            "szakasz_hossz_mm": 399.9147591816173,
+            "szakasz_max_sebesseg_mm_s": 100.00032750113475,
+            "elteres_mm": 0.00043164364045654696,
+            "felbontas_mm": 0.0017831452452768866,
+            "csuklo_elteres_fok": 5.6758406628887315e-05,
+            "csuklo_valtozas_fok": [
+              53.11880068407212,
+              0.0017066787876842682,
+              -0.007200481746721721,
+              0.005494506017697631,
+              -2.904821343463482e-07,
+              53.11880068086397
+            ],
+            "palya_elteres_mm": 2.4675290082528926e-06
+          },
+          {
+            "sorszam": 6,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 12.006748195085445,
+            "indulas_s": 12.33170918216662,
+            "szakaszido_s": 1.3782828072753226,
+            "szakasz_hossz_mm": 99.9261771237928,
+            "szakasz_max_sebesseg_mm_s": 100.00000000004187,
+            "elteres_mm": 6.435318170519254e-08,
+            "felbontas_mm": 0.0011385939498571773,
+            "csuklo_elteres_fok": 2.1057502408439177e-08,
+            "csuklo_valtozas_fok": [
+              -1.1012613043703823e-07,
+              -12.51501032093796,
+              5.929525873912169,
+              6.5854844408348185,
+              -7.601528295708704e-10,
+              -1.1014182632607117e-07
+            ],
+            "palya_elteres_mm": 2.1762985981066334e-06
+          },
+          {
+            "sorszam": 7,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 13.704389213802614,
+            "indulas_s": 13.732403091999267,
+            "szakaszido_s": 1.3726800316359942,
+            "szakasz_hossz_mm": 99.90515837511651,
+            "szakasz_max_sebesseg_mm_s": 100.00000000007229,
+            "elteres_mm": 6.727511045119777e-06,
+            "felbontas_mm": 0.003618193155571266,
+            "csuklo_elteres_fok": 6.631972482296078e-07,
+            "csuklo_valtozas_fok": [
+              -6.584118565911012e-07,
+              12.512801181353268,
+              -5.9311472820462825,
+              -6.581653890344622,
+              2.0697854097306845e-08,
+              -6.464859154675651e-07
+            ],
+            "palya_elteres_mm": 6.795690136657114e-08
+          },
+          {
+            "sorszam": 8,
+            "celpont": "Home",
+            "utasitas": "MoveL (Home)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 16.808326917991756,
+            "indulas_s": 16.808326917991756,
+            "szakaszido_s": 3.07592382599249,
+            "szakasz_hossz_mm": 270.31665987011223,
+            "szakasz_max_sebesseg_mm_s": 100.00027636176691,
+            "elteres_mm": 1.1018526102658054e-08,
+            "felbontas_mm": 0.003923878484939893,
+            "csuklo_elteres_fok": 3.2387248438681127e-09,
+            "csuklo_valtozas_fok": [
+              -21.514441522257382,
+              21.105915537802105,
+              -1.7695415165512571,
+              -19.336374341796855,
+              -1.2694400197688083e-08,
+              -21.51444152246586
+            ],
+            "palya_elteres_mm": 2.31251521240067e-06
+          }
+        ],
+        "kep": "kepek/palya_PP_MoveL_lassu.png"
+      }
+    },
+    {
+      "nev": "PP_MoveL_kozepes",
+      "robot": "UR5e",
+      "utasitasok": [
+        {
+          "sorszam": 1,
+          "nev": "Set Reference Frame (Asztal)",
+          "tipus": "Referencia beállítása"
+        },
+        {
+          "sorszam": 2,
+          "nev": "Set Tool (Megfogo)",
+          "tipus": "Szerszám beállítása"
+        },
+        {
+          "sorszam": 3,
+          "nev": "Set Speed (300 mm/s)",
+          "tipus": "Sebesség beállítása"
+        },
+        {
+          "sorszam": 4,
+          "nev": "Set Rounding (-1)",
+          "tipus": "Lekerekítés"
+        },
+        {
+          "sorszam": 5,
+          "nev": "Alaphelyzet",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 6,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        },
+        {
+          "sorszam": 7,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 8,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 9,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 10,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 11,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 12,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 13,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 14,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 15,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 16,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 17,
+          "nev": "MoveL (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        }
+      ],
+      "kezdohelyzet": "a program első célpontja",
+      "frissites": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 7.689536097409948,
+        "palyahossz_mm": 1340.8326917991753,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)"
+      },
+      "utkozes": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 7.689536097409948,
+        "palyahossz_mm": 1340.8326917991753,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)",
+        "utkozesmentes": true
+      },
+      "palya": {
+        "csv": "palya_PP_MoveL_kozepes.csv",
+        "idolepes_s": 0.0025631786991366493,
+        "uzenet": "",
+        "allapot": 17,
+        "statisztika": {
+          "mintak_szama": 3001,
+          "idotartam_s": 7.689536097409948,
+          "tcp_palyahossz_mm": 1340.832393167562,
+          "tcp_max_sebesseg_mm_s": 300.0013497343981,
+          "tcp_atlag_sebesseg_mm_s": 174.37103827618316,
+          "csuklok": [
+            {
+              "nev": "J1",
+              "min": -9.223459878635214,
+              "max": 43.906642585598235,
+              "mozgastartomany": 53.130102464233445,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 350.7765401213648,
+              "tartalek_felso": 316.0933574144018,
+              "kihasznaltsag_szazalek": 7.3791808978102,
+              "max_sebesseg_fok_s": 44.23605223374102,
+              "max_gyorsulas_fok_s2": 125.30527191217516
+            },
+            {
+              "nev": "J2",
+              "min": -212.97519760054612,
+              "max": -179.33893090144568,
+              "mozgastartomany": 33.636266699100446,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 147.02480239945388,
+              "tartalek_felso": 539.3389309014457,
+              "kihasznaltsag_szazalek": 4.671703708208396,
+              "max_sebesseg_fok_s": 35.33610078373022,
+              "max_gyorsulas_fok_s2": 104.0027826511432
+            },
+            {
+              "nev": "J3",
+              "min": 89.57995495192792,
+              "max": 99.97492914581318,
+              "mozgastartomany": 10.394974193885261,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 449.5799549519279,
+              "tartalek_felso": 260.0250708541868,
+              "kihasznaltsag_szazalek": 1.4437464158173974,
+              "max_sebesseg_fok_s": 18.539966717140487,
+              "max_gyorsulas_fok_s2": 73.44917353034589
+            },
+            {
+              "nev": "J4",
+              "min": -0.24102438511710225,
+              "max": 25.69499172195872,
+              "mozgastartomany": 25.936016107075822,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 359.7589756148829,
+              "tartalek_felso": 334.30500827804127,
+              "kihasznaltsag_szazalek": 3.602224459316086,
+              "max_sebesseg_fok_s": 28.10448338703327,
+              "max_gyorsulas_fok_s2": 83.35637927984274
+            },
+            {
+              "nev": "J5",
+              "min": -90.00000177661306,
+              "max": -89.99999890708503,
+              "mozgastartomany": 2.8695280320789607e-06,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 269.9999982233869,
+              "tartalek_felso": 449.999998907085,
+              "kihasznaltsag_szazalek": 3.9854556001096677e-07,
+              "max_sebesseg_fok_s": 0.0003282367414295494,
+              "max_gyorsulas_fok_s2": 0.09387138531176151
+            },
+            {
+              "nev": "J6",
+              "min": 80.7765401213576,
+              "max": 133.90664258559823,
+              "mozgastartomany": 53.130102464240636,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 440.7765401213576,
+              "tartalek_felso": 226.09335741440177,
+              "kihasznaltsag_szazalek": 7.3791808978111995,
+              "max_sebesseg_fok_s": 44.23605223380582,
+              "max_gyorsulas_fok_s2": 125.3096449612749
+            }
+          ],
+          "hibas_mintak": 0,
+          "hibak": [],
+          "szakaszok": [
+            {
+              "sorszam": 1,
+              "move_id": 6,
+              "kezdet_s": 0.0,
+              "veg_s": 1.2764629921700514,
+              "idotartam_s": 1.2764629921700514,
+              "hossz_mm": 270.41635061178863
+            },
+            {
+              "sorszam": 2,
+              "move_id": 7,
+              "kezdet_s": 1.2764629921700514,
+              "veg_s": 1.9839003131317665,
+              "idotartam_s": 0.7074373209617151,
+              "hossz_mm": 99.9999977397054
+            },
+            {
+              "sorszam": 3,
+              "move_id": 8,
+              "kezdet_s": 1.9839003131317665,
+              "veg_s": 2.2837922209307546,
+              "idotartam_s": 0.2998919077989881,
+              "hossz_mm": 3.542988090170121e-05
+            },
+            {
+              "sorszam": 4,
+              "move_id": 10,
+              "kezdet_s": 2.2837922209307546,
+              "veg_s": 2.9912295418924697,
+              "idotartam_s": 0.7074373209617151,
+              "hossz_mm": 99.99997286244877
+            },
+            {
+              "sorszam": 5,
+              "move_id": 11,
+              "kezdet_s": 2.9912295418924697,
+              "veg_s": 4.700869734216615,
+              "idotartam_s": 1.7096401923241449,
+              "hossz_mm": 400.0011906749203
+            },
+            {
+              "sorszam": 6,
+              "move_id": 12,
+              "kezdet_s": 4.700869734216615,
+              "veg_s": 5.40830705517833,
+              "idotartam_s": 0.7074373209617155,
+              "hossz_mm": 99.99850228880001
+            },
+            {
+              "sorszam": 7,
+              "move_id": 13,
+              "kezdet_s": 5.40830705517833,
+              "veg_s": 5.708198962977318,
+              "idotartam_s": 0.29989190779898767,
+              "hossz_mm": 0.0018618564289946864
+            },
+            {
+              "sorszam": 8,
+              "move_id": 15,
+              "kezdet_s": 5.708198962977318,
+              "veg_s": 6.415636283939033,
+              "idotartam_s": 0.7074373209617155,
+              "hossz_mm": 100.00061339137928
+            },
+            {
+              "sorszam": 9,
+              "move_id": 16,
+              "kezdet_s": 6.415636283939033,
+              "veg_s": 7.689536097409948,
+              "idotartam_s": 1.2738998134709147,
+              "hossz_mm": 270.4138683122052
+            }
+          ],
+          "max_elteres_megallo_mm": 0.0001571382112233421,
+          "max_elteres_lekerekitett_mm": null,
+          "max_palya_elteres_mm": 3.191779667891825e-06,
+          "ismetlesi_elteres_mm": 0.0001557813158789659,
+          "kezdo_veg_elteres_mm": 2.3713886038945868e-06,
+          "pozicio_forras": "RoboDK pályaadat (XYZ)",
+          "felveteltol_lerakasig_s": 3.1091357620527558
+        },
+        "celpontok": [
+          {
+            "sorszam": 1,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 0.0,
+            "indulas_s": 0.015379072194819897,
+            "szakaszido_s": 0.0,
+            "szakasz_hossz_mm": 0,
+            "szakasz_max_sebesseg_mm_s": 0.0,
+            "elteres_mm": 1.6317047250661976e-06,
+            "felbontas_mm": 0.0026296850906741835,
+            "csuklo_elteres_fok": 4.344581441273476e-07,
+            "csuklo_valtozas_fok": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "sorszam": 2,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 1.2764629921700514,
+            "indulas_s": 1.2918420643648714,
+            "szakaszido_s": 1.2610839199752315,
+            "szakasz_hossz_mm": 270.32174253609037,
+            "szakasz_max_sebesseg_mm_s": 300.0002152507686,
+            "elteres_mm": 1.8299364296901198e-06,
+            "felbontas_mm": 0.0024775130880227572,
+            "csuklo_elteres_fok": 2.632860685025662e-07,
+            "csuklo_valtozas_fok": [
+              -31.59761272552489,
+              -21.1035854446948,
+              1.759486176512894,
+              19.344099268182664,
+              4.320099833421409e-12,
+              -31.597612725525053
+            ],
+            "palya_elteres_mm": 2.0336746023050234e-06
+          },
+          {
+            "sorszam": 3,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 1.9839003131317665,
+            "indulas_s": 2.2991712931255743,
+            "szakaszido_s": 0.6920582487668951,
+            "szakasz_hossz_mm": 99.90446659061267,
+            "szakasz_max_sebesseg_mm_s": 281.9917476105637,
+            "elteres_mm": 5.285775058315026e-07,
+            "felbontas_mm": 0.0018618823524336027,
+            "csuklo_elteres_fok": 1.1377845865467862e-07,
+            "csuklo_valtozas_fok": [
+              -1.2800427384718205e-11,
+              -12.512243896276715,
+              5.927868268241596,
+              6.584375625616268,
+              -1.4198064945958322e-10,
+              -3.1377567211166024e-11
+            ],
+            "palya_elteres_mm": 5.343159256022153e-07
+          },
+          {
+            "sorszam": 4,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 2.9912295418924697,
+            "indulas_s": 3.004045435388153,
+            "szakaszido_s": 0.6920582487668954,
+            "szakasz_hossz_mm": 99.90170488350466,
+            "szakasz_max_sebesseg_mm_s": 282.1208749407316,
+            "elteres_mm": 0.0001571382112233421,
+            "felbontas_mm": 0.0015060097603458026,
+            "csuklo_elteres_fok": 2.0888695722476314e-05,
+            "csuklo_valtozas_fok": [
+              2.090971017487675e-05,
+              12.512374045073699,
+              -5.930987725809217,
+              -6.581386316854989,
+              1.3869794202037156e-10,
+              2.090972876089836e-05
+            ],
+            "palya_elteres_mm": 5.285420888063619e-07
+          },
+          {
+            "sorszam": 5,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 4.698306555517478,
+            "indulas_s": 4.713685627712298,
+            "szakaszido_s": 1.6942611201293247,
+            "szakasz_hossz_mm": 399.9275451087607,
+            "szakasz_max_sebesseg_mm_s": 300.0013497343981,
+            "elteres_mm": 0.000156948390974233,
+            "felbontas_mm": 0.0015064237070527397,
+            "csuklo_elteres_fok": 1.6228646416038828e-05,
+            "csuklo_valtozas_fok": [
+              53.1205085294002,
+              0.0014914209413632307,
+              -0.0061182176335421445,
+              0.004626994126834205,
+              2.3364935941572185e-07,
+              53.12050751197333
+            ],
+            "palya_elteres_mm": 2.4424194396912716e-06
+          },
+          {
+            "sorszam": 6,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 5.40830705517833,
+            "indulas_s": 5.721014856473001,
+            "szakaszido_s": 0.6946214274660321,
+            "szakasz_hossz_mm": 99.91296429329427,
+            "szakasz_max_sebesseg_mm_s": 282.12088012024094,
+            "elteres_mm": 6.435318170519254e-08,
+            "felbontas_mm": 3.543420895487639e-05,
+            "csuklo_elteres_fok": 2.1057502408439177e-08,
+            "csuklo_valtozas_fok": [
+              -1.1011179879005795e-07,
+              -12.513326744550682,
+              5.928517238925551,
+              6.584809499432062,
+              -7.610339025632129e-10,
+              -1.101275586279371e-07
+            ],
+            "palya_elteres_mm": 2.1761327326133856e-06
+          },
+          {
+            "sorszam": 7,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 6.413073105239897,
+            "indulas_s": 6.428452177434717,
+            "szakaszido_s": 0.6920582487668954,
+            "szakasz_hossz_mm": 99.9103171988529,
+            "szakasz_max_sebesseg_mm_s": 281.99175418426967,
+            "elteres_mm": 1.6900565992174212e-06,
+            "felbontas_mm": 0.002477506771177502,
+            "csuklo_elteres_fok": 2.8621175829357526e-07,
+            "csuklo_valtozas_fok": [
+              -1.070787902790471e-10,
+              12.513433120234453,
+              -5.931366063129303,
+              -6.582067050915544,
+              7.621565600857139e-10,
+              -9.106315701501444e-11
+            ],
+            "palya_elteres_mm": 6.850775012640798e-08
+          },
+          {
+            "sorszam": 8,
+            "celpont": "Home",
+            "utasitas": "MoveL (Home)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 7.689536097409948,
+            "indulas_s": 7.689536097409948,
+            "szakaszido_s": 1.2610839199752313,
+            "szakasz_hossz_mm": 270.32266069577275,
+            "szakasz_max_sebesseg_mm_s": 300.00063754502554,
+            "elteres_mm": 1.1018526102446725e-08,
+            "felbontas_mm": 0.0026279438749126837,
+            "csuklo_elteres_fok": 3.2387248438681127e-09,
+            "csuklo_valtozas_fok": [
+              -21.51476750928965,
+              21.106272826449214,
+              -1.7692735693281207,
+              -19.336999577671982,
+              -1.2695309692389856e-08,
+              -21.514767509498256
+            ],
+            "palya_elteres_mm": 3.191779667891825e-06
+          }
+        ],
+        "kep": "kepek/palya_PP_MoveL_kozepes.png"
+      }
+    },
+    {
+      "nev": "PP_MoveL_gyors",
+      "robot": "UR5e",
+      "utasitasok": [
+        {
+          "sorszam": 1,
+          "nev": "Set Reference Frame (Asztal)",
+          "tipus": "Referencia beállítása"
+        },
+        {
+          "sorszam": 2,
+          "nev": "Set Tool (Megfogo)",
+          "tipus": "Szerszám beállítása"
+        },
+        {
+          "sorszam": 3,
+          "nev": "Set Speed (800 mm/s)",
+          "tipus": "Sebesség beállítása"
+        },
+        {
+          "sorszam": 4,
+          "nev": "Set Rounding (-1)",
+          "tipus": "Lekerekítés"
+        },
+        {
+          "sorszam": 5,
+          "nev": "Alaphelyzet",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 6,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        },
+        {
+          "sorszam": 7,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 8,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 9,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 10,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 11,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 12,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 13,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 14,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 15,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 16,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 17,
+          "nev": "MoveL (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        }
+      ],
+      "kezdohelyzet": "a program első célpontja",
+      "frissites": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 4.759680941181378,
+        "palyahossz_mm": 1340.8326917991753,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)"
+      },
+      "utkozes": {
+        "ervenyes_utasitasok": 8,
+        "ciklusido_s": 4.759680941181378,
+        "palyahossz_mm": 1340.8326917991753,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)",
+        "utkozesmentes": true
+      },
+      "palya": {
+        "csv": "palya_PP_MoveL_gyors.csv",
+        "idolepes_s": 0.002,
+        "uzenet": "",
+        "allapot": 17,
+        "statisztika": {
+          "mintak_szama": 2381,
+          "idotartam_s": 4.759680941181378,
+          "tcp_palyahossz_mm": 1340.8325158958278,
+          "tcp_max_sebesseg_mm_s": 800.0005943946952,
+          "tcp_atlag_sebesseg_mm_s": 281.7063858828794,
+          "csuklok": [
+            {
+              "nev": "J1",
+              "min": -9.223459878615333,
+              "max": 43.90664258561504,
+              "mozgastartomany": 53.130102464230376,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 350.77654012138464,
+              "tartalek_felso": 316.09335741438497,
+              "kihasznaltsag_szazalek": 7.379180897809775,
+              "max_sebesseg_fok_s": 117.37190827344239,
+              "max_gyorsulas_fok_s2": 394.93922312522045
+            },
+            {
+              "nev": "J2",
+              "min": -212.97519760054612,
+              "max": -179.33893090144568,
+              "mozgastartomany": 33.636266699100446,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 147.02480239945388,
+              "tartalek_felso": 539.3389309014457,
+              "kihasznaltsag_szazalek": 4.671703708208396,
+              "max_sebesseg_fok_s": 59.03951514493383,
+              "max_gyorsulas_fok_s2": 259.92610619687184
+            },
+            {
+              "nev": "J3",
+              "min": 89.57995495192792,
+              "max": 99.97492555372149,
+              "mozgastartomany": 10.394970601793574,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 449.5799549519279,
+              "tartalek_felso": 260.0250744462785,
+              "kihasznaltsag_szazalek": 1.4437459169157743,
+              "max_sebesseg_fok_s": 29.73998024654429,
+              "max_gyorsulas_fok_s2": 282.4160578638837
+            },
+            {
+              "nev": "J4",
+              "min": -0.24102438511710225,
+              "max": 25.69499172195872,
+              "mozgastartomany": 25.936016107075822,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 359.7589756148829,
+              "tartalek_felso": 334.30500827804127,
+              "kihasznaltsag_szazalek": 3.602224459316086,
+              "max_sebesseg_fok_s": 54.67937144899679,
+              "max_gyorsulas_fok_s2": 298.92288515029577
+            },
+            {
+              "nev": "J5",
+              "min": -90.0000022118997,
+              "max": -89.99999927476975,
+              "mozgastartomany": 2.937129949032169e-06,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 269.9999977881003,
+              "tartalek_felso": 449.9999992747697,
+              "kihasznaltsag_szazalek": 4.079347151433568e-07,
+              "max_sebesseg_fok_s": 0.00042066456984457545,
+              "max_gyorsulas_fok_s2": 0.1598879525772821
+            },
+            {
+              "nev": "J6",
+              "min": 80.77654012138296,
+              "max": 133.90664258561506,
+              "mozgastartomany": 53.130102464232095,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 440.77654012138294,
+              "tartalek_felso": 226.09335741438494,
+              "kihasznaltsag_szazalek": 7.379180897810013,
+              "max_sebesseg_fok_s": 117.37190749721049,
+              "max_gyorsulas_fok_s2": 394.9368448020323
+            }
+          ],
+          "hibas_mintak": 0,
+          "hibak": [],
+          "szakaszok": [
+            {
+              "sorszam": 1,
+              "move_id": 6,
+              "kezdet_s": 0.0,
+              "veg_s": 0.736,
+              "idotartam_s": 0.736,
+              "hossz_mm": 270.41658737996204
+            },
+            {
+              "sorszam": 2,
+              "move_id": 7,
+              "kezdet_s": 0.736,
+              "veg_s": 1.184,
+              "idotartam_s": 0.44799999999999995,
+              "hossz_mm": 99.99965576137421
+            },
+            {
+              "sorszam": 3,
+              "move_id": 8,
+              "kezdet_s": 1.184,
+              "veg_s": 1.484,
+              "idotartam_s": 0.30000000000000004,
+              "hossz_mm": 0.0018854669966347757
+            },
+            {
+              "sorszam": 4,
+              "move_id": 10,
+              "kezdet_s": 1.484,
+              "veg_s": 1.93,
+              "idotartam_s": 0.44599999999999995,
+              "hossz_mm": 99.99811462858705
+            },
+            {
+              "sorszam": 5,
+              "move_id": 11,
+              "kezdet_s": 1.93,
+              "veg_s": 2.83,
+              "idotartam_s": 0.9000000000000001,
+              "hossz_mm": 399.99997854994587
+            },
+            {
+              "sorszam": 6,
+              "move_id": 12,
+              "kezdet_s": 2.83,
+              "veg_s": 3.278,
+              "idotartam_s": 0.44799999999999995,
+              "hossz_mm": 99.99997455096724
+            },
+            {
+              "sorszam": 7,
+              "move_id": 13,
+              "kezdet_s": 3.278,
+              "veg_s": 3.5780000000000003,
+              "idotartam_s": 0.30000000000000027,
+              "hossz_mm": 0.0008947871983821424
+            },
+            {
+              "sorszam": 8,
+              "move_id": 15,
+              "kezdet_s": 3.5780000000000003,
+              "veg_s": 4.026,
+              "idotartam_s": 0.4479999999999995,
+              "hossz_mm": 100.00208138796712
+            },
+            {
+              "sorszam": 9,
+              "move_id": 16,
+              "kezdet_s": 4.026,
+              "veg_s": 4.759680941181378,
+              "idotartam_s": 0.7336809411813778,
+              "hossz_mm": 270.41334338282485
+            }
+          ],
+          "max_elteres_megallo_mm": 0.00023451229133544552,
+          "max_elteres_lekerekitett_mm": null,
+          "max_palya_elteres_mm": 3.7000045817979463e-06,
+          "ismetlesi_elteres_mm": 0.00021699707280912762,
+          "kezdo_veg_elteres_mm": 2.3713886038945868e-06,
+          "pozicio_forras": "RoboDK pályaadat (XYZ)",
+          "felveteltol_lerakasig_s": 1.786
+        },
+        "celpontok": [
+          {
+            "sorszam": 1,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 0.0,
+            "indulas_s": 0.008,
+            "szakaszido_s": 0.0,
+            "szakasz_hossz_mm": 0,
+            "szakasz_max_sebesseg_mm_s": 0.0,
+            "elteres_mm": 1.63207333216787e-06,
+            "felbontas_mm": 0.004001730899795865,
+            "csuklo_elteres_fok": 4.344581441273476e-07,
+            "csuklo_valtozas_fok": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "sorszam": 2,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 0.736,
+            "indulas_s": 0.744,
+            "szakaszido_s": 0.728,
+            "szakasz_hossz_mm": 270.35258564906576,
+            "szakasz_max_sebesseg_mm_s": 733.9139648677808,
+            "elteres_mm": 0.00023451229133544552,
+            "felbontas_mm": 0.0022355892445089635,
+            "csuklo_elteres_fok": 4.383908409977266e-05,
+            "csuklo_valtozas_fok": [
+              -31.60169986364741,
+              -21.10630274850979,
+              1.7613243814407156,
+              19.34497836707002,
+              4.320099833421409e-12,
+              -31.60169986364751
+            ],
+            "palya_elteres_mm": 1.9783754987623706e-06
+          },
+          {
+            "sorszam": 3,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 1.184,
+            "indulas_s": 1.492,
+            "szakaszido_s": 0.43999999999999995,
+            "szakasz_hossz_mm": 99.92626826782586,
+            "szakasz_max_sebesseg_mm_s": 446.213192328567,
+            "elteres_mm": 5.285775058315026e-07,
+            "felbontas_mm": 0.0,
+            "csuklo_elteres_fok": 1.1377845865467862e-07,
+            "csuklo_valtozas_fok": [
+              -1.2892797940367018e-11,
+              -12.51502185865229,
+              5.929532523306904,
+              6.585489332922684,
+              -1.4239276424632408e-10,
+              -3.150546490360284e-11
+            ],
+            "palya_elteres_mm": 5.33880866793206e-07
+          },
+          {
+            "sorszam": 4,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 1.93,
+            "indulas_s": 1.938,
+            "szakaszido_s": 0.43799999999999994,
+            "szakasz_hossz_mm": 99.91214466370388,
+            "szakasz_max_sebesseg_mm_s": 445.62634134274464,
+            "elteres_mm": 2.5628838916194216e-05,
+            "felbontas_mm": 0.0033874351738935604,
+            "csuklo_elteres_fok": 3.3503010250512943e-06,
+            "csuklo_valtozas_fok": [
+              3.3713154916625854e-06,
+              12.51365641385894,
+              -5.931441356745026,
+              -6.582215054701074,
+              1.3882583971280837e-10,
+              3.3713341167640465e-06
+            ],
+            "palya_elteres_mm": 5.27694691899496e-07
+          },
+          {
+            "sorszam": 5,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 2.83,
+            "indulas_s": 2.838,
+            "szakaszido_s": 0.8920000000000001,
+            "szakasz_hossz_mm": 399.9334261124082,
+            "szakasz_max_sebesseg_mm_s": 800.0005943946952,
+            "elteres_mm": 2.547433191546019e-05,
+            "felbontas_mm": 0.0033913367451735236,
+            "csuklo_elteres_fok": 3.056522416500229e-06,
+            "csuklo_valtozas_fok": [
+              53.121281536445494,
+              0.0013733964545110666,
+              -0.0056449632183870335,
+              0.0042722698266182135,
+              -2.904799174530126e-07,
+              53.121281533236285
+            ],
+            "palya_elteres_mm": 2.666305534137165e-06
+          },
+          {
+            "sorszam": 6,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 3.278,
+            "indulas_s": 3.586,
+            "szakaszido_s": 0.43999999999999995,
+            "szakasz_hossz_mm": 99.93342211300295,
+            "szakasz_max_sebesseg_mm_s": 446.0135446961501,
+            "elteres_mm": 6.435318170519254e-08,
+            "felbontas_mm": 0.0011110720086730508,
+            "csuklo_elteres_fok": 2.1057502408439177e-08,
+            "csuklo_valtozas_fok": [
+              -1.1013401746140516e-07,
+              -12.515933478726339,
+              5.930078963874081,
+              6.585854508661264,
+              -7.597549256388447e-10,
+              -1.1014958545274567e-07
+            ],
+            "palya_elteres_mm": 2.1764800829739077e-06
+          },
+          {
+            "sorszam": 7,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 4.024,
+            "indulas_s": 4.034,
+            "szakaszido_s": 0.43800000000000017,
+            "szakasz_hossz_mm": 99.91989866527146,
+            "szakasz_max_sebesseg_mm_s": 446.09858355615665,
+            "elteres_mm": 5.375156444754945e-05,
+            "felbontas_mm": 0.0030478133427597107,
+            "csuklo_elteres_fok": 9.127414045906335e-06,
+            "csuklo_valtozas_fok": [
+              -2.622400074869802e-10,
+              12.51460627415213,
+              -5.931769384374647,
+              -6.582836889395988,
+              9.735856565384893e-11,
+              -2.532942744437605e-10
+            ],
+            "palya_elteres_mm": 6.809682064252384e-08
+          },
+          {
+            "sorszam": 8,
+            "celpont": "Home",
+            "utasitas": "MoveL (Home)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 4.759680941181378,
+            "indulas_s": 4.759680941181378,
+            "szakaszido_s": 0.7256809411813778,
+            "szakasz_hossz_mm": 270.32162753469373,
+            "szakasz_max_sebesseg_mm_s": 733.4640134024417,
+            "elteres_mm": 1.1018526102658054e-08,
+            "felbontas_mm": 0.0028256103461944946,
+            "csuklo_elteres_fok": 3.2387248438681127e-09,
+            "csuklo_valtozas_fok": [
+              -21.514711362956536,
+              21.1062110803785,
+              -1.769319981787362,
+              -19.33689243473742,
+              -2.7716970407709596e-07,
+              -21.514711443327002
+            ],
+            "palya_elteres_mm": 3.7000045817979463e-06
+          }
+        ],
+        "kep": "kepek/palya_PP_MoveL_gyors.png"
+      }
+    },
+    {
+      "nev": "PP_ismetles_3x",
+      "robot": "UR5e",
+      "utasitasok": [
+        {
+          "sorszam": 1,
+          "nev": "Set Reference Frame (Asztal)",
+          "tipus": "Referencia beállítása"
+        },
+        {
+          "sorszam": 2,
+          "nev": "Set Tool (Megfogo)",
+          "tipus": "Szerszám beállítása"
+        },
+        {
+          "sorszam": 3,
+          "nev": "Set Speed (300 mm/s)",
+          "tipus": "Sebesség beállítása"
+        },
+        {
+          "sorszam": 4,
+          "nev": "Set Rounding (-1)",
+          "tipus": "Lekerekítés"
+        },
+        {
+          "sorszam": 5,
+          "nev": "Alaphelyzet",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 6,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        },
+        {
+          "sorszam": 7,
+          "nev": "MoveJ (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 8,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 9,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 10,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 11,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 12,
+          "nev": "MoveJ (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 13,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 14,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 15,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 16,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 17,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 18,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 19,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 20,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 21,
+          "nev": "MoveJ (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 22,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 23,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 24,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 25,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 26,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 27,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 28,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 29,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 30,
+          "nev": "MoveJ (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 31,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 32,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 33,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 34,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 35,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 36,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 37,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 38,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 39,
+          "nev": "MoveJ (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 40,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 41,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 42,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 43,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 44,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 45,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 46,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 47,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 48,
+          "nev": "MoveJ (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 49,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 50,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 51,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 52,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 53,
+          "nev": "MoveL (Lerakas)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.9066424803257,
+            -212.9751976022598,
+            97.28020587459872,
+            25.694991712113264,
+            -89.99999997970353,
+            133.90664248059093
+          ]
+        },
+        {
+          "sorszam": 54,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 55,
+          "nev": "Megfogas",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 56,
+          "nev": "MoveL (Lerakas_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            43.90664248048309,
+            -200.45078074639474,
+            91.34504375713269,
+            19.10573697948418,
+            -89.99999997903036,
+            133.90664248044973
+          ]
+        },
+        {
+          "sorszam": 57,
+          "nev": "MoveJ (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 58,
+          "nev": "MoveL (Felvetel)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.223459857782762,
+            -212.97519762148215,
+            97.28020584394642,
+            25.69499160818026,
+            -89.999999910924,
+            80.77654014345005
+          ]
+        },
+        {
+          "sorszam": 59,
+          "nev": "Pause (300 ms)",
+          "tipus": "Szünet"
+        },
+        {
+          "sorszam": 60,
+          "nev": "Elengedes",
+          "tipus": "Kód / programhívás"
+        },
+        {
+          "sorszam": 61,
+          "nev": "MoveL (Felvetel_felett)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveL (lineáris)",
+          "csuklo_cel": false,
+          "csuklok_fok": [
+            -9.22345985753152,
+            -200.4507807692079,
+            91.34504373738366,
+            19.105736876123398,
+            -89.99999990984477,
+            80.77654014372062
+          ]
+        },
+        {
+          "sorszam": 62,
+          "nev": "MoveJ (Home)",
+          "tipus": "Mozgás",
+          "mozgas": "MoveJ (csukló)",
+          "csuklo_cel": true,
+          "csuklok_fok": [
+            22.386785902118767,
+            -179.3389309027165,
+            89.57995495222745,
+            -0.24102418605072762,
+            -90.00000085439325,
+            112.38678537745098
+          ]
+        }
+      ],
+      "kezdohelyzet": "a program első célpontja",
+      "frissites": {
+        "ervenyes_utasitasok": 33,
+        "ciklusido_s": 28.78881526475788,
+        "palyahossz_mm": 5439.617649244351,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)"
+      },
+      "utkozes": {
+        "ervenyes_utasitasok": 33,
+        "ciklusido_s": 28.78881526475788,
+        "palyahossz_mm": 5439.617649244351,
+        "ervenyesseg_arany": 1.0,
+        "uzenet": "Program OK (MINTA - szimulált adat)",
+        "utkozesmentes": true
+      },
+      "palya": {
+        "csv": "palya_PP_ismetles_3x.csv",
+        "idolepes_s": 0.009596271754919294,
+        "uzenet": "",
+        "allapot": 62,
+        "statisztika": {
+          "mintak_szama": 3001,
+          "idotartam_s": 28.78881526475788,
+          "tcp_palyahossz_mm": 5439.568781856358,
+          "tcp_max_sebesseg_mm_s": 702.4748230802992,
+          "tcp_atlag_sebesseg_mm_s": 188.94729539340446,
+          "csuklok": [
+            {
+              "nev": "J1",
+              "min": -9.223459912269057,
+              "max": 43.90664248026299,
+              "mozgastartomany": 53.130102392532045,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 350.77654008773095,
+              "tartalek_felso": 316.093357519737,
+              "kihasznaltsag_szazalek": 7.379180887851673,
+              "max_sebesseg_fok_s": 90.00000000000045,
+              "max_gyorsulas_fok_s2": 180.00000000006958
+            },
+            {
+              "nev": "J2",
+              "min": -212.97519760238748,
+              "max": -179.3389309027165,
+              "mozgastartomany": 33.63626669967098,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 147.02480239761252,
+              "tartalek_felso": 539.3389309027165,
+              "kihasznaltsag_szazalek": 4.6717037082876365,
+              "max_sebesseg_fok_s": 49.7389424993562,
+              "max_gyorsulas_fok_s2": 120.2183938988835
+            },
+            {
+              "nev": "J3",
+              "min": 89.57995495222745,
+              "max": 97.28020587581283,
+              "mozgastartomany": 7.700250923585372,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 449.57995495222747,
+              "tartalek_felso": 262.71979412418716,
+              "kihasznaltsag_szazalek": 1.0694792949424128,
+              "max_sebesseg_fok_s": 16.62856995227048,
+              "max_gyorsulas_fok_s2": 70.48767494615765
+            },
+            {
+              "nev": "J4",
+              "min": -0.24102418605072762,
+              "max": 25.69499172210729,
+              "mozgastartomany": 25.936015908158016,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 359.7589758139493,
+              "tartalek_felso": 334.30500827789274,
+              "kihasznaltsag_szazalek": 3.6022244316886134,
+              "max_sebesseg_fok_s": 45.58044167029351,
+              "max_gyorsulas_fok_s2": 110.16735002796327
+            },
+            {
+              "nev": "J5",
+              "min": -90.00000085439325,
+              "max": -89.99999990973858,
+              "mozgastartomany": 9.446546727076566e-07,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 269.99999914560675,
+              "tartalek_felso": 449.99999990973856,
+              "kihasznaltsag_szazalek": 1.312020378760634e-07,
+              "max_sebesseg_fok_s": 4.703065314970445e-06,
+              "max_gyorsulas_fok_s2": 0.0002465320957300685
+            },
+            {
+              "nev": "J6",
+              "min": 80.77654008773095,
+              "max": 133.90664248011302,
+              "mozgastartomany": 53.13010239238207,
+              "also_hatar": -360.0,
+              "felso_hatar": 360.0,
+              "tartalek_also": 440.77654008773095,
+              "tartalek_felso": 226.09335751988698,
+              "kihasznaltsag_szazalek": 7.3791808878308425,
+              "max_sebesseg_fok_s": 89.99999999996726,
+              "max_gyorsulas_fok_s2": 180.00000000006958
+            }
+          ],
+          "hibas_mintak": 0,
+          "hibak": [],
+          "szakaszok": [
+            {
+              "sorszam": 1,
+              "move_id": 6,
+              "kezdet_s": 0.0,
+              "veg_s": 0.8444719144328978,
+              "idotartam_s": 0.8444719144328978,
+              "hossz_mm": 275.7385472494217
+            },
+            {
+              "sorszam": 2,
+              "move_id": 7,
+              "kezdet_s": 0.8444719144328978,
+              "veg_s": 1.5545960242969257,
+              "idotartam_s": 0.7101241098640279,
+              "hossz_mm": 99.9838757343787
+            },
+            {
+              "sorszam": 3,
+              "move_id": 8,
+              "kezdet_s": 1.5545960242969257,
+              "veg_s": 1.8520804486994238,
+              "idotartam_s": 0.2974844244024981,
+              "hossz_mm": 0.018773499601081767
+            },
+            {
+              "sorszam": 4,
+              "move_id": 10,
+              "kezdet_s": 1.8520804486994238,
+              "veg_s": 2.5526082868085322,
+              "idotartam_s": 0.7005278381091085,
+              "hossz_mm": 99.98122653916369
+            },
+            {
+              "sorszam": 5,
+              "move_id": 11,
+              "kezdet_s": 2.5526082868085322,
+              "veg_s": 3.6465832668693317,
+              "idotartam_s": 1.0939749800607994,
+              "hossz_mm": 414.6975247089059
+            },
+            {
+              "sorszam": 6,
+              "move_id": 12,
+              "kezdet_s": 3.6465832668693317,
+              "veg_s": 4.356707376733359,
+              "idotartam_s": 0.7101241098640276,
+              "hossz_mm": 99.99387729825442
+            },
+            {
+              "sorszam": 7,
+              "move_id": 13,
+              "kezdet_s": 4.356707376733359,
+              "veg_s": 4.654191801135857,
+              "idotartam_s": 0.2974844244024979,
+              "hossz_mm": 0.007793865462100986
+            },
+            {
+              "sorszam": 8,
+              "move_id": 15,
+              "kezdet_s": 4.654191801135857,
+              "veg_s": 5.364315910999885,
+              "idotartam_s": 0.7101241098640276,
+              "hossz_mm": 100.01054773159956
+            },
+            {
+              "sorszam": 9,
+              "move_id": 16,
+              "kezdet_s": 5.364315910999885,
+              "veg_s": 6.064843749108993,
+              "idotartam_s": 0.7005278381091085,
+              "hossz_mm": 99.97790930661947
+            },
+            {
+              "sorszam": 10,
+              "move_id": 17,
+              "kezdet_s": 6.064843749108993,
+              "veg_s": 6.371924445266411,
+              "idotartam_s": 0.30708069615741795,
+              "hossz_mm": 0.025174405862004746
+            },
+            {
+              "sorszam": 11,
+              "move_id": 19,
+              "kezdet_s": 6.371924445266411,
+              "veg_s": 7.07245228337552,
+              "idotartam_s": 0.7005278381091085,
+              "hossz_mm": 99.97485612258113
+            },
+            {
+              "sorszam": 12,
+              "move_id": 20,
+              "kezdet_s": 7.07245228337552,
+              "veg_s": 8.166427263436319,
+              "idotartam_s": 1.093974980060799,
+              "hossz_mm": 414.6985149162168
+            },
+            {
+              "sorszam": 13,
+              "move_id": 21,
+              "kezdet_s": 8.166427263436319,
+              "veg_s": 8.876551373300346,
+              "idotartam_s": 0.7101241098640276,
+              "hossz_mm": 99.99002083381893
+            },
+            {
+              "sorszam": 14,
+              "move_id": 22,
+              "kezdet_s": 8.876551373300346,
+              "veg_s": 9.174035797702844,
+              "idotartam_s": 0.2974844244024979,
+              "hossz_mm": 0.012084789171353805
+            },
+            {
+              "sorszam": 15,
+              "move_id": 24,
+              "kezdet_s": 9.174035797702844,
+              "veg_s": 9.884159907566872,
+              "idotartam_s": 0.7101241098640276,
+              "hossz_mm": 100.01597233392008
+            },
+            {
+              "sorszam": 16,
+              "move_id": 25,
+              "kezdet_s": 9.884159907566872,
+              "veg_s": 10.58468774567598,
+              "idotartam_s": 0.7005278381091085,
+              "hossz_mm": 99.97100560307231
+            },
+            {
+              "sorszam": 17,
+              "move_id": 26,
+              "kezdet_s": 10.58468774567598,
+              "veg_s": 10.891768441833399,
+              "idotartam_s": 0.30708069615741884,
+              "hossz_mm": 0.0325125880191314
+            },
+            {
+              "sorszam": 18,
+              "move_id": 28,
+              "kezdet_s": 10.891768441833399,
+              "veg_s": 11.592296279942508,
+              "idotartam_s": 0.7005278381091085,
+              "hossz_mm": 99.96790733872031
+            },
+            {
+              "sorszam": 19,
+              "move_id": 29,
+              "kezdet_s": 11.592296279942508,
+              "veg_s": 12.686271260003306,
+              "idotartam_s": 1.093974980060798,
+              "hossz_mm": 414.70103895112794
+            },
+            {
+              "sorszam": 20,
+              "move_id": 30,
+              "kezdet_s": 12.686271260003306,
+              "veg_s": 13.396395369867333,
+              "idotartam_s": 0.7101241098640276,
+              "hossz_mm": 99.98522710472469
+            },
+            {
+              "sorszam": 21,
+              "move_id": 31,
+              "kezdet_s": 13.396395369867333,
+              "veg_s": 13.693879794269833,
+              "idotartam_s": 0.29748442440249967,
+              "hossz_mm": 0.017312996782818047
+            },
+            {
+              "sorszam": 22,
+              "move_id": 33,
+              "kezdet_s": 13.693879794269833,
+              "veg_s": 14.40400390413386,
+              "idotartam_s": 0.7101241098640276,
+              "hossz_mm": 100.0195223758212
+            },
+            {
+              "sorszam": 23,
+              "move_id": 34,
+              "kezdet_s": 14.40400390413386,
+              "veg_s": 15.104531742242969,
+              "idotartam_s": 0.7005278381091085,
+              "hossz_mm": 99.96316462739637
+            },
+            {
+              "sorszam": 24,
+              "move_id": 35,
+              "kezdet_s": 15.104531742242969,
+              "veg_s": 15.402016166645467,
+              "idotartam_s": 0.2974844244024979,
+              "hossz_mm": 0.00010070246173700765
+            },
+            {
+              "sorszam": 25,
+              "move_id": 37,
+              "kezdet_s": 15.402016166645467,
+              "veg_s": 16.112140276509493,
+              "idotartam_s": 0.7101241098640259,
+              "hossz_mm": 100.00227048296335
+            },
+            {
+              "sorszam": 26,
+              "move_id": 38,
+              "kezdet_s": 16.112140276509493,
+              "veg_s": 17.206115256570293,
+              "idotartam_s": 1.0939749800607999,
+              "hossz_mm": 414.7048190807987
+            },
+            {
+              "sorszam": 27,
+              "move_id": 39,
+              "kezdet_s": 17.206115256570293,
+              "veg_s": 17.906643094679403,
+              "idotartam_s": 0.7005278381091102,
+              "hossz_mm": 99.97949610012024
+            },
+            {
+              "sorszam": 28,
+              "move_id": 40,
+              "kezdet_s": 17.906643094679403,
+              "veg_s": 18.21372379083682,
+              "idotartam_s": 0.30708069615741707,
+              "hossz_mm": 0.02347847997481267
+            },
+            {
+              "sorszam": 29,
+              "move_id": 42,
+              "kezdet_s": 18.21372379083682,
+              "veg_s": 18.914251628945927,
+              "idotartam_s": 0.7005278381091067,
+              "hossz_mm": 99.97605288291629
+            },
+            {
+              "sorszam": 30,
+              "move_id": 43,
+              "kezdet_s": 18.914251628945927,
+              "veg_s": 19.624375738809956,
+              "idotartam_s": 0.7101241098640294,
+              "hossz_mm": 99.99953136289145
+            },
+            {
+              "sorszam": 31,
+              "move_id": 44,
+              "kezdet_s": 19.624375738809956,
+              "veg_s": 19.921860163212454,
+              "idotartam_s": 0.2974844244024979,
+              "hossz_mm": 0.0010038184106741115
+            },
+            {
+              "sorszam": 32,
+              "move_id": 46,
+              "kezdet_s": 19.921860163212454,
+              "veg_s": 20.63198427307648,
+              "idotartam_s": 0.7101241098640259,
+              "hossz_mm": 100.00692853316363
+            },
+            {
+              "sorszam": 33,
+              "move_id": 47,
+              "kezdet_s": 20.63198427307648,
+              "veg_s": 21.72595925313728,
+              "idotartam_s": 1.0939749800607999,
+              "hossz_mm": 414.7078055192503
+            },
+            {
+              "sorszam": 34,
+              "move_id": 48,
+              "kezdet_s": 21.72595925313728,
+              "veg_s": 22.42648709124639,
+              "idotartam_s": 0.7005278381091102,
+              "hossz_mm": 99.97282782309641
+            },
+            {
+              "sorszam": 35,
+              "move_id": 49,
+              "kezdet_s": 22.42648709124639,
+              "veg_s": 22.733567787403807,
+              "idotartam_s": 0.30708069615741707,
+              "hossz_mm": 0.03058123549013397
+            },
+            {
+              "sorszam": 36,
+              "move_id": 51,
+              "kezdet_s": 22.733567787403807,
+              "veg_s": 23.434095625512914,
+              "idotartam_s": 0.7005278381091067,
+              "hossz_mm": 99.96754421714078
+            },
+            {
+              "sorszam": 37,
+              "move_id": 52,
+              "kezdet_s": 23.434095625512914,
+              "veg_s": 24.144219735376943,
+              "idotartam_s": 0.7101241098640294,
+              "hossz_mm": 99.99812545263123
+            },
+            {
+              "sorszam": 38,
+              "move_id": 53,
+              "kezdet_s": 24.144219735376943,
+              "veg_s": 24.44170415977944,
+              "idotartam_s": 0.2974844244024979,
+              "hossz_mm": 0.002844209183176679
+            },
+            {
+              "sorszam": 39,
+              "move_id": 55,
+              "kezdet_s": 24.44170415977944,
+              "veg_s": 25.15182826964347,
+              "idotartam_s": 0.7101241098640294,
+              "hossz_mm": 100.01453923141744
+            },
+            {
+              "sorszam": 40,
+              "move_id": 56,
+              "kezdet_s": 25.15182826964347,
+              "veg_s": 26.245803249704267,
+              "idotartam_s": 1.0939749800607963,
+              "hossz_mm": 414.70879668306293
+            },
+            {
+              "sorszam": 41,
+              "move_id": 57,
+              "kezdet_s": 26.245803249704267,
+              "veg_s": 26.946331087813377,
+              "idotartam_s": 0.7005278381091102,
+              "hossz_mm": 99.96522227011876
+            },
+            {
+              "sorszam": 42,
+              "move_id": 58,
+              "kezdet_s": 26.946331087813377,
+              "veg_s": 27.243815512215875,
+              "idotartam_s": 0.2974844244024979,
+              "hossz_mm": 2.1137077851565338e-05
+            },
+            {
+              "sorszam": 43,
+              "move_id": 60,
+              "kezdet_s": 27.243815512215875,
+              "veg_s": 27.953939622079904,
+              "idotartam_s": 0.7101241098640294,
+              "hossz_mm": 100.00680189744854
+            },
+            {
+              "sorszam": 44,
+              "move_id": 61,
+              "kezdet_s": 27.953939622079904,
+              "veg_s": 28.78881526475788,
+              "idotartam_s": 0.8348756426779751,
+              "hossz_mm": 275.7155998160932
+            }
+          ],
+          "max_elteres_megallo_mm": 0.008287113056199245,
+          "max_elteres_lekerekitett_mm": null,
+          "max_palya_elteres_mm": 5.343652947708246e-07,
+          "ismetlesi_elteres_mm": 0.008258230934137661,
+          "kezdo_veg_elteres_mm": 2.3154047953846246e-15,
+          "pozicio_forras": "RoboDK pályaadat (XYZ)",
+          "felveteltol_lerakasig_s": 2.5046269280339355
+        },
+        "celpontok": [
+          {
+            "sorszam": 1,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 0.0,
+            "indulas_s": 0.009596271754919294,
+            "szakaszido_s": 0.0,
+            "szakasz_hossz_mm": 0,
+            "szakasz_max_sebesseg_mm_s": 0.0,
+            "elteres_mm": 0.0,
+            "felbontas_mm": 0.06417672145674096,
+            "csuklo_elteres_fok": 0.0,
+            "csuklo_valtozas_fok": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "sorszam": 2,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveJ (Felvetel_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 0.8348756426779785,
+            "indulas_s": 0.8444719144328978,
+            "szakaszido_s": 0.8252793709230593,
+            "szakasz_hossz_mm": 275.6514231498409,
+            "szakasz_max_sebesseg_mm_s": 655.6316377884685,
+            "elteres_mm": 0.004968537157904295,
+            "felbontas_mm": 0.02294737812408117,
+            "csuklo_elteres_fok": 0.0009489899202890228,
+            "csuklo_valtozas_fok": [
+              -31.601008810886515,
+              -21.105680693464166,
+              1.764573001925811,
+              19.341107672382883,
+              9.442724717700912e-07,
+              -31.60100828512026
+            ]
+          },
+          {
+            "sorszam": 3,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 1.5545960242969257,
+            "indulas_s": 1.8520804486994238,
+            "szakaszido_s": 0.7101241098640279,
+            "szakasz_hossz_mm": 99.9838757343787,
+            "szakasz_max_sebesseg_mm_s": 280.1430610392949,
+            "elteres_mm": 5.213007590091793e-07,
+            "felbontas_mm": 2.113703259960282e-05,
+            "csuklo_elteres_fok": 1.1173587921575745e-07,
+            "csuklo_valtozas_fok": [
+              1.2586902187194937e-08,
+              -12.522362223387631,
+              5.933930787956143,
+              6.588431585683658,
+              -9.085925967156072e-08,
+              1.1317141002109565e-08
+            ],
+            "palya_elteres_mm": 5.340971311046206e-07
+          },
+          {
+            "sorszam": 4,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 2.5526082868085322,
+            "indulas_s": 2.5622045585634514,
+            "szakaszido_s": 0.7005278381091085,
+            "szakasz_hossz_mm": 99.98122653916369,
+            "szakasz_max_sebesseg_mm_s": 279.86611307945526,
+            "elteres_mm": 5.229681168647773e-05,
+            "felbontas_mm": 0.03477776656419652,
+            "csuklo_elteres_fok": 6.631621065622539e-06,
+            "csuklo_valtozas_fok": [
+              6.652431229881017e-06,
+              12.522117656086436,
+              -5.934367729354165,
+              -6.587749925704848,
+              2.941504817499663e-10,
+              6.65241785213766e-06
+            ],
+            "palya_elteres_mm": 5.214042324752829e-07
+          },
+          {
+            "sorszam": 5,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveJ (Lerakas_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 3.6465832668693317,
+            "indulas_s": 3.656179538624251,
+            "szakaszido_s": 1.0843787083058802,
+            "szakasz_hossz_mm": 414.629168722689,
+            "szakasz_max_sebesseg_mm_s": 702.474822230196,
+            "elteres_mm": 0.005911372653361088,
+            "felbontas_mm": 0.023506074584673964,
+            "csuklo_elteres_fok": 0.0007801724973433011,
+            "csuklo_valtozas_fok": [
+              53.121338117015775,
+              -0.0007801745624362866,
+              0.0004675630010098075,
+              0.00031260075300210133,
+              2.0677603629337682e-08,
+              53.12133811699583
+            ]
+          },
+          {
+            "sorszam": 6,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 4.356707376733359,
+            "indulas_s": 4.663788072890776,
+            "szakaszido_s": 0.7005278381091085,
+            "szakasz_hossz_mm": 99.9270064513974,
+            "szakasz_max_sebesseg_mm_s": 280.8911106451234,
+            "elteres_mm": 3.6197691835024877e-09,
+            "felbontas_mm": 0.0028442077277423825,
+            "csuklo_elteres_fok": 8.053113731421035e-10,
+            "csuklo_valtozas_fok": [
+              7.632714016381215e-09,
+              -12.515115917977369,
+              5.929588872817035,
+              6.585527038122372,
+              -9.463576589041622e-10,
+              7.516405275964644e-09
+            ],
+            "palya_elteres_mm": 7.122373023685012e-08
+          },
+          {
+            "sorszam": 7,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 5.354719639244966,
+            "indulas_s": 5.364315910999885,
+            "szakaszido_s": 0.6909315663541893,
+            "szakasz_hossz_mm": 99.91960879173732,
+            "szakasz_max_sebesseg_mm_s": 280.8180100059913,
+            "elteres_mm": 0.001874548143610683,
+            "felbontas_mm": 0.053454600061741075,
+            "csuklo_elteres_fok": 0.00023885791082989272,
+            "csuklo_valtozas_fok": [
+              2.829146694693918e-09,
+              12.514561856705427,
+              -5.931695769915748,
+              -6.582866069914832,
+              -2.0021346358589653e-08,
+              2.9785667265969096e-09
+            ],
+            "palya_elteres_mm": 7.463059187726314e-08
+          },
+          {
+            "sorszam": 8,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 6.064843749108993,
+            "indulas_s": 6.371924445266411,
+            "szakaszido_s": 0.7005278381091085,
+            "szakasz_hossz_mm": 99.97790930661947,
+            "szakasz_max_sebesseg_mm_s": 279.4932240494867,
+            "elteres_mm": 6.725459274516607e-08,
+            "felbontas_mm": 0.030581235548596614,
+            "csuklo_elteres_fok": 2.0537029854494904e-08,
+            "csuklo_valtozas_fok": [
+              -6.586731160496129e-12,
+              -12.521602009821748,
+              5.933475246648442,
+              6.588126759205036,
+              -5.896652055525919e-10,
+              -9.697487257653847e-11
+            ],
+            "palya_elteres_mm": 7.139586755101973e-08
+          },
+          {
+            "sorszam": 9,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 7.07245228337552,
+            "indulas_s": 7.082048555130439,
+            "szakaszido_s": 0.7005278381091085,
+            "szakasz_hossz_mm": 99.97485612258113,
+            "szakasz_max_sebesseg_mm_s": 279.125724857111,
+            "elteres_mm": 0.0012868917719879168,
+            "felbontas_mm": 0.027202705392578207,
+            "csuklo_elteres_fok": 0.00016507136678001189,
+            "csuklo_valtozas_fok": [
+              -0.0001650664799726087,
+              12.521333727769957,
+              -5.934096848018001,
+              -6.587236876436304,
+              3.7611869174725143e-10,
+              -0.00016506656891124294
+            ],
+            "palya_elteres_mm": 6.773458072786668e-08
+          },
+          {
+            "sorszam": 10,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveJ (Felvetel_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 8.166427263436319,
+            "indulas_s": 8.176023535191238,
+            "szakaszido_s": 1.0843787083058798,
+            "szakasz_hossz_mm": 414.6155655577036,
+            "szakasz_max_sebesseg_mm_s": 702.4748230802992,
+            "elteres_mm": 0.008286763667162862,
+            "felbontas_mm": 0.017911823729666945,
+            "csuklo_elteres_fok": 0.0012715858407545966,
+            "csuklo_valtozas_fok": [
+              -53.11931005608672,
+              -0.0012716106187440346,
+              0.000762086940824247,
+              0.0005093674798217762,
+              9.010773283080198e-08,
+              -53.11931005477207
+            ]
+          },
+          {
+            "sorszam": 11,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 8.876551373300346,
+            "indulas_s": 9.183632069457763,
+            "szakaszido_s": 0.7005278381091085,
+            "szakasz_hossz_mm": 99.91484038042918,
+            "szakasz_max_sebesseg_mm_s": 280.6810220476301,
+            "elteres_mm": 5.213007590091793e-07,
+            "felbontas_mm": 0.0010038178760964774,
+            "csuklo_elteres_fok": 1.1173587921575745e-07,
+            "csuklo_valtozas_fok": [
+              1.2563871720772113e-08,
+              -12.513565678866314,
+              5.928660096957486,
+              6.584905732168629,
+              -9.085800911634578e-08,
+              1.129420468259923e-08
+            ],
+            "palya_elteres_mm": 5.337624157351995e-07
+          },
+          {
+            "sorszam": 12,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 9.874563635811953,
+            "indulas_s": 9.884159907566872,
+            "szakaszido_s": 0.6909315663541893,
+            "szakasz_hossz_mm": 99.90841415339844,
+            "szakasz_max_sebesseg_mm_s": 280.5173700678998,
+            "elteres_mm": 0.00046863717431654844,
+            "felbontas_mm": 0.045144985271775795,
+            "csuklo_elteres_fok": 5.969019713347734e-05,
+            "csuklo_valtozas_fok": [
+              -2.1464607868892926e-10,
+              12.513197734998585,
+              -5.931269618792996,
+              -6.581928116048299,
+              3.97335497837048e-11,
+              -2.156781420126208e-10
+            ],
+            "palya_elteres_mm": 5.212912418546438e-07
+          },
+          {
+            "sorszam": 13,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 10.58468774567598,
+            "indulas_s": 10.891768441833399,
+            "szakaszido_s": 0.7005278381091085,
+            "szakasz_hossz_mm": 99.97100560307231,
+            "szakasz_max_sebesseg_mm_s": 279.33006737091824,
+            "elteres_mm": 5.29226748530563e-07,
+            "felbontas_mm": 0.023478478273774174,
+            "csuklo_elteres_fok": 1.1392702958801237e-07,
+            "csuklo_valtozas_fok": [
+              -8.991918321044068e-12,
+              -12.520722327740543,
+              5.932948105740039,
+              6.587774218770832,
+              -5.111360223963857e-10,
+              6.750155989720952e-12
+            ],
+            "palya_elteres_mm": 5.343652947708246e-07
+          },
+          {
+            "sorszam": 14,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 11.592296279942508,
+            "indulas_s": 11.592296279942508,
+            "szakaszido_s": 0.7005278381091085,
+            "szakasz_hossz_mm": 99.96790733872031,
+            "szakasz_max_sebesseg_mm_s": 279.674820319613,
+            "elteres_mm": 0.004087579130725039,
+            "felbontas_mm": 0.020923825022739588,
+            "csuklo_elteres_fok": 0.000534346230672611,
+            "csuklo_valtozas_fok": [
+              0.0005343672341719952,
+              12.52043500700458,
+              -5.9337862858965025,
+              -6.58664871421329,
+              9.019061053550104e-10,
+              0.0005343672779360986
+            ],
+            "palya_elteres_mm": 5.265431681241989e-07
+          },
+          {
+            "sorszam": 15,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveJ (Lerakas_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 12.676674988248386,
+            "indulas_s": 12.695867531758225,
+            "szakaszido_s": 1.084378708305879,
+            "szakasz_hossz_mm": 414.68389490329787,
+            "szakasz_max_sebesseg_mm_s": 702.4748222372036,
+            "elteres_mm": 0.007496280676406427,
+            "felbontas_mm": 0.017144047830079622,
+            "csuklo_elteres_fok": 0.0011145542802921682,
+            "csuklo_valtozas_fok": [
+              53.12845343750365,
+              -2.5876829568005633e-09,
+              -6.340172831187374e-10,
+              -1.1252019760377152e-08,
+              2.028446033364162e-08,
+              53.12845343742421
+            ]
+          },
+          {
+            "sorszam": 16,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 13.396395369867333,
+            "indulas_s": 13.693879794269833,
+            "szakaszido_s": 0.7005278381091085,
+            "szakasz_hossz_mm": 99.90173703874075,
+            "szakasz_max_sebesseg_mm_s": 280.27559221763136,
+            "elteres_mm": 3.6197691835024877e-09,
+            "felbontas_mm": 0.00010070248939144772,
+            "csuklo_elteres_fok": 8.053113731421035e-10,
+            "csuklo_valtozas_fok": [
+              7.63083107813145e-09,
+              -12.51189609880521,
+              5.927659912931787,
+              6.584236178835198,
+              -9.459597549721366e-10,
+              7.514415756304516e-09
+            ],
+            "palya_elteres_mm": 7.137376058804616e-08
+          },
+          {
+            "sorszam": 17,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 14.394407632378941,
+            "indulas_s": 14.40400390413386,
+            "szakaszido_s": 0.7005278381091085,
+            "szakasz_hossz_mm": 99.98268700321725,
+            "szakasz_max_sebesseg_mm_s": 280.021388959221,
+            "elteres_mm": 6.461597927108915e-08,
+            "felbontas_mm": 0.03683537267772863,
+            "csuklo_elteres_fok": 2.09689972052729e-08,
+            "csuklo_valtozas_fok": [
+              2.8313138500379864e-09,
+              12.5222965286776,
+              -5.934429534781245,
+              -6.587866977068746,
+              -2.003237398184865e-08,
+              2.9811815238645067e-09
+            ],
+            "palya_elteres_mm": 7.475383244794221e-08
+          },
+          {
+            "sorszam": 18,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 15.104531742242969,
+            "indulas_s": 15.411612438400386,
+            "szakaszido_s": 0.7005278381091085,
+            "szakasz_hossz_mm": 99.96316462739637,
+            "szakasz_max_sebesseg_mm_s": 280.0213898373843,
+            "elteres_mm": 6.725459274516607e-08,
+            "felbontas_mm": 0.017312996827229313,
+            "csuklo_elteres_fok": 2.0537029854494904e-08,
+            "csuklo_valtozas_fok": [
+              7.483436093025375e-11,
+              -12.51972321886251,
+              5.9323494177755265,
+              6.587373798112246,
+              -2.405613486189395e-10,
+              1.0274447959091049e-10
+            ],
+            "palya_elteres_mm": 6.82841301906382e-08
+          },
+          {
+            "sorszam": 19,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 16.112140276509493,
+            "indulas_s": 16.112140276509493,
+            "szakaszido_s": 0.7005278381091067,
+            "szakasz_hossz_mm": 99.96158314323503,
+            "szakasz_max_sebesseg_mm_s": 280.27559129487605,
+            "elteres_mm": 0.007496211151199333,
+            "felbontas_mm": 0.017144080755259132,
+            "csuklo_elteres_fok": 0.0011145591637955476,
+            "csuklo_valtozas_fok": [
+              -0.0011145542770378825,
+              12.519421491358827,
+              -5.933436037224027,
+              -6.5859854508231415,
+              3.7755398807348683e-10,
+              -0.0011145543662109958
+            ],
+            "palya_elteres_mm": 6.648463268426132e-08
+          },
+          {
+            "sorszam": 20,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveJ (Felvetel_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 17.196518984815373,
+            "indulas_s": 17.206115256570293,
+            "szakaszido_s": 1.0843787083058807,
+            "szakasz_hossz_mm": 414.6838951810127,
+            "szakasz_max_sebesseg_mm_s": 702.4748230783374,
+            "elteres_mm": 0.004087199379575564,
+            "felbontas_mm": 0.020923899786011398,
+            "csuklo_elteres_fok": 0.0005343669837749587,
+            "csuklo_valtozas_fok": [
+              -53.128453411894945,
+              -2.4782252694421913e-08,
+              -1.9536969375621993e-08,
+              -1.1172075176091312e-07,
+              9.001702494515484e-08,
+              -53.12845341058156
+            ]
+          },
+          {
+            "sorszam": 21,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 17.906643094679403,
+            "indulas_s": 18.21372379083682,
+            "szakaszido_s": 0.7005278381091102,
+            "szakasz_hossz_mm": 99.97949610012024,
+            "szakasz_max_sebesseg_mm_s": 279.6748209416742,
+            "elteres_mm": 5.213007590091793e-07,
+            "felbontas_mm": 0.03251258601693859,
+            "csuklo_elteres_fok": 1.1173587921575745e-07,
+            "csuklo_valtozas_fok": [
+              1.2585459785441344e-08,
+              -12.521804161597373,
+              5.93359636457987,
+              6.588207947270231,
+              -9.085916019557772e-08,
+              1.1315691494928615e-08
+            ],
+            "palya_elteres_mm": 5.337166096062254e-07
+          },
+          {
+            "sorszam": 22,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 18.914251628945927,
+            "indulas_s": 18.923847900700846,
+            "szakaszido_s": 0.7005278381091067,
+            "szakasz_hossz_mm": 99.97605288291629,
+            "szakasz_max_sebesseg_mm_s": 279.3300664181249,
+            "elteres_mm": 0.00046863736859720684,
+            "felbontas_mm": 0.02852575793704705,
+            "csuklo_elteres_fok": 5.96899845390908e-05,
+            "csuklo_valtozas_fok": [
+              -2.6575364131531387e-10,
+              12.521481715873136,
+              -5.9341328341720185,
+              -6.587348880674199,
+              2.9410784918582067e-10,
+              -2.7914381917071296e-10
+            ],
+            "palya_elteres_mm": 5.213752801096468e-07
+          },
+          {
+            "sorszam": 23,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 19.624375738809956,
+            "indulas_s": 19.931456434967373,
+            "szakaszido_s": 0.7005278381091102,
+            "szakasz_hossz_mm": 99.95438637544964,
+            "szakasz_max_sebesseg_mm_s": 280.517371146668,
+            "elteres_mm": 5.29226748530563e-07,
+            "felbontas_mm": 0.012084787951666074,
+            "csuklo_elteres_fok": 1.1392702958801237e-07,
+            "csuklo_valtozas_fok": [
+              -8.93862761586206e-12,
+              -12.518604683540843,
+              5.931679190116199,
+              6.586925490196062,
+              -5.108518053020816e-10,
+              6.849631972727366e-12
+            ],
+            "palya_elteres_mm": 5.342517524734046e-07
+          },
+          {
+            "sorszam": 24,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 20.62238800132156,
+            "indulas_s": 20.63198427307648,
+            "szakaszido_s": 0.6909315663541875,
+            "szakasz_hossz_mm": 99.94002006219046,
+            "szakasz_max_sebesseg_mm_s": 280.6810211263971,
+            "elteres_mm": 0.008287113056199245,
+            "felbontas_mm": 0.01791151663795017,
+            "csuklo_elteres_fok": 0.0012715443439503815,
+            "csuklo_valtozas_fok": [
+              1.8964918524488894e-10,
+              12.517021610524154,
+              -5.93228404741059,
+              -6.58473755475627,
+              1.1617657946771942e-09,
+              1.552677986182971e-10
+            ],
+            "palya_elteres_mm": 5.289221768802667e-07
+          },
+          {
+            "sorszam": 25,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveJ (Lerakas_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 21.71636298138236,
+            "indulas_s": 21.72595925313728,
+            "szakaszido_s": 1.0843787083058807,
+            "szakasz_hossz_mm": 414.6806028139537,
+            "szakasz_max_sebesseg_mm_s": 702.4748222370742,
+            "elteres_mm": 0.001286955681125558,
+            "felbontas_mm": 0.027202705296569926,
+            "csuklo_elteres_fok": 0.00016506647975234046,
+            "csuklo_valtozas_fok": [
+              53.12803166411733,
+              -2.5876829568005633e-09,
+              -6.340030722640222e-10,
+              -1.1251927389821503e-08,
+              2.028430401423975e-08,
+              53.12803166403789
+            ]
+          },
+          {
+            "sorszam": 26,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 22.42648709124639,
+            "indulas_s": 22.733567787403807,
+            "szakaszido_s": 0.7005278381091102,
+            "szakasz_hossz_mm": 99.97282782309641,
+            "szakasz_max_sebesseg_mm_s": 279.1257255630192,
+            "elteres_mm": 3.6197691835024877e-09,
+            "felbontas_mm": 0.025174405915313947,
+            "csuklo_elteres_fok": 8.053113731421035e-10,
+            "csuklo_valtozas_fok": [
+              1.2529930870641692e-08,
+              -12.520954519632596,
+              5.933087238555075,
+              6.5878672642546405,
+              2.0027641767228488e-08,
+              1.2379956615404808e-08
+            ],
+            "palya_elteres_mm": 7.114013002712599e-08
+          },
+          {
+            "sorszam": 27,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 23.434095625512914,
+            "indulas_s": 23.443691897267836,
+            "szakaszido_s": 0.7005278381091067,
+            "szakasz_hossz_mm": 99.96754421714078,
+            "szakasz_max_sebesseg_mm_s": 279.4932232776263,
+            "elteres_mm": 0.001874547352644649,
+            "felbontas_mm": 0.020216146068494038,
+            "csuklo_elteres_fok": 0.00023885774817244965,
+            "csuklo_valtozas_fok": [
+              2.7806095204141457e-09,
+              12.520432687099685,
+              -5.933724878844018,
+              -6.586707790436726,
+              -1.9683611185428163e-08,
+              3.048796770599438e-09
+            ],
+            "palya_elteres_mm": 7.471966756071886e-08
+          },
+          {
+            "sorszam": 28,
+            "celpont": "Lerakas",
+            "utasitas": "MoveL (Lerakas)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 24.144219735376943,
+            "indulas_s": 24.45130043153436,
+            "szakaszido_s": 0.7005278381091067,
+            "szakasz_hossz_mm": 99.94467085186938,
+            "szakasz_max_sebesseg_mm_s": 280.81801103731834,
+            "elteres_mm": 6.725459274516607e-08,
+            "felbontas_mm": 0.007793854408875147,
+            "csuklo_elteres_fok": 2.0537029854494904e-08,
+            "csuklo_valtozas_fok": [
+              -6.565414878423326e-12,
+              -12.517366723137513,
+              5.930937431393701,
+              6.586429287777218,
+              -5.893099341847119e-10,
+              -9.742961992742494e-11
+            ],
+            "palya_elteres_mm": 6.975237206469474e-08
+          },
+          {
+            "sorszam": 29,
+            "celpont": "Lerakas_felett",
+            "utasitas": "MoveL (Lerakas_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 25.14223199788855,
+            "indulas_s": 25.15182826964347,
+            "szakaszido_s": 0.6909315663541911,
+            "szakasz_hossz_mm": 99.93372651516489,
+            "szakasz_max_sebesseg_mm_s": 280.891109601132,
+            "elteres_mm": 0.005911344845768422,
+            "felbontas_mm": 0.023506150615470428,
+            "csuklo_elteres_fok": 0.0007801693681983579,
+            "csuklo_valtozas_fok": [
+              -2.1032064978498966e-11,
+              12.516269899537974,
+              -5.932148884374584,
+              -6.584121012083465,
+              2.9605473628180334e-10,
+              -4.9965365178650245e-11
+            ],
+            "palya_elteres_mm": 6.719631678569949e-08
+          },
+          {
+            "sorszam": 30,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveJ (Felvetel_felett)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 26.236206977949347,
+            "indulas_s": 26.245803249704267,
+            "szakaszido_s": 1.0843787083058771,
+            "szakasz_hossz_mm": 414.67401891387414,
+            "szakasz_max_sebesseg_mm_s": 702.4748230763765,
+            "elteres_mm": 5.192560063793192e-05,
+            "felbontas_mm": 0.03477776918880498,
+            "csuklo_elteres_fok": 6.652573077303714e-06,
+            "csuklo_valtozas_fok": [
+              -53.127188091840345,
+              -2.4781655838523875e-08,
+              -1.9536514628271107e-08,
+              -1.117180907783677e-07,
+              9.001487910609285e-08,
+              -53.127188090527
+            ]
+          },
+          {
+            "sorszam": 31,
+            "celpont": "Felvetel",
+            "utasitas": "MoveL (Felvetel)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 26.946331087813377,
+            "indulas_s": 27.253411783970794,
+            "szakaszido_s": 0.7005278381091102,
+            "szakasz_hossz_mm": 99.96522227011876,
+            "szakasz_max_sebesseg_mm_s": 279.8661140975788,
+            "elteres_mm": 5.213007590091793e-07,
+            "felbontas_mm": 0.018773498074273278,
+            "csuklo_elteres_fok": 1.1173587921575745e-07,
+            "csuklo_valtozas_fok": [
+              1.2580688490970715e-08,
+              -12.519985366224034,
+              5.932506478285816,
+              6.587479038192697,
+              -9.085890440019284e-08,
+              1.1310930858599022e-08
+            ],
+            "palya_elteres_mm": 5.33368229174567e-07
+          },
+          {
+            "sorszam": 32,
+            "celpont": "Felvetel_felett",
+            "utasitas": "MoveL (Felvetel_felett)",
+            "mozgas": "MoveL (lineáris)",
+            "megallt": true,
+            "erkezes_s": 27.953939622079904,
+            "indulas_s": 27.953939622079904,
+            "szakaszido_s": 0.7005278381091102,
+            "szakasz_hossz_mm": 99.96820176744556,
+            "szakasz_max_sebesseg_mm_s": 280.14306028862285,
+            "elteres_mm": 0.004968863025737851,
+            "felbontas_mm": 0.022947298731495223,
+            "csuklo_elteres_fok": 0.0009489691171395975,
+            "csuklo_valtozas_fok": [
+              0.0009489899273216196,
+              12.520320673801791,
+              -5.933580738729816,
+              -6.586739934050986,
+              2.6837199129658984e-10,
+              0.0009489898982053546
+            ],
+            "palya_elteres_mm": 5.213406204476972e-07
+          },
+          {
+            "sorszam": 33,
+            "celpont": "Home",
+            "utasitas": "MoveJ (Home)",
+            "mozgas": "MoveJ (csukló)",
+            "megallt": true,
+            "erkezes_s": 28.78881526475788,
+            "indulas_s": 28.78881526475788,
+            "szakaszido_s": 0.8348756426779751,
+            "szakasz_hossz_mm": 275.7155998160932,
+            "szakasz_max_sebesseg_mm_s": 655.6316373249529,
+            "elteres_mm": 1.5326832481670806e-15,
+            "felbontas_mm": 0.06417672139694022,
+            "csuklo_elteres_fok": 1.3322676295501878e-15,
+            "csuklo_valtozas_fok": [
+              31.609296790533147,
+              21.111216030149677,
+              -1.7650358140480193,
+              -19.346180353666696,
+              -8.546618772697911e-07,
+              31.6092962658945
+            ]
+          }
+        ],
+        "kep": "kepek/palya_PP_ismetles_3x.png"
+      }
+    }
+  ],
+  "figyelmeztetesek": []
+}

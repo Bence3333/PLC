@@ -10,7 +10,12 @@ Mit ment ki?
   * programonként: becsült ciklusidő, TCP pályahossz, érvényesség, ütközésvizsgálat
   * programonként időalapú pályát: csuklószögek, TCP pozíció, csukló- és TCP-sebesség,
     csuklógyorsulás, csuklóhatároktól való távolság, szingularitás/elérhetőségi hibák
+  * célpontonként: érkezési és indulási idő, szakaszidő, szakaszhossz, a tengelyek elfordulása,
+    a célpont elérésének pontossága (eltérés mm-ben), MoveL-nél az egyenes pályától való eltérés,
+    ugyanazon célpont ismételt elérésének szórása, felvételtől lerakásig eltelt idő
+  * tiltott zóna (pl. "Tiltott_zona" nevű doboz) esetén a TCP legkisebb távolsága a zónától
   * képernyőképeket (az állomásról + a pályákról "szellemrobotokkal")
+  Az "x_" kezdetű nevű programokat (próbaprogramok) kihagyja (KIHAGYOTT_ELOTAG).
 
 Használat:
   1. Mentsd el az állomást (File -> Save Station), mert az adatok az .rdk fájl mellé kerülnek.
@@ -47,13 +52,19 @@ except ImportError:  # régebbi RoboDK verziók
 # ---------------------------------------------------------------------------
 # BEÁLLÍTÁSOK
 # ---------------------------------------------------------------------------
-IDOLEPES_S = None  # pálya-mintavételi időlépés [s]; None = automatikus (kb. 1500 minta/program)
-MAX_MINTASZAM = 1500  # automatikus időlépésnél ennyi mintára törekszik
+IDOLEPES_S = None  # pálya-mintavételi időlépés [s]; None = automatikus (kb. 3000 minta/program)
+MAX_MINTASZAM = 3000  # automatikus időlépésnél ennyi mintára törekszik
 UTKOZESVIZSGALAT = True  # programonként ütközésvizsgálat is (lassabb, de a jegyzőkönyvbe kell)
 KEPERNYOKEPEK = True  # képernyőképek mentése a 3D nézetről
 SZELLEM_ROBOTOK = 8  # ennyi átlátszó "szellemrobot" a pályaképeken (0 = kikapcsolva)
 ADATMAPPA_UTOTAG = "_dokumentacio"  # <állomás neve>_dokumentacio
 MEGNEVEZES_KERESE = True  # induláskor rákérdez a mérés nevére (pl. "v = 300 mm/s") - összehasonlításhoz hasznos
+KEZDES_ELSO_CELPONTBOL = True  # mérés előtt a robot a program első célpontjába áll -> a ciklusidő nem függ
+#                                attól, hol állt éppen a robot (a mérés végén visszaáll az eredeti helyzetbe)
+CELPONT_TUR_MM = 0.1  # a TCP ennyire [mm] megközelítve "megérkezett" egy megálló célpontba (a 7 tengelyes
+#                        robotoknál a csuklóállás nem egyértelmű, ezért a felismerés a TCP helyzetén alapul)
+ZONA_KULCSSZAVAK = ("tiltott", "zona", "akadaly")  # ilyen nevű objektumok számítanak tiltott zónának
+KIHAGYOTT_ELOTAG = "x_"  # az ilyen nevű programokat (pl. "x_proba", próbaprogramok) a mérés kihagyja
 
 ITEM_TYPE_ROBOT = robolink.ITEM_TYPE_ROBOT
 ITEM_TYPE_FRAME = robolink.ITEM_TYPE_FRAME
@@ -347,7 +358,7 @@ def palya_feldolgozasa(mat, dof):
     n = dof if dof and nval >= dof + 8 else max(1, (nval - 8) // 3)
     if nval < n + 8:
         raise ValueError("váratlan oszlopszám a pályaadatokban: %d" % nval)
-    minta =[[float(sorok[k][j]) for k in range(nval)] for j in range(nminta)]
+    minta = [[float(sorok[k][j]) for k in range(nval)] for j in range(nminta)]
     van_seb = nval >= 2 * n + 8
     van_gyors = nval >= 3 * n + 8
 
@@ -435,7 +446,7 @@ def palya_statisztika(p, also, felso):
     return stat
 
 
-def palya_csv(fajl, p):
+def palya_csv(fajl, p, zona_tavok=None):
     n = p["n"]
     fejlec = ["ido_s"] + ["J%d_fok" % (k + 1) for k in range(n)]
     fejlec += ["TCP_X_mm", "TCP_Y_mm", "TCP_Z_mm", "TCP_sebesseg_mm_s"]
@@ -444,8 +455,10 @@ def palya_csv(fajl, p):
     if p["van_gyors"]:
         fejlec += ["a_J%d_fok_s2" % (k + 1) for k in range(n)]
     fejlec += ["mozgas_id", "hibakod"]
+    if zona_tavok:
+        fejlec.append("zona_tavolsag_mm")
     sorok = []
-    for a in p["adatok"]:
+    for i, a in enumerate(p["adatok"]):
         s = [szam_csv(a["t"], 4)] + [szam_csv(v, 4) for v in a["j"]]
         s += [szam_csv(v, 3) for v in a["xyz"]] + [szam_csv(a["tcp_v"], 3)]
         if p["van_seb"]:
@@ -453,8 +466,232 @@ def palya_csv(fajl, p):
         if p["van_gyors"]:
             s += [szam_csv(v, 4) for v in a["a"]]
         s += [str(int(round(a["move_id"]))), str(int(round(a["hiba"])))]
+        if zona_tavok:
+            s.append(szam_csv(zona_tavok[i], 3))
         sorok.append(s)
     csv_iras(fajl, fejlec, sorok)
+
+
+# ---------------------------------------------------------------------------
+# Célpontok elérése, pályaeltérés, tiltott zóna (4x4 mátrixok listákkal, verziófüggetlenül)
+# ---------------------------------------------------------------------------
+def m_lista(pose):
+    return [[float(v) for v in sor] for sor in pose.rows]
+
+
+def m_szor(A, B):
+    return [[sum(A[i][k] * B[k][j] for k in range(4)) for j in range(4)] for i in range(4)]
+
+
+def m_inv(A):
+    """Merev test transzformációjának inverze."""
+    R = [[A[j][i] for j in range(3)] for i in range(3)]
+    t = [-sum(R[i][k] * A[k][3] for k in range(3)) for i in range(3)]
+    return [R[0] + [t[0]], R[1] + [t[1]], R[2] + [t[2]], [0.0, 0.0, 0.0, 1.0]]
+
+
+def m_pont(A, p):
+    return [A[i][0] * p[0] + A[i][1] * p[1] + A[i][2] * p[2] + A[i][3] for i in range(3)]
+
+
+def tav(a, b):
+    return math.sqrt(sum((a[i] - b[i]) ** 2 for i in range(3)))
+
+
+def legkozelebbi_pont(p, a, b):
+    """Az a-b szakasz p-hez legközelebbi pontja."""
+    ab = [b[i] - a[i] for i in range(3)]
+    l2 = sum(v * v for v in ab)
+    u = 0.0 if l2 < 1e-18 else max(0.0, min(1.0, sum((p[i] - a[i]) * ab[i] for i in range(3)) / l2))
+    return [a[i] + u * ab[i] for i in range(3)]
+
+
+def tcp_fuggveny(robot):
+    """q -> a TCP helyzete a robot bázisához képest [mm] (direkt kinematika + aktív szerszám)."""
+    try:
+        sz = m_lista(robot.PoseTool())
+    except Exception:
+        sz = [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]]
+
+    def tcp(q):
+        return m_pont(m_lista(robot.SolveFK([float(v) for v in q])), [sz[0][3], sz[1][3], sz[2][3]])
+    return tcp
+
+
+class Pozicio(object):
+    """A minták TCP-pozíciója a robot bázisában. Ha a RoboDK pályaadataiban lévő XYZ is ebben a
+    rendszerben van, azt használja, különben direkt kinematikával számol (gyorsítótárral)."""
+
+    def __init__(self, p, tcp):
+        self.adatok, self.tcp, self.tar = p["adatok"], tcp, {}
+        elso, utolso = self.adatok[0], self.adatok[-1]
+        self.xyz_jo = tav(tcp(elso["j"]), elso["xyz"]) < 0.01 and tav(tcp(utolso["j"]), utolso["xyz"]) < 0.01
+
+    def __call__(self, i):
+        if self.xyz_jo:
+            return self.adatok[i]["xyz"]
+        if i not in self.tar:
+            self.tar[i] = self.tcp(self.adatok[i]["j"])
+        return self.tar[i]
+
+
+def celpontnev(utasitas_nev):
+    m = re.search(r"\(([^()]*)\)\s*$", utasitas_nev)
+    return m.group(1).strip() if m else utasitas_nev
+
+
+def celpont_elemzes(p, utasitasok, tcp, poz):
+    """Végigköveti a pályán a mozgásutasítások célpontjait: érkezés, indulás, eltérés, szakaszadatok."""
+    adatok, n = p["adatok"], p["n"]
+    N = len(adatok)
+    mozgasok = [u for u in utasitasok if u.get("mozgas") and len(u.get("csuklok_fok") or []) >= n]
+    if not mozgasok:
+        return None
+
+    def jt(i, q):
+        return max(abs(adatok[i]["j"][k] - q[k]) for k in range(n))
+
+    celok = [tcp(u["csuklok_fok"][:n]) for u in mozgasok]  # a célpontok TCP-helyzete a robot bázisában
+
+    def tv(i, k):
+        return tav(poz(i), celok[k])
+
+    # 1. menet: megálló (pontos) célpontok, sorrendben
+    tal = [None] * len(mozgasok)
+    kezd = 0
+    for k in range(len(mozgasok)):
+        if k > 0 and tal[k - 1] and tav(celok[k], celok[k - 1]) <= CELPONT_TUR_MM:
+            tal[k] = (tal[k - 1][1], tal[k - 1][1], tal[k - 1][2])  # ugyanaz a célpont még egyszer: nulla hosszú mozgás
+            continue
+        i = kezd
+        while i < N and tv(i, k) > CELPONT_TUR_MM:
+            i += 1
+        if i < N:
+            j = i
+            while j + 1 < N and tv(j + 1, k) <= CELPONT_TUR_MM:
+                j += 1
+            tal[k] = (min(range(i, j + 1), key=lambda s: tv(s, k)), j, True)
+            kezd = min(j + 1, N - 1)  # a következő célpontot csak az indulás után keressük
+    # 2. menet: lekerekített célpontok (ahol a robot nem áll meg): legközelebbi minta a szomszédok között
+    for k in range(len(mozgasok)):
+        if tal[k] is None:
+            lo = next((tal[m][1] for m in range(k - 1, -1, -1) if tal[m]), 0)
+            hi = max(lo, next((tal[m][0] for m in range(k + 1, len(mozgasok)) if tal[m]), N - 1))
+            i = min(range(lo, hi + 1), key=lambda s: tv(s, k))
+            tal[k] = (i, i, False)
+
+    latogatasok, elert = [], []
+    elozo_dep, elozo_P = 0, None
+    for k, u in enumerate(mozgasok):
+        i_arr, i_dep, megallt = tal[k]
+        q = u["csuklok_fok"][:n]
+        P = celok[k]
+        # elért pont: a mintapontok közti szakaszok P-hez legközelebbi pontja (a mintavételnél pontosabb)
+        lo, hi = max(0, i_arr - 6), min(N - 1, i_arr + 6)
+        pontok = [poz(s) for s in range(lo, hi + 1)]
+        jeloltek = [(legkozelebbi_pont(P, pontok[s], pontok[s + 1]), tav(pontok[s], pontok[s + 1]))
+                    for s in range(len(pontok) - 1)] or [(pontok[0], 0.0)]
+        Q, felbontas = min(jeloltek, key=lambda x: tav(P, x[0]))  # felbontás: a két szomszédos minta távolsága
+        s0 = elozo_dep if k > 0 else 0
+        d = {
+            "sorszam": k + 1, "celpont": celpontnev(u["nev"]), "utasitas": u["nev"], "mozgas": u["mozgas"],
+            "megallt": megallt, "erkezes_s": adatok[i_arr]["t"], "indulas_s": adatok[i_dep]["t"],
+            "szakaszido_s": adatok[i_arr]["t"] - adatok[s0]["t"],
+            "szakasz_hossz_mm": sum(tav(adatok[s]["xyz"], adatok[s - 1]["xyz"]) for s in range(s0 + 1, i_arr + 1)),
+            "szakasz_max_sebesseg_mm_s": max(adatok[s]["tcp_v"] for s in range(s0, i_arr + 1)),
+            "elteres_mm": tav(P, Q),
+            "felbontas_mm": felbontas,
+            "csuklo_elteres_fok": jt(i_arr, q),
+            "csuklo_valtozas_fok": [adatok[i_arr]["j"][m] - adatok[s0]["j"][m] for m in range(n)],
+        }
+        if "MoveL" in u["mozgas"] and elozo_P is not None:
+            # csak a két célpont közötti belső minták: a megállás körüli minták már a szomszédos szakaszon lehetnek
+            belso = range(s0 + 1, i_arr)
+            d["palya_elteres_mm"] = max([tav(poz(s), legkozelebbi_pont(poz(s), elozo_P, P)) for s in belso] or [0.0])
+        latogatasok.append(d)
+        if megallt:  # ismételhetőség: ugyanannak a megálló célpontnak az ismételt elérései
+            elert.append((d["celpont"], Q))
+        elozo_dep, elozo_P = i_dep, P
+
+    def kulcs(s):
+        return ascii_nev(s).lower()
+
+    csoportok = {}
+    for nev, Q in elert:
+        csoportok.setdefault(nev, []).append(Q)
+    ismetelt = [pts for pts in csoportok.values() if len(pts) > 1]
+    megallo = [d["elteres_mm"] for d in latogatasok if d["megallt"]]
+    lekerekitett = [d["elteres_mm"] for d in latogatasok if not d["megallt"]]
+    palya = [d["palya_elteres_mm"] for d in latogatasok if "palya_elteres_mm" in d]
+    eredmeny = {
+        "latogatasok": latogatasok,
+        "max_elteres_megallo_mm": max(megallo) if megallo else None,
+        "max_elteres_lekerekitett_mm": max(lekerekitett) if lekerekitett else None,
+        "max_palya_elteres_mm": max(palya) if palya else None,
+        "ismetlesi_elteres_mm": max(max(tav(a, b) for a in pts for b in pts) for pts in ismetelt) if ismetelt else None,
+        "kezdo_veg_elteres_mm": tav(adatok[0]["xyz"], adatok[-1]["xyz"]),
+        "pozicio_forras": "RoboDK pályaadat (XYZ)" if poz.xyz_jo else "direkt kinematika",
+    }
+    fel = next((d for d in latogatasok if "felvet" in kulcs(d["celpont"]) and "felett" not in kulcs(d["celpont"])), None)
+    if fel:
+        le = next((d for d in latogatasok if d["sorszam"] > fel["sorszam"]
+                   and "lerak" in kulcs(d["celpont"]) and "felett" not in kulcs(d["celpont"])), None)
+        if le:
+            eredmeny["felveteltol_lerakasig_s"] = le["erkezes_s"] - fel["indulas_s"]
+    return eredmeny
+
+
+def zonak_gyujtese(RDK, figy):
+    """Tiltott zónák: olyan objektumok, amelyek nevében szerepel valamelyik ZONA_KULCSSZAVAK elem.
+    A doboz méretét a cella_epito.py / doboz_letrehozasa.py tárolja el az objektumban; ha nincs
+    ilyen adat, a névből olvassa ki (pl. "Tiltott_zona 60x60x50": a doboz alaplapjának közepe az origó)."""
+    zonak = []
+    for obj in RDK.ItemList(ITEM_TYPE_OBJECT):
+        nev = obj.Name()
+        if not any(k in ascii_nev(nev).lower() for k in ZONA_KULCSSZAVAK):
+            continue
+        doboz = None
+        try:
+            nyers = obj.getParam("ZonaDoboz")
+            if nyers:
+                doboz = json.loads(nyers.decode("utf-8") if isinstance(nyers, bytes) else nyers)
+        except Exception:
+            doboz = None
+        if doboz is None:
+            m = re.search(r"(\d+(?:[.,]\d+)?)\s*x\s*(\d+(?:[.,]\d+)?)\s*x\s*(\d+(?:[.,]\d+)?)", nev)
+            if m:
+                a, b, c = [float(x.replace(",", ".")) for x in m.groups()]
+                doboz = {"min": [-a / 2, -b / 2, 0.0], "max": [a / 2, b / 2, c]}
+        if doboz is None:
+            figy.append("%s: a tiltott zóna mérete nem ismert (nevezd el pl. így: 'Tiltott_zona 60x60x50') - "
+                        "a belépést csak az ütközésvizsgálat jelzi." % nev)
+            continue
+        zonak.append({"nev": nev, "abs": m_lista(obj.PoseAbs()), "min": doboz["min"], "max": doboz["max"]})
+    return zonak
+
+
+def doboz_tav(p, mn, mx):
+    """Előjeles távolság egy tengelyekkel párhuzamos doboztól: pozitív = kívül, negatív = belül [mm]."""
+    kulso = math.sqrt(sum(max(mn[i] - p[i], 0.0, p[i] - mx[i]) ** 2 for i in range(3)))
+    if kulso > 0:
+        return kulso
+    return -min(min(p[i] - mn[i], mx[i] - p[i]) for i in range(3))
+
+
+def zona_elemzes(robot, zonak, p, poz):
+    """A TCP távolsága a legközelebbi tiltott zónától, mintánként."""
+    B = m_lista(robot.PoseAbs())
+    atvaltok = [(z, m_szor(m_inv(z["abs"]), B)) for z in zonak]  # robotbázis -> zóna saját rendszere
+    tavok, legkozelebbi = [], []
+    for i in range(len(p["adatok"])):
+        P = poz(i)
+        ertekek = [(doboz_tav(m_pont(M, P), z["min"], z["max"]), z["nev"]) for z, M in atvaltok]
+        d, nev = min(ertekek)
+        tavok.append(d)
+        legkozelebbi.append(nev)
+    i = min(range(len(tavok)), key=lambda k: tavok[k])
+    return tavok, {"zona": legkozelebbi[i], "min_tavolsag_mm": tavok[i], "ido_s": p["adatok"][i]["t"],
+                   "belepett": tavok[i] <= 0.0}
 
 
 def palyakep(RDK, robot, p, fajl, figy):
@@ -479,10 +716,22 @@ def palyakep(RDK, robot, p, fajl, figy):
     return ok
 
 
-def program_meres(RDK, prog, kimenet, foglalt, figy):
-    nev = prog.Name()
+def program_meres(RDK, prog, kimenet, foglalt, figy, zonak):
     robot = prog.getLink(ITEM_TYPE_ROBOT)
     robot = robot if robot.Valid() else None
+    eredeti = csuklok(robot) if robot is not None else None
+    try:
+        return _program_meres(RDK, prog, robot, kimenet, foglalt, figy, zonak)
+    finally:
+        if eredeti:
+            try:
+                robot.setJoints(eredeti)  # a robot visszaáll a mérés előtti helyzetébe
+            except Exception:
+                pass
+
+
+def _program_meres(RDK, prog, robot, kimenet, foglalt, figy, zonak):
+    nev = prog.Name()
     d = {"nev": nev, "robot": nev_or_ures(robot), "utasitasok": utasitasok_gyujtese(prog, figy)}
     dof, also, felso = 0, None, None
     if robot is not None:
@@ -492,6 +741,15 @@ def program_meres(RDK, prog, kimenet, foglalt, figy):
             also, felso = mat_lista(lim[0]), mat_lista(lim[1])
         except Exception:
             pass
+
+    if robot is not None and KEZDES_ELSO_CELPONTBOL:
+        elso = next((u["csuklok_fok"] for u in d["utasitasok"] if u.get("mozgas") and u.get("csuklok_fok")), None)
+        if elso and len(elso) >= dof:
+            try:
+                robot.setJoints(elso[:dof])
+                d["kezdohelyzet"] = "a program első célpontja"
+            except Exception as e:
+                figy.append("%s: a robot nem állítható a kezdőhelyzetbe (%s)" % (nev, e))
 
     print("  - %s: becsült ciklusidő és érvényesség..." % nev)
     try:
@@ -521,12 +779,30 @@ def program_meres(RDK, prog, kimenet, foglalt, figy):
     if p is None:
         return d
 
+    stat = palya_statisztika(p, also, felso)
+    celpontok, zona_tavok = None, None
+    if robot is not None:
+        print("  - %s: célpontok elérése, pontosság, tiltott zóna..." % nev)
+        try:
+            tcp = tcp_fuggveny(robot)
+            poz = Pozicio(p, tcp)
+            elemzes = celpont_elemzes(p, d["utasitasok"], tcp, poz)
+            if elemzes:
+                celpontok = elemzes.pop("latogatasok")
+                stat.update(elemzes)
+            if zonak:
+                zona_tavok, stat["zona"] = zona_elemzes(robot, zonak, p, poz)
+        except Exception as e:
+            figy.append("%s: a célpont- / zónaelemzés nem sikerült (%s)" % (nev, e))
+
     fajlnev = egyedi_nev("palya_" + ascii_nev(nev, "program"), foglalt)
-    palya_csv(os.path.join(kimenet, fajlnev + ".csv"), p)
+    palya_csv(os.path.join(kimenet, fajlnev + ".csv"), p, zona_tavok)
     d["palya"] = {
         "csv": fajlnev + ".csv", "idolepes_s": dt, "uzenet": str(uzenet), "allapot": allapot,
-        "statisztika": palya_statisztika(p, also, felso),
+        "statisztika": stat,
     }
+    if celpontok:
+        d["palya"]["celpontok"] = celpontok
     kep = os.path.join("kepek", fajlnev + ".png")
     d["palya"]["kep"] = kep.replace("\\", "/")  # kézzel ide mentett kép is bekerül a jegyzőkönyvbe
     if not palyakep(RDK, robot, p, os.path.join(kimenet, kep), figy) and KEPERNYOKEPEK:
@@ -612,11 +888,21 @@ def main():
         figy.append("Az állomásról nem készült képernyőkép - mentsd kézzel (Windows: Win+Shift+S) ide: "
                     + os.path.join(kimenet, "kepek", "allomas.png"))
 
+    zonak = zonak_gyujtese(RDK, figy)
+    adat["tiltott_zonak"] = [{"nev": z["nev"], "min": z["min"], "max": z["max"]} for z in zonak]
+
     print("Programok mérése...")
     foglalt = set()
     adat["programok"] = []
+    kihagyott = []
     for prog in RDK.ItemList(ITEM_TYPE_PROGRAM):
-        adat["programok"].append(program_meres(RDK, prog, kimenet, foglalt, figy))
+        if KIHAGYOTT_ELOTAG and prog.Name().lower().startswith(KIHAGYOTT_ELOTAG.lower()):
+            kihagyott.append(prog.Name())
+            continue
+        adat["programok"].append(program_meres(RDK, prog, kimenet, foglalt, figy, zonak))
+    if kihagyott:
+        adat["kihagyott_programok"] = kihagyott
+        print("Kihagyott programok (%s előtag): %s" % (KIHAGYOTT_ELOTAG, ", ".join(kihagyott)))
 
     # Excel-barát összesítő táblák
     csv_iras(
@@ -634,14 +920,32 @@ def main():
             p["nev"], p["robot"], len(p["utasitasok"]), szam_csv(f.get("ciklusido_s"), 3),
             szam_csv(f.get("palyahossz_mm"), 1), szam_csv(100.0 * f["ervenyesseg_arany"], 1) if f else "",
             {True: "nincs", False: "VAN"}.get(u.get("utkozesmentes"), "nem vizsgált"),
-            szam_csv(s.get("tcp_max_sebesseg_mm_s"), 1), f.get("uzenet", ""),
+            szam_csv(s.get("tcp_max_sebesseg_mm_s"), 1), szam_csv(s.get("felveteltol_lerakasig_s"), 3),
+            szam_csv(s.get("max_elteres_megallo_mm"), 4), szam_csv(s.get("max_palya_elteres_mm"), 3),
+            szam_csv(s.get("kezdo_veg_elteres_mm"), 4), szam_csv((s.get("zona") or {}).get("min_tavolsag_mm"), 2),
+            f.get("uzenet", ""),
         ])
     csv_iras(
         os.path.join(kimenet, "programok.csv"),
         ["program", "robot", "utasitasok", "ciklusido_s", "palyahossz_mm", "ervenyesseg_szazalek",
-         "utkozes", "tcp_max_sebesseg_mm_s", "robodk_uzenet"],
+         "utkozes", "tcp_max_sebesseg_mm_s", "felveteltol_lerakasig_s", "max_celpont_elteres_mm",
+         "max_palya_elteres_mm", "kezdo_veg_elteres_mm", "zona_min_tavolsag_mm", "robodk_uzenet"],
         sorok,
     )
+    for p in adat["programok"]:  # célpontonkénti részletek programonként
+        cp = (p.get("palya") or {}).get("celpontok")
+        if cp:
+            csv_iras(
+                os.path.join(kimenet, p["palya"]["csv"].replace("palya_", "celpontok_", 1)),
+                ["sorszam", "celpont", "mozgas", "megallt", "erkezes_s", "indulas_s", "szakaszido_s",
+                 "szakasz_hossz_mm", "elteres_mm", "felbontas_mm", "palya_elteres_mm"]
+                + ["dJ%d_fok" % (k + 1) for k in range(len(cp[0]["csuklo_valtozas_fok"]))],
+                [[c["sorszam"], c["celpont"], c["mozgas"], "igen" if c["megallt"] else "nem",
+                  szam_csv(c["erkezes_s"], 3), szam_csv(c["indulas_s"], 3), szam_csv(c["szakaszido_s"], 3),
+                  szam_csv(c["szakasz_hossz_mm"], 2), szam_csv(c["elteres_mm"], 4), szam_csv(c["felbontas_mm"], 3),
+                  szam_csv(c.get("palya_elteres_mm"), 3)] + [szam_csv(v, 3) for v in c["csuklo_valtozas_fok"]]
+                 for c in cp],
+            )
 
     adat["figyelmeztetesek"] = figy
     with open(os.path.join(kimenet, "meresek.json"), "w", encoding="utf-8") as f:

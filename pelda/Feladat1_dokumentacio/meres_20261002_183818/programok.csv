@@ -1,0 +1,8 @@
+﻿program;robot;utasitasok;ciklusido_s;palyahossz_mm;ervenyesseg_szazalek;utkozes;tcp_max_sebesseg_mm_s;felveteltol_lerakasig_s;max_celpont_elteres_mm;max_palya_elteres_mm;kezdo_veg_elteres_mm;zona_min_tavolsag_mm;robodk_uzenet
+PP_MoveJ_lassu;UR5e;17;11,242;1364,5;100,0;nincs;383,8;5,048;0,0002;0,000;0,0000;;Program OK (MINTA - szimulált adat)
+PP_MoveJ_kozepes;UR5e;17;6,048;1364,5;100,0;nincs;792,7;2,490;0,0001;0,000;0,0000;;Program OK (MINTA - szimulált adat)
+PP_MoveJ_gyors;UR5e;17;4,144;1364,5;100,0;nincs;1178,7;1,616;0,0004;0,000;0,0000;;Program OK (MINTA - szimulált adat)
+PP_MoveL_lassu;UR5e;17;16,808;1340,8;100,0;nincs;100,0;7,177;0,0004;0,000;0,0000;;Program OK (MINTA - szimulált adat)
+PP_MoveL_kozepes;UR5e;17;7,690;1340,8;100,0;nincs;300,0;3,109;0,0002;0,000;0,0000;;Program OK (MINTA - szimulált adat)
+PP_MoveL_gyors;UR5e;17;4,760;1340,8;100,0;nincs;800,0;1,786;0,0002;0,000;0,0000;;Program OK (MINTA - szimulált adat)
+PP_ismetles_3x;UR5e;62;28,789;5439,6;100,0;nincs;702,5;2,505;0,0083;0,000;0,0000;;Program OK (MINTA - szimulált adat)
