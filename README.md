@@ -6,24 +6,31 @@ Három RoboDK-s egyetemi mérési feladat megoldása, mérése és dokumentálá
 
 | Feladat | Útmutató | Word-sablon a jegyzőkönyvhöz |
 |---|---|---|
-| **1. Pick & Place** (Universal Robots UR5e) | [`feladat1/UTMUTATO.md`](feladat1/UTMUTATO.md), nyomtatható: [`UTMUTATO.pdf`](feladat1/UTMUTATO.pdf) | [`feladat1/jegyzokonyv_sablon.docx`](feladat1/jegyzokonyv_sablon.docx) |
+| **1. Pick & Place** (Universal Robots UR5e) | [`feladat1/UTMUTATO.md`](feladat1/UTMUTATO.md), nyomtatható: [`UTMUTATO.pdf`](feladat1/UTMUTATO.pdf) (részletes, kezdőknek) | [`feladat1/jegyzokonyv_sablon.docx`](feladat1/jegyzokonyv_sablon.docx) |
 | 2. Pályakövetés (ABB IRB 120) | később készül | – |
 | 3. Precíziós mozgás (KUKA LBR iiwa 7) | később készül | – |
 
 Az útmutatóhoz **nem kell semmilyen szkript vagy programozás**:
 
-- a cellát és a programokat a RoboDK menüiből építed fel, kattintásról kattintásra;
+- a cellát és a programokat a RoboDK menüiből építed fel, kattintásról kattintásra. Minden lépésnél le van írva,
+  mit kell utána látnod (✅), és mit tegyél, ha nem azt látod (⚠️);
+- az asztallap, a munkadarab, a lerakóhely és a megfogó kész 3D-modellként (STL) a
+  [`feladat1/modellek/`](feladat1/modellek) mappában van: ezeket a RoboDK **File → Open** parancsával töltöd be;
+- az útmutató ábrái (a RoboDK ablaka, a cella felül- és oldalnézetben, a megfogó és a TCP, a sebességprofil) a
+  [`feladat1/abrak/`](feladat1/abrak) mappában vannak;
 - a mérési eredményeket a RoboDK kijelzőiről olvasod le: az állapotsorban a program idejét és a pálya hosszát,
   a robotpanelen a TCP helyzetét és a csuklószögeket;
 - a részidőket (pl. a felvételtől a lerakásig) kis mérőprogramokkal méred;
-- a sebességeket és az időket egyszerű képlettel (trapéz sebességprofil) ki is számolod, ellenőrzésként;
+- a sebességeket és az időket egyszerű képlettel (trapéz sebességprofil) ki is számolod, ellenőrzésként. Az
+  útmutatóban minden mérendő értéknek megvan a számított (várható) értéke is, így látod, ha valami nem stimmel;
 - a jegyzőkönyvet a Word-sablonba írod, amelyben minden fejezet és mérési táblázat előre el van készítve.
 
 **Így kezdj hozzá:**
 
 1. Töltsd le a repót: a GitHubon **Code → Download ZIP**, majd csomagold ki.
-2. Nyisd meg a `feladat1/UTMUTATO.pdf`-et, és haladj fejezetről fejezetre.
-3. A sablont (`feladat1/jegyzokonyv_sablon.docx`) mentsd el a saját nevedre, és menet közben ebbe dolgozz.
+2. Nyisd meg a `feladat1/UTMUTATO.pdf`-et, és haladj lépésről lépésre.
+3. Másold egy munkamappába a `feladat1/modellek/` négy `.stl` fájlját és a Word-sablont
+   (`feladat1/jegyzokonyv_sablon.docx`). A sablont mentsd el a saját nevedre, és menet közben ebbe dolgozz.
 
 ## Opcionális: automatizált út szkriptekkel
 

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="350" viewBox="0 0 900 350" font-family="Carlito, Calibri, 'Segoe UI', Arial, sans-serif" font-size="14" fill="#1f1e1c">
+<defs><marker id="nyil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker>
+<marker id="nyilk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="20.0" y="28.0" font-size="15" fill="#1f1e1c" text-anchor="start" font-weight="bold">a) hosszú szakasz</text>
+<line x1="50.0" y1="250.0" x2="400.0" y2="250.0" stroke="#52514e" stroke-width="1.4" marker-end="url(#nyil)"/>
+<line x1="50.0" y1="250.0" x2="50.0" y2="55.0" stroke="#52514e" stroke-width="1.4" marker-end="url(#nyil)"/>
+<text x="402.0" y="268.0" font-size="14" fill="#52514e" text-anchor="end" font-style="italic">t</text>
+<text x="42.0" y="52.0" font-size="14" fill="#52514e" text-anchor="end" font-style="italic">v</text>
+<polygon points="50.0,250.0 130.0,120.0 300.0,120.0 380.0,250.0" fill="#1c5aa6" fill-opacity="0.12" stroke="none"/>
+<polyline points="50.0,250.0 130.0,120.0 300.0,120.0 380.0,250.0" fill="none" stroke="#1c5aa6" stroke-width="2.5"/>
+<text x="44.0" y="125.0" font-size="14" fill="#1c5aa6" text-anchor="end" font-weight="bold">v</text>
+<text x="215.0" y="190.0" font-size="14" fill="#1c5aa6" text-anchor="middle">terület = L</text>
+<text x="108.0" y="165.0" font-size="12.5" fill="#52514e" text-anchor="start">gyorsít (a)</text>
+<text x="215.0" y="110.0" font-size="12.5" fill="#52514e" text-anchor="middle">állandó v</text>
+<text x="322.0" y="165.0" font-size="12.5" fill="#52514e" text-anchor="end">lassít (a)</text>
+<line x1="130.0" y1="120.0" x2="130.0" y2="250.0" stroke="#b9b6ae" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="300.0" y1="120.0" x2="300.0" y2="250.0" stroke="#b9b6ae" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="380.0" y1="120.0" x2="380.0" y2="250.0" stroke="#b9b6ae" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="130.0" y="268.0" font-size="12.5" fill="#52514e" text-anchor="middle">v/a</text>
+<text x="215.0" y="290.0" font-size="13.5" fill="#1f1e1c" text-anchor="middle" font-weight="bold">teljes idő: t = L/v + v/a</text>
+<text x="20.0" y="325.0" font-size="13" fill="#52514e" text-anchor="start">Hosszú szakasz: L ≥ v²/a. A robot eléri a beállított v sebességet.</text>
+<text x="470.0" y="28.0" font-size="15" fill="#1f1e1c" text-anchor="start" font-weight="bold">b) rövid szakasz</text>
+<line x1="500.0" y1="250.0" x2="850.0" y2="250.0" stroke="#52514e" stroke-width="1.4" marker-end="url(#nyil)"/>
+<line x1="500.0" y1="250.0" x2="500.0" y2="55.0" stroke="#52514e" stroke-width="1.4" marker-end="url(#nyil)"/>
+<text x="852.0" y="268.0" font-size="14" fill="#52514e" text-anchor="end" font-style="italic">t</text>
+<text x="492.0" y="52.0" font-size="14" fill="#52514e" text-anchor="end" font-style="italic">v</text>
+<line x1="500.0" y1="120.0" x2="830.0" y2="120.0" stroke="#52514e" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="494.0" y="125.0" font-size="14" fill="#52514e" text-anchor="end">v</text>
+<text x="830.0" y="112.0" font-size="12.5" fill="#52514e" text-anchor="end">beállított v (nem éri el)</text>
+<polygon points="500.0,250.0 650.0,155.0 800.0,250.0" fill="#1c5aa6" fill-opacity="0.12" stroke="none"/>
+<polyline points="500.0,250.0 650.0,155.0 800.0,250.0" fill="none" stroke="#1c5aa6" stroke-width="2.5"/>
+<line x1="650.0" y1="155.0" x2="650.0" y2="250.0" stroke="#b9b6ae" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="500.0" y1="155.0" x2="650.0" y2="155.0" stroke="#b9b6ae" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="494.0" y="160.0" font-size="13" fill="#1c5aa6" text-anchor="end" font-weight="bold">v_max</text>
+<text x="650.0" y="224.5" font-size="14" fill="#1c5aa6" text-anchor="middle">terület = L</text>
+<text x="650.0" y="290.0" font-size="13.5" fill="#1f1e1c" text-anchor="middle" font-weight="bold">teljes idő: t = 2·√(L/a)</text>
+<text x="650.0" y="145.0" font-size="12.5" fill="#1f1e1c" text-anchor="middle" font-weight="bold">v_max = √(a·L)</text>
+<text x="470.0" y="325.0" font-size="13" fill="#52514e" text-anchor="start">Rövid szakasz: L &lt; v²/a. A robot csak v_max-ig gyorsul, utána rögtön lassít.</text>
+</svg>

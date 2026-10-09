@@ -3,3 +3,4 @@ __pycache__/
 teszt/kimenet/
 ~$*.docx
 abrak/
+!feladat1/abrak/
