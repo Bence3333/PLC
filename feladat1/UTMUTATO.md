@@ -716,9 +716,27 @@ Ments: **Ctrl+S**.
 
 1. Válaszd a **Tools → Check Collisions** pontot (az eszköztáron is van gombja). Bekapcsolt állapotban a gomb
    kiemelten látszik.
-2. Válaszd a **Tools → Collision Map** pontot (**Shift+X**). Egy táblázat jelenik meg: azt mutatja, mely
-   elempárok ütközését vizsgálja a RoboDK. Hagyd az alapbeállításon, csak nézd meg, és készíts róla képet. Utána
-   zárd be.
+2. Válaszd a **Tools → Collision Map** pontot (**Shift+X**). Megnyílik a *Collision Map Settings* ablak. Ebben
+   egy táblázat azt mutatja, mely elempárok ütközését vizsgálja a RoboDK. A sorokban és az oszlopokban a cella
+   elemei vannak: `Asztallap`, `Munkadarab`, `Lerakohely`, `Megfogo`, és a robot tagjai: *UR5e (J0)* … *UR5e (J6)*.
+
+   | Jel a cellában | Jelentése |
+   |---|---|
+   | zöld pipa | ezt a párt vizsgálja |
+   | piros X | ezt a párt nem vizsgálja. Alapból csak a robot szomszédos tagjai között van ilyen (például J0–J1, J1–J2, J2–J3, J5–J6), mert azok a csuklóknál mindig összeérnek |
+   | négyirányú nyíl (az átlóban) | az elem saját cellája. Dupla kattintással az elem összes párját egyszerre kapcsolod ki vagy be: **ehhez ne nyúlj** |
+
+   - A **Clearance (mm)** mező maradjon `0.00`. Ha nagyobbra állítod (például 1 mm-re), a kocka és az asztallap
+     közötti 0,5 mm-es hézag is ütközésnek számítana.
+   - Az **Include hidden objects** maradjon kikapcsolva.
+   - Az ablak bal felső sarkában lévő **Check collisions** gomb ugyanaz, mint a **Tools → Check Collisions**:
+     bekapcsolt állapotban kiemelten látszik.
+
+   Hagyd mindent az alapbeállításon, készíts az ablakról képet, majd zárd be.
+
+   > ✅ **Ellenőrzés:** Az `Asztallap`, a `Munkadarab`, a `Lerakohely` és a `Megfogo` sorában minden cellában zöld
+   > pipa van. Piros X csak a robot tagjai (*UR5e (J…)*) között van.
+
 3. Jobb klikk a `PP_MoveJ_kozepes` programra → **Check Path and Collisions** (**Shift+F5**). Várd meg, amíg
    végigszámol.
 
