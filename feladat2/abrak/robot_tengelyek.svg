@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" font-family="Carlito, Calibri, 'Segoe UI', Arial, sans-serif" font-size="14" fill="#1f1e1c">
+<defs><marker id="nyil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker>
+<marker id="nyilk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="294.0" y="561.2" width="328.0" height="16.4" fill="#e4e1da" stroke="#9c978c" stroke-width="1.5"/>
+<rect x="336.2" y="560.4" width="243.5" height="0.7" fill="#ffffff" stroke="#8f8b82" stroke-width="1"/>
+<text x="618.0" y="595.6" font-size="12.5" fill="#52514e" text-anchor="end">asztal és rajzlap (Z = 0)</text>
+<rect x="56.2" y="461.6" width="147.6" height="98.4" fill="#e9d3c4" stroke="#8a3210" stroke-width="1.5"/>
+<line x1="130.0" y1="461.6" x2="130.0" y2="322.2" stroke="#f0a37a" stroke-width="40" stroke-linecap="round"/><line x1="130.0" y1="461.6" x2="130.0" y2="322.2" stroke="#8a3210" stroke-width="1.2" stroke-dasharray="1 0"/>
+<line x1="130.0" y1="322.2" x2="274.8" y2="154.8" stroke="#f0a37a" stroke-width="30" stroke-linecap="round"/><line x1="130.0" y1="322.2" x2="274.8" y2="154.8" stroke="#8a3210" stroke-width="1.2" stroke-dasharray="1 0"/>
+<line x1="274.8" y1="154.8" x2="330.1" y2="139.4" stroke="#f0a37a" stroke-width="26" stroke-linecap="round"/><line x1="274.8" y1="154.8" x2="330.1" y2="139.4" stroke="#8a3210" stroke-width="1.2" stroke-dasharray="1 0"/>
+<line x1="330.1" y1="139.4" x2="396.5" y2="378.0" stroke="#f0a37a" stroke-width="24" stroke-linecap="round"/><line x1="330.1" y1="139.4" x2="396.5" y2="378.0" stroke="#8a3210" stroke-width="1.2" stroke-dasharray="1 0"/>
+<line x1="396.5" y1="378.0" x2="396.5" y2="437.0" stroke="#f0a37a" stroke-width="18" stroke-linecap="round"/><line x1="396.5" y1="378.0" x2="396.5" y2="437.0" stroke="#8a3210" stroke-width="1.2" stroke-dasharray="1 0"/>
+<line x1="396.5" y1="437.0" x2="396.5" y2="514.9" stroke="#e8c98a" stroke-width="22"/>
+<line x1="396.5" y1="514.9" x2="396.5" y2="554.0" stroke="#8a5d12" stroke-width="8"/>
+<polygon points="392.5,553.0 400.5,553.0 396.5,560.0" fill="#8a5d12"/>
+<text x="414.5" y="502.5" font-size="14" fill="#8a5d12" text-anchor="start" font-weight="bold">Toll</text>
+<circle cx="396.5" cy="560.0" r="4.5" fill="#ffffff" stroke="#1f1e1c" stroke-width="2"/>
+<text x="406.5" y="552.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">TCP (a toll hegye)</text>
+<line x1="130.0" y1="584.6" x2="130.0" y2="-14.0" stroke="#eb6834" stroke-width="1.6" stroke-dasharray="8 5"/>
+<text x="138.0" y="-5.8" font-size="12.5" fill="#b04a12" text-anchor="start">J1 tengelye (függőleges)</text>
+<circle cx="130.0" cy="322.2" r="11" fill="#ffffff" stroke="#8a3210" stroke-width="2.4"/><circle cx="130.0" cy="322.2" r="3" fill="#8a3210"/><circle cx="108.0" cy="306.2" r="10" fill="#eb6834"/><text x="108.0" y="310.7" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">2</text>
+<circle cx="274.8" cy="154.8" r="11" fill="#ffffff" stroke="#8a3210" stroke-width="2.4"/><circle cx="274.8" cy="154.8" r="3" fill="#8a3210"/><circle cx="254.8" cy="136.8" r="10" fill="#eb6834"/><text x="254.8" y="141.3" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">3</text>
+<circle cx="396.5" cy="378.0" r="11" fill="#ffffff" stroke="#8a3210" stroke-width="2.4"/><circle cx="396.5" cy="378.0" r="3" fill="#8a3210"/><circle cx="416.5" cy="362.0" r="10" fill="#eb6834"/><text x="416.5" y="366.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">5</text>
+<line x1="324.8" y1="120.1" x2="415.3" y2="445.4" stroke="#eb6834" stroke-width="1.6" stroke-dasharray="8 5"/>
+<circle cx="367.3" cy="232.7" r="10" fill="#eb6834"/><text x="367.3" y="237.2" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">4</text>
+<line x1="396.5" y1="417.0" x2="396.5" y2="590.0" stroke="#eb6834" stroke-width="1.6" stroke-dasharray="8 5"/>
+<circle cx="374.5" cy="477.0" r="10" fill="#eb6834"/><text x="374.5" y="481.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">6</text>
+<circle cx="108.0" cy="396.0" r="10" fill="#eb6834"/><text x="108.0" y="400.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">1</text>
+<text x="44.7" y="441.1" font-size="12.5" fill="#52514e" text-anchor="start">290</text>
+<line x1="39.8" y1="560.0" x2="39.8" y2="322.2" stroke="#b9b6ae" stroke-width="1"/><line x1="33.8" y1="560.0" x2="45.8" y2="560.0" stroke="#b9b6ae" stroke-width="1"/><line x1="33.8" y1="322.2" x2="45.8" y2="322.2" stroke="#b9b6ae" stroke-width="1"/><text x="39.8" y="435.1" font-size="12.5" fill="#b9b6ae" text-anchor="middle"></text>
+<text x="184.4" y="238.5" font-size="12.5" fill="#52514e" text-anchor="end">270</text>
+<text x="305.7" y="256.4" font-size="12.5" fill="#52514e" text-anchor="end">302 (+70)</text>
+<text x="416.5" y="411.5" font-size="12.5" fill="#52514e" text-anchor="start">72</text>
+<text x="376.5" y="528.5" font-size="12.5" fill="#52514e" text-anchor="end">150</text>
+<line x1="638.4" y1="396.0" x2="671.2" y2="396.0" stroke="#52514e" stroke-width="1.2"/>
+<text x="677.8" y="400.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">Home: Z = 200</text>
+<line x1="638.4" y1="519.0" x2="671.2" y2="519.0" stroke="#52514e" stroke-width="1.2"/>
+<text x="677.8" y="523.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">P1_felett: Z = 50</text>
+<line x1="638.4" y1="560.0" x2="671.2" y2="560.0" stroke="#52514e" stroke-width="1.2"/>
+<text x="677.8" y="564.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">P1…P4: Z = 0 (a papír)</text>
+<text x="470.0" y="40.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">1  J1 – az egész robot elfordul a függőleges tengely körül (balra-jobbra)</text>
+<text x="470.0" y="60.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">2  J2 – a felkar előre-hátra billen (váll)</text>
+<text x="470.0" y="80.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">3  J3 – az alkar fel-le billen (könyök)</text>
+<text x="470.0" y="100.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">4  J4 – az alkar a saját tengelye körül fordul</text>
+<text x="470.0" y="120.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">5  J5 – a csukló billen (a toll dőlése)</text>
+<text x="470.0" y="140.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">6  J6 – a karima (és a toll) a saját tengelye körül fordul</text>
+<text x="20.0" y="628.0" font-size="12.5" fill="#52514e" text-anchor="start">Az ABB IRB 120 oldalnézetben (méretarányos vázlat), a toll a papíron, a Palya keret X = -75 pontja fölött. Méretek mm-ben.</text>
+</svg>

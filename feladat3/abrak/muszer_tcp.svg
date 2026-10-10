@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="448" height="464" viewBox="0 0 560 580" font-family="Carlito, Calibri, 'Segoe UI', Arial, sans-serif" font-size="14" fill="#1f1e1c">
+<defs><marker id="nyil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker>
+<marker id="nyilk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="80.0" y="471.0" width="240.0" height="23.0" fill="#d7e6f2" stroke="#6f8fa8" stroke-width="1.5"/>
+<rect x="120.0" y="60.0" width="160.0" height="50.0" fill="#e5e8ec" stroke="#6d747c" stroke-width="1.5"/>
+<text x="200.0" y="91.0" font-size="12" fill="#3d444b" text-anchor="middle">robot (7. tengely)</text>
+<rect x="137.0" y="111.0" width="126.0" height="15.0" fill="#b8c1ca" stroke="#59636d" stroke-width="1.3"/>
+<rect x="160.0" y="126.0" width="80.0" height="144.0" fill="#cfd6dd" stroke="#59636d" stroke-width="1.3"/>
+<polygon points="160.0,270.0 240.0,270.0 206.0,294.0 194.0,294.0" fill="#cfd6dd" stroke="#59636d" stroke-width="1.3"/>
+<rect x="194.0" y="294.0" width="12.0" height="160.0" fill="#cfd6dd" stroke="#59636d" stroke-width="1.3"/>
+<polygon points="194.0,454.0 206.0,454.0 200.0,470.0" fill="#cfd6dd" stroke="#59636d" stroke-width="1.3"/>
+<text x="200.0" y="190.0" font-size="14" fill="#2f363d" text-anchor="middle" font-weight="bold">Muszer</text>
+<line x1="80.0" y1="110.0" x2="410.0" y2="110.0" stroke="#52514e" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="414.0" y="114.0" font-size="12.5" fill="#52514e" text-anchor="start">karima</text>
+<line x1="200.0" y1="470.0" x2="200.0" y2="510.0" stroke="#1f5fbf" stroke-width="2.4" marker-end="url(#nyil)"/>
+<text x="209.0" y="514.0" font-size="13" fill="#1f5fbf" text-anchor="start" font-weight="bold">Z</text>
+<line x1="200.0" y1="470.0" x2="240.0" y2="470.0" stroke="#c8321e" stroke-width="2.4" marker-end="url(#nyil)"/>
+<text x="246.0" y="475.0" font-size="13" fill="#c8321e" text-anchor="start" font-weight="bold">X</text>
+<circle cx="200.0" cy="470.0" r="4.5" fill="#ffffff" stroke="#1f1e1c" stroke-width="2"/>
+<line x1="250.0" y1="470.0" x2="410.0" y2="470.0" stroke="#52514e" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="414.0" y="474.0" font-size="12.5" fill="#52514e" text-anchor="start">TCP = a műszer hegye</text>
+<line x1="380.0" y1="110.0" x2="380.0" y2="470.0" stroke="#1f1e1c" stroke-width="1"/><line x1="386.0" y1="110.0" x2="374.0" y2="110.0" stroke="#1f1e1c" stroke-width="1"/><line x1="386.0" y1="470.0" x2="374.0" y2="470.0" stroke="#1f1e1c" stroke-width="1"/><text x="390.0" y="295.0" font-size="12.5" fill="#1f1e1c" text-anchor="start">180 mm</text>
+<text x="20.0" y="565.0" font-size="12.5" fill="#52514e" text-anchor="start">A műszer oldalnézetben (méretarányos). A TCP 180 mm-re van a karimától, a Z tengely lefelé mutat.</text>
+</svg>
