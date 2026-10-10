@@ -144,8 +144,8 @@ Minden lépésnél leírjuk:
 | ② | **Eszköztár** | A gyakori parancsok gombjai. Ha az egeret egy gomb fölé viszed, megjelenik a neve. |
 | ③ | **Állomásfa** | A cella elemei. Itt jelölöd ki, nevezed át és rendezed az elemeket. |
 | ④ | **3D nézet** | A cella térben. |
-| ⑤ | **Szimulációs csúszka** | Program futtatásakor jelenik meg. Ezzel előre-hátra tekerheted a mozgást. |
-| ⑥ | **Állapotsor** | Üzenetek. A program végén a jobb alsó sarokban itt jelenik meg a program ideje és a pálya hossza. |
+| ⑤ | **Szimulációs sáv** | Program futtatásakor jelenik meg. A csúszkával előre-hátra tekerheted a mozgást. Mellette áll a program neve és **ideje**, például *PP_MoveJ_lassu time: 11.6s*. A csúszka melletti szám (például 529) a szimuláció lépésszáma, **nem az út**. |
+| ⑥ | **Állapotsor** | Üzenetek és tippek. Egyes RoboDK-verziók a program végén itt a pálya hosszát (*path length*) is kiírják. |
 
 **Alapműveletek:**
 
@@ -684,8 +684,8 @@ fut, a szabad mozgások MoveJ-k. Utána ezt másolod le a többi változathoz.
 > 3. átviszi a kockát, és leteszi a zöld keretbe;
 > 4. felemelkedik, és visszatér a `Home`-ba.
 >
-> Alul megjelenik a szimulációs csúszka. A program végén a jobb alsó sarokban megjelenik az idő (kb. **6.2 s**)
-> és az út (kb. **1369 mm**). Ezek a 10. fejezet számított értékei; a pontos mérést a 9. fejezetben végzed.
+> Alul megjelenik a szimulációs sáv. A csúszka mellett a program neve és ideje áll: *PP_MoveJ_kozepes time:
+> 6.2s*. Ez a 10. fejezet számított értéke (6,21 s); a pontos mérést a 9. fejezetben végzed.
 
 3. Futtasd le még egyszer (dupla katt). A program elején a kocka visszaugrik a kiinduló helyére, és minden
    ismétlődik.
@@ -799,7 +799,7 @@ A MoveL-változatban a három szabad mozgás (a 4., a 9. és a 14. sor) is egyen
 4. Ellenőrizd: a programban most csak egy MoveJ van (a 3. sor), a többi mozgás MoveL.
 5. Kattints a `Home`-ra, majd futtasd le a programot.
 
-   > ✅ **Ellenőrzés:** A robot most egyenes vonalakon mozog. Az idő kb. **7.7 s**, az út kb. **1341 mm**.
+   > ✅ **Ellenőrzés:** A robot most egyenes vonalakon mozog. A csúszka mellett: *PP_MoveL_kozepes time: 7.7s*.
 
 6. Készíts belőle lassú és gyors másolatot is (17. lépés): `PP_MoveL_lassu` és `PP_MoveL_gyors`.
 
@@ -845,12 +845,17 @@ Ments: **Ctrl+S**.
    beleszámolja az időbe.
 2. **Futtasd le kétszer, és a második futás eredményét írd fel.** Az első futásnál a RoboDK még a korábbi
    beállításokkal is számolhat.
-3. **A program végén olvasd le az eredményt** az ablak alján, a jobb alsó sarokban: a pálya hosszát (mm) és a
-   program idejét (s). Ha lemaradtál róla, futtasd újra, és a végén figyeld az ablak alját.
-4. **Ne stopperrel mérj!** A RoboDK alapból ötször gyorsabban játssza le a mozgást a valós időnél. A kiírt idő
+3. **Az időt a szimulációs sávról olvasd le**, a csúszka mellől: például *PP_MoveJ_lassu time: 11.6s*.
+   - A RoboDK egy tizedesre kerekítve írja ki az időt. Ezért például 11,61 s helyett 11.6 s-ot látsz: ez nem hiba,
+     hanem a kijelzés felbontása (0,1 s). A jegyzőkönyvben is írd le.
+   - A csúszka melletti szám (például 529) a szimuláció lépésszáma, **nem az út**.
+4. **Az utat (pályahosszt) számítással adod meg** (10. fejezet), mert a RoboDK a szimulációs sávon nem írja ki.
+   Ha a te verziód a program végén az ablak legalsó sorában (állapotsor) kiírja a pálya hosszát (*path length*),
+   azt is írd fel, és hasonlítsd össze a számítottal.
+5. **Ne stopperrel mérj!** A RoboDK alapból ötször gyorsabban játssza le a mozgást a valós időnél. A kiírt idő
    viszont a valódi robotra számolt idő, ezt kell használni. A szóköz nyomva tartása gyorsítja a lejátszást, de
    a kiírt időt nem változtatja meg.
-5. **A leolvasásról készíts képet.** Legalább egy kép mindenképp kerüljön a jegyzőkönyvbe (11. ábra).
+6. **A leolvasásról készíts képet.** Legalább egy kép mindenképp kerüljön a jegyzőkönyvbe (11. ábra).
 
 ### M1. Ciklusidő és pályahossz → T1.1
 
@@ -858,8 +863,8 @@ Mind a hat `PP_…` programmal csináld meg:
 1. Kattints a `Home` célpontra.
 2. Kattints duplán a programra, és várd meg a végét.
 3. Kattints duplán újra (a robot most is a `Home`-ban van), és várd meg a végét.
-4. Írd be a **T1.1** táblázatba a második futás idejét és útját. A *Számított ciklusidő* oszlopba a 10.5
-   értékei vagy a saját számításod kerül.
+4. Olvasd le a csúszka mellől a második futás idejét, és írd be a **T1.1** táblázat *Mért ciklusidő* oszlopába.
+5. A *Számított ciklusidő* és a *Pályahossz* oszlopba a 10.5 értékei vagy a saját számításod kerül.
 
 > ✅ **Ellenőrzés:** A 10. fejezet szerint számított értékek:
 >
@@ -872,15 +877,16 @@ Mind a hat `PP_…` programmal csináld meg:
 > | `PP_MoveL_kozepes` | 7,69 s | 1340,8 mm |
 > | `PP_MoveL_gyors` | 4,76 s | 1340,8 mm |
 >
-> Ha a te értékeid ezektől legfeljebb 1–2%-kal térnek el, minden rendben. Nagyobb eltérésnél nézd meg a
+> A RoboDK egy tizedesre kerekítve írja ki az időt, ezért például 11.6 s-ot vagy 6.2 s-ot fogsz látni. Ha a
+> kiírt idő a számítottól legfeljebb 0,1 s-mal tér el, minden rendben. Nagyobb eltérésnél nézd meg a
 > 13. fejezetet.
 
-> 📸 **Képernyőkép → 11. ábra:** az ablak alja a `PP_MoveJ_kozepes` program végén.
+> 📸 **Képernyőkép → 11. ábra:** a szimulációs sáv a `PP_MoveJ_kozepes` program végén (a program neve és ideje).
 
 ### M2. Idő és út a felvételtől a lerakásig → T1.2
 
 1. Kattints a `Felvetel` célpontra.
-2. Kattints duplán a `Meres_atvitel_J`-re, és a végén olvasd le az időt és az utat.
+2. Kattints duplán a `Meres_atvitel_J`-re, és a végén olvasd le az időt a csúszka mellől.
 3. Kattints újra a `Felvetel`-re, futtasd le még egyszer, és ezt az eredményt írd fel. Ez a T1.2-ben a *MoveJ –
    közepes* sor.
 4. Kattints duplán a `Meres_atvitel_J` *Set Speed* sorára, írd át a lassú értékekre, majd **OK**. Ismételd meg
@@ -888,6 +894,10 @@ Mind a hat `PP_…` programmal csináld meg:
 5. Ugyanezt csináld meg a `Meres_atvitel_L`-lel is: ezek a *MoveL – lassú, közepes, gyors* sorok.
 6. A *Számított idő* oszlopba a 10. fejezet értékei vagy a saját számításod kerül. Az *Eltérés* = mért −
    számított.
+7. Az *Út* oszlopba a számított út kerül:
+   - MoveL: 100 + 400 + 100 = **600 mm** (egyenes szakaszok);
+   - MoveJ: 100 + ív + 100, ahol az ív hossza r · ΔJ1 (radiánban), r = 447,2 mm. A ΔJ1-et a saját T1.0
+     táblázatodból veszed (10.4). Ez kb. **614,7 mm**.
 
 > ✅ **Ellenőrzés:** A számított értékek (10.3 és 10.4):
 >
@@ -1051,8 +1061,9 @@ halad a robot talpa körül (3. ábra).
 | **összesen** | **≈ 1368,7 mm** | **11,61 s** | **6,21 s** | **4,25 s** |
 
 A MoveJ-program útja (≈ 1368,7 mm) nem számolható egyszerűen kézzel, mert a TCP a `Home`-hoz vezető
-szakaszokon görbe pályán halad. Ezt az értéket a robot geometriájából számítógéppel számoltuk. A jegyzőkönyvbe
-a RoboDK által kiírt értéket írd.
+szakaszokon görbe pályán halad. Ezt az értéket a robot geometriájából számítógéppel számoltuk ki. A
+jegyzőkönyvbe ezt írd be, és jelezd, hogy számított érték. Ha a te RoboDK-verziód a program végén kiírja a
+pálya hosszát, azt is írd mellé.
 
 ### 10.6 A legnagyobb sebesség (T1.3a és T1.3b)
 
@@ -1202,12 +1213,14 @@ eredmények (T1.1–T1.6), Értékelés, Összefoglalás, Források.
 | A célpontok az `Asztal` helyett máshová kerültek. | A robotpanelen nem az `Asztal` volt kiválasztva (7. lépés). Húzd át őket az `Asztal` alá, vagy töröld és vedd fel újra őket. |
 | Egy MoveL-re a RoboDK szingularitást vagy csuklóhatárt jelez. | Ellenőrizd a célpontok koordinátáit és a kiinduló helyzetet (8. lépés). Ha minden jó, a szabad mozgásnál használj MoveJ-t. |
 | A program furcsa, túl hosszú ciklusidőt mutat. | A robot nem a program első célpontjáról indult (kattints rá előtte), vagy ez volt az első futás (futtasd újra). |
-| A mért idő eltér a számítottól (több mint 2%-kal). | Ellenőrizd a *Set Speed* értékeit: mind a négy be van-e pipálva. Nézd meg a **Tools → Options → Motion** fület: a *Move time calculation* alapbeállítás szerint MoveJ-nél a csukló-, MoveL-nél a lineáris értékekkel számol. Ha a robot lekerekítve halad a célpontokon (nem áll meg bennük), a program elejére tegyél egy **Program → Set Rounding Instruction** utasítást `-1` értékkel. |
+| A kiírt idő 0,1 s-nál jobban eltér a számítottól. | Ellenőrizd a *Set Speed* értékeit: mind a négy be van-e pipálva. Nézd meg a **Tools → Options → Motion** fület: a *Move time calculation* alapbeállítás szerint MoveJ-nél a csukló-, MoveL-nél a lineáris értékekkel számol. Ha a robot lekerekítve halad a célpontokon (nem áll meg bennük), a program elejére tegyél egy **Program → Set Rounding Instruction** utasítást `-1` értékkel. |
 | MoveJ-nél a teljes program ideje eltér, de az átvitelé stimmel. | Más karállással (konfigurációval) vetted fel a célpontokat (10. lépés). Ez nem hiba: írd le a jegyzőkönyvben. |
 | A kocka nem mozdul a megfogóval, vagy az asztallapot fogja meg. | Hiányzik vagy rossz az *Attach object* esemény, vagy a TCP nem a kocka közepén van. Az *Attach* ablakában bepipálhatod a *Check shortest distance between TCP and the object shape* opciót is. |
 | A második futtatásnál a kocka rossz helyről indul. | A program elején kell lennie a *Set object position (relative)* eseménynek (12. lépés). |
 | Ütközést jelez, pedig csak érintés van. | Lásd a 16. lépést. Ha a dobozokat magad készítetted (B függelék), kapcsold ki a felfekvő párokat a *Collision Map*-ben. |
-| Nem látom az állapotsor üzenetét a program végén. | Az üzenet a program végén jelenik meg, az ablak alján, jobb oldalt. Ha közben máshová kattintasz, eltűnhet: futtasd újra a programot. |
+| Nem találom a program idejét. | A program futtatásakor az ablak alján megjelenik a szimulációs sáv. A csúszka mellett áll a program neve és ideje, például *PP_MoveJ_lassu time: 11.6s*. Ha bezártad (piros X), futtasd újra a programot. |
+| A csúszka melletti szám (például 529) nem egyezik az úttal. | Ez nem az út, hanem a szimuláció lépésszáma. Az utat a 10. fejezet szerint számolod (9.0, 4. szabály). |
+| A kiírt idő 0,01–0,05 s-mal eltér a számítottól. | A RoboDK egy tizedesre kerekít (például 11.6 s a 11,61 s helyett). Ez a kijelzés felbontása, nem hiba. |
 | A robotpanelen nem találom a TCP-koordinátákat. | Azt a mezőcsoportot keresd, amelyben a 8. lépés után kb. 91.9 / -133.3 / 327.9 áll. A másik kettőben 0, 0, 160 (a szerszám), illetve 400, 0, 0 (az `Asztal`) áll. |
 
 ---

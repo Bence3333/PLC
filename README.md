@@ -18,8 +18,8 @@ Az útmutatóhoz **nem kell semmilyen szkript vagy programozás**:
   [`feladat1/modellek/`](feladat1/modellek) mappában van: ezeket a RoboDK **File → Open** parancsával töltöd be;
 - az útmutató ábrái (a RoboDK ablaka, a cella felül- és oldalnézetben, a megfogó és a TCP, a sebességprofil) a
   [`feladat1/abrak/`](feladat1/abrak) mappában vannak;
-- a mérési eredményeket a RoboDK kijelzőiről olvasod le: az állapotsorban a program idejét és a pálya hosszát,
-  a robotpanelen a TCP helyzetét és a csuklószögeket;
+- a mérési eredményeket a RoboDK kijelzőiről olvasod le: a szimulációs sávon a program idejét, a robotpanelen a
+  TCP helyzetét és a csuklószögeket. A pálya hosszát számítással adod meg;
 - a részidőket (pl. a felvételtől a lerakásig) kis mérőprogramokkal méred;
 - a sebességeket és az időket egyszerű képlettel (trapéz sebességprofil) ki is számolod, ellenőrzésként. Az
   útmutatóban minden mérendő értéknek megvan a számított (várható) értéke is, így látod, ha valami nem stimmel;

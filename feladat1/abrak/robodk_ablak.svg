@@ -80,17 +80,21 @@
 <rect x="78.0" y="409.5" width="11" height="11" rx="2" fill="#52514e"/>
 <text x="95.0" y="419.5" font-size="13" fill="#1f1e1c" text-anchor="start">MoveJ (Home)</text>
 <rect x="20" y="462" width="860" height="28" fill="#f2f1ed" stroke="#e2dfd8"/>
-<rect x="60" y="473" width="680" height="6" rx="3" fill="#d6d2c9"/>
-<rect x="60" y="473" width="420" height="6" rx="3" fill="#1c5aa6"/>
-<circle cx="480" cy="476" r="8" fill="#ffffff" stroke="#1c5aa6" stroke-width="2"/>
+<rect x="54" y="473" width="440" height="6" rx="3" fill="#1c5aa6"/>
+<rect x="488" y="469" width="13" height="13" rx="2" fill="#1c5aa6"/>
+<rect x="512" y="466" width="54" height="20" rx="3" fill="#ffffff" stroke="#b9b6ae"/>
+<text x="520.0" y="481.0" font-size="13" fill="#1f1e1c" text-anchor="start">529</text>
+<text x="578.0" y="481.0" font-size="13.5" fill="#1f1e1c" text-anchor="start" font-weight="bold">PP_MoveJ_kozepes</text>
+<text x="708.0" y="481.0" font-size="13.5" fill="#1f1e1c" text-anchor="start">time: 6.2s</text>
+<rect x="852" y="466" width="20" height="20" rx="3" fill="#ffffff" stroke="#b9b6ae"/>
+<line x1="857.0" y1="471.0" x2="867.0" y2="481.0" stroke="#d03a2c" stroke-width="2.2"/><line x1="867.0" y1="471.0" x2="857.0" y2="481.0" stroke="#d03a2c" stroke-width="2.2"/>
 <rect x="20" y="490" width="860" height="30" fill="#e9e7e2"/>
 <rect x="20" y="512" width="860" height="8" rx="8" fill="#e9e7e2"/>
 <text x="32.0" y="510.0" font-size="12.5" fill="#52514e" text-anchor="start" font-style="italic">üzenetek, tippek</text>
-<text x="868.0" y="510.0" font-size="12.5" fill="#52514e" text-anchor="end" font-style="italic">a program végén: pálya hossza [mm], programidő [s]</text>
 <circle cx="500.0" cy="63.0" r="10" fill="#eb6834"/><text x="500.0" y="67.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">1</text>
 <circle cx="720.0" cy="93.0" r="10" fill="#eb6834"/><text x="720.0" y="97.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">2</text>
 <circle cx="262.0" cy="132.0" r="10" fill="#eb6834"/><text x="262.0" y="136.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">3</text>
 <circle cx="820.0" cy="140.0" r="10" fill="#eb6834"/><text x="820.0" y="144.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">4</text>
-<circle cx="760.0" cy="476.0" r="10" fill="#eb6834"/><text x="760.0" y="480.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">5</text>
+<circle cx="36.0" cy="476.0" r="10" fill="#eb6834"/><text x="36.0" y="480.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">5</text>
 <circle cx="450.0" cy="505.0" r="10" fill="#eb6834"/><text x="450.0" y="509.5" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold">6</text>
 </svg>
