@@ -6,7 +6,7 @@ Három RoboDK-s egyetemi mérési feladat megoldása, mérése és dokumentálá
 
 | Feladat | Útmutató | Word-sablon a jegyzőkönyvhöz |
 |---|---|---|
-| **1. Pick & Place** (Universal Robots UR5e) | [`feladat1/UTMUTATO.md`](feladat1/UTMUTATO.md), nyomtatható: [`UTMUTATO.pdf`](feladat1/UTMUTATO.pdf) (részletes, kezdőknek) | [`feladat1/jegyzokonyv_sablon.docx`](feladat1/jegyzokonyv_sablon.docx) |
+| **1. Pick & Place** (Universal Robots UR5e) | [`feladat1/UTMUTATO.md`](feladat1/UTMUTATO.md), nyomtatható: [`UTMUTATO.pdf`](feladat1/UTMUTATO.pdf) (részletes, kezdőknek); rövid, 2 oldalas lépéssor Wordben: [`rovid_utmutato.docx`](feladat1/rovid_utmutato.docx) | [`feladat1/jegyzokonyv_sablon.docx`](feladat1/jegyzokonyv_sablon.docx) |
 | 2. Pályakövetés (ABB IRB 120) | később készül | – |
 | 3. Precíziós mozgás (KUKA LBR iiwa 7) | később készül | – |
 
