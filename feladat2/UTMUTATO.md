@@ -448,7 +448,9 @@ csuklószögeid egyezni fognak az útmutató ellenőrző értékeivel (11. lép�
 > ✅ **Ellenőrzés:**
 > - A felkar függőlegesen felfelé áll, az alkar vízszintesen előre nyúlik, a toll függőlegesen lefelé néz.
 > - A *Tool Frame w.r.t. Reference Frame* mezőkben kb. ez áll: X ≈ `-98`, Y ≈ `0`, Z ≈ `408`.
-> - A forgatási mezők között 180 (vagy -180) is szerepel. **A forgatásokhoz ne nyúlj.**
+> - A három forgatás (a RoboDK ABB-formátumában, *Rot[Z,Y',X'']*) kb. `-180`, `0`, `180`: **a középső 0**. Ez jelenti,
+>   hogy a toll pontosan függőleges. **A forgatásokhoz ne nyúlj.**
+> - A robotpanel *Tool Frame w.r.t. Robot Flange* sorában `0`, `0`, `150`, `0`, `0`, `0` áll.
 
 > ⚠️ **Ha nem így van:** ellenőrizd, hogy a szerszám listában a `Toll`, a referencia listában a `Palya` van-e
 > kiválasztva (7. lépés), és hogy a `Toll` TCP-je Z = 150.
@@ -486,6 +488,11 @@ nyúlnod:** a toll a 9. lépés óta pontosan lefelé néz, és ez így is marad
 > a `P1_felett` a `P1` fölött, a `Home` a négyzet közepe fölött. Ments: **Ctrl+S**.
 
 > ⚠️ **Ha nem így van:**
+> - **A toll ferde, és/vagy a hegye nem ér le a papírra:** a célpontokat hibás szerszámbeállítással vetted fel
+>   (3. lépés: Z = 200 maradt, vagy egy forgatás nem 0). Javítsd a `Toll`-t (Z = `150`, forgatások `0`), majd
+>   javítsd a célpontokat: írd be a 9. lépés csuklószögeit, utána sorban minden célpontnál írd be az X, Y, Z értéket,
+>   és jobb klikk a célponton → **Teach Current Position**. Így a programok is megmaradnak. A végén minden
+>   célpontban a középső forgatás 0, a toll függőleges, és a hegye a papírt éri.
 > - **Elfelejtetted átírni a koordinátákat a Ctrl+T előtt:** állítsd a robotot a jó helyre, majd jobb klikk a
 >   célponton → **Teach Current Position**. Ez felülírja a célpontot a robot jelenlegi helyzetével.
 > - **A robot nem mozdul, vagy hibát ír** (*target not reachable*): elírtál egy számot. Írd be újra.
