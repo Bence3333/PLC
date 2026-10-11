@@ -279,6 +279,10 @@ A robot karimájára szereled a tollat, és a TCP-t a toll hegyére (150 mm) ál
    |---|---|---|---|---|---|
    | `0` | `0` | **`150`** | `0` | `0` | `0` |
 
+   > ⚠️ **Figyelj a kezdőértékekre!** A RoboDK magától Z = `200`-at ír be, ezt kell `150`-re átírnod. A három
+   > forgatási mező mindegyike legyen pontosan `0`: ha bármelyikben más érték áll (például `-10`), a célpontok
+   > megdőlt tollal jönnek létre, és a csuklószögek nem fognak egyezni az ellenőrző értékekkel.
+
 5. Zárd be az ablakot.
 
 > ✅ **Ellenőrzés:** A TCP kis koordináta-rendszere (piros, zöld és kék nyilacska) pontosan a toll kúpos hegyén
@@ -286,7 +290,9 @@ A robot karimájára szereled a tollat, és a TCP-t a toll hegyére (150 mm) ál
 
 > ⚠️ **Ha nem így van:**
 > - **A toll nem a karimán van:** valószínűleg nem a robotra húztad. **Ctrl+Z**, és próbáld újra.
-> - **A TCP nem a hegyen van:** nyisd meg újra a `Toll` ablakát, és ellenőrizd: Z = 150.
+> - **A TCP nem a hegyen van** (például a toll hegye alatt, a levegőben látszik): nyisd meg újra a `Toll` ablakát,
+>   és ellenőrizd: Z = 150, a forgatások 0. A robotpanel *Tool Frame w.r.t. Robot Flange* sorában is ezt kell látnod:
+>   0, 0, 150, 0, 0, 0.
 > - **Nem sikerül:** használd a B) változatot.
 
 **B) Egyszerűbb, tollmodell nélkül**
@@ -512,6 +518,10 @@ nyúlnod:** a toll a 9. lépés óta pontosan lefelé néz, és ez így is marad
 > ⚠️ **Ha nálad más számok vannak, de a robot a jó helyen áll:**
 > - **Egy szög előjele ellentétes** (például a J6-é), de a nagysága egyezik: ez a tengely forgásirányának
 >   megállapodásából adódik. Nem hiba; a jegyzőkönyvbe a saját értékeidet írd.
+> - **A J1 és a J6 egyezik, de a J2, a J3 és a J5 más** (például a `P2`-ben J2 ≈ 55,5, J3 ≈ -8,9, J5 ≈ 43,5): a
+>   `Toll` TCP-je nem 150 mm (ez a Z = 200-hoz tartozó érték). Javítsd a 3. lépés szerint (Z = 150, forgatások 0),
+>   majd a célpontokat vedd fel újra a 9. lépéstől: a régieket töröld, vagy a robotot a helyes helyzetbe állítva
+>   jobb klikk a célponton → **Teach Current Position**.
 > - **Egészen más számok** (például J4 ≈ 180 vagy J5 negatív): a robot más karállással (konfigurációval) éri el a
 >   pontot. Töröld a célpontokat, és kezdd újra a 9. lépéstől.
 

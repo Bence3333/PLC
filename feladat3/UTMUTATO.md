@@ -235,6 +235,10 @@ a tiltott zónán.*
    |---|---|---|---|---|---|
    | `0` | `0` | **`180`** | `0` | `0` | `0` |
 
+   > ⚠️ **Figyelj a kezdőértékekre!** A RoboDK magától Z = `200`-at ír be, ezt kell `180`-ra átírnod, és a három
+   > forgatási mező mindegyike legyen pontosan `0`. Különben a műszer hegye nem a célpontokba kerül, vagy a
+   > célpontok megdőlt műszerrel jönnek létre.
+
 4. Zárd be az ablakot.
 
 > ✅ **Ellenőrzés:** A TCP kis koordináta-rendszere pontosan a műszer hegyes végén látszik (1. ábra). A kék Z nyíl a
