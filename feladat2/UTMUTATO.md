@@ -484,6 +484,11 @@ nyúlnod:** a toll a 9. lépés óta pontosan lefelé néz, és ez így is marad
 | 5. | `P3` | `75` | `75` | `0` |
 | 6. | `P4` | `-75` | `75` | `0` |
 
+> 💡 **Tipp: nem látszik, hogy a toll leér?** A célpontok és a keretek nagy nyilai eltakarják a toll vékony hegyét.
+> A **-** billentyűvel kicsinyítsd a kereteket, vagy nagyíts rá a tollra oldalról. A biztos jel a robotpanel: ha a
+> *Tool Frame w.r.t. Reference Frame* sorban Z = `0`, és a szerszám sora `0, 0, 150, 0, 0, 0`, a toll hegye a papíron
+> van (pontosan 0,5 mm-rel fölötte, 5. lépés).
+
 > ✅ **Ellenőrzés:** A `Palya` alatt hat célpont van. A négy sarok-célpont pontosan a piros négyzet sarkain látszik,
 > a `P1_felett` a `P1` fölött, a `Home` a négyzet közepe fölött. Ments: **Ctrl+S**.
 
@@ -525,6 +530,9 @@ nyúlnod:** a toll a 9. lépés óta pontosan lefelé néz, és ez így is marad
 > ⚠️ **Ha nálad más számok vannak, de a robot a jó helyen áll:**
 > - **Egy szög előjele ellentétes** (például a J6-é), de a nagysága egyezik: ez a tengely forgásirányának
 >   megállapodásából adódik. Nem hiba; a jegyzőkönyvbe a saját értékeidet írd.
+> - **Csak a J6 tér el pontosan 180°-kal** (például -193,0 a -13,0 helyett), a forgatások pedig `0`, `0`, `180` a
+>   `-180`, `0`, `180` helyett: a toll a saját tengelye körül fél fordulattal el van fordítva. A tollnál ez nem
+>   számít, a ΔJ6 értékek ugyanazok; folytathatod.
 > - **A J1 és a J6 egyezik, de a J2, a J3 és a J5 más** (például a `P2`-ben J2 ≈ 55,5, J3 ≈ -8,9, J5 ≈ 43,5): a
 >   `Toll` TCP-je nem 150 mm (ez a Z = 200-hoz tartozó érték). Javítsd a 3. lépés szerint (Z = 150, forgatások 0),
 >   majd a célpontokat vedd fel újra a 9. lépéstől: a régieket töröld, vagy a robotot a helyes helyzetbe állítva
